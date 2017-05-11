@@ -25,7 +25,7 @@ Elle a d'abord été en beta publique à partir de février 2014, puis disponibl
 
 ## Prérequis pour débuter sur Bluemix
 
-* An IBM Bluemix account. Either [sign up][bluemix_signup_url], or use an existing account.
+* Un compte IBM Bluemix. Soit [s'inscrire ici][bluemix_signup_url], ou utiliser votre compte existant.
 * [Bluemix CLI](https://clis.ng.bluemix.net/ui/home.html)
 * [OpenWhisk CLI](https://console.ng.bluemix.net/openwhisk/learn/cli)
 * [Bluemix Container Registry plugin](https://console.ng.bluemix.net/docs/cli/plugins/registry/index.html)
