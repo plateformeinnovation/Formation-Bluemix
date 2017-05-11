@@ -33,9 +33,11 @@ Watch this Youtube video that walks you through the deployment of the service an
    </center>
 
 
-## About the micro-service
+## A propos de Bluemix
 
-The micro-service used in this project computes Fibonacci numbers.
+
+Selon [Wikipedia] (https://fr.wikipedia.org/wiki/Bluemix): 
+IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que service (PaaS) développé par IBM. Il permet d'utiliser plusieurs langages de programmation et services avec des outils de type DevOps. Bluemix est basé sur Cloud Foundry, ainsi que des technologies spécifiques à IBM, et tourne sur SoftLayer1,2. La plate-forme a coûté 1 milliard de dollars en 18 mois3. Elle a d'abord été en beta publique à partir de février 2014, puis disponible publiquement en juin4.
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number): *In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones:*
 
