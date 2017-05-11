@@ -17,8 +17,10 @@ Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibl
 
 
 Selon [Wikipedia](https://fr.wikipedia.org/wiki/Bluemix):
-IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que service (PaaS) développé par IBM. Il permet d'utiliser plusieurs langages de programmation et services avec des outils de type DevOps. Bluemix est basé sur Cloud Foundry, ainsi que des technologies spécifiques à IBM, et tourne sur SoftLayer1,2. La plate-forme a coûté 1 milliard de dollars en 18 mois3. Elle a d'abord été en beta publique à partir de février 2014, puis disponible publiquement en juin4.
-
+IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que service (PaaS) développé par IBM. 
+Il permet d'utiliser plusieurs langages de programmation et services avec des outils de type DevOps. 
+Bluemix est basé sur Cloud Foundry, ainsi que des technologies spécifiques à IBM, et tourne sur SoftLayer.
+Elle a d'abord été en beta publique à partir de février 2014, puis disponible publiquement en juin.
 
 
 ## Prérequis pour débuter sur Bluemix
@@ -36,14 +38,24 @@ IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que serv
 
 
   
-## Deploy the service in Bluemix with the toolchain
+## 1 : Un tour de l'interface graphique
 
-Follow [these instructions](./DEPLOY_TOOLCHAIN.md).
+Suivre [ce tuto](./tour.md).
 
 
-## Deploying the service manually in Bluemix
+## 2 : Déployer une application
 
-Follow [these instructions](./DEPLOY_MANUALLY.md).
+Suivre [ce tuto](./deploy.md).
+
+
+## 3 : Ajouter un service à votre application
+
+Suivre [ce tuto](./service.md).
+
+
+## 4 : DevOps avec Bluemix
+
+Suivre [ce tuto](./devops.md).
 
 ## Service API
 
