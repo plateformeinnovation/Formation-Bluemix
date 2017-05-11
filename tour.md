@@ -6,7 +6,7 @@ Voici un apperçu de ce que propose Bluemix au travers de son interface graphiqu
 
 ## 1. Se connecter à Bluemix
 
-Il suffit de se rendre sur l'url [www.bluemix.net](www.bluemix.net) et de rentrer ses identifiants de connexion.
+Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de rentrer ses identifiants de connexion.
 
 1. Generate a Bluemix API key
 
