@@ -2,13 +2,11 @@
 
 Voici un apperçu de ce que propose Bluemix au travers de son interface graphique
 
-> Although this section uses a toolchain, it assumes you have successfully configured the Bluemix CLI and its plugins. Some steps require you to use the command line.
+>
 
-> Only the US South region is currently supported.
+## 1. Se connecter à Bluemix
 
-## 1. Obtain a Bluemix API key
-
-A Bluemix API key is used in place of your Bluemix credentials. It allows to access the Bluemix API. The toolchain uses the API key to interact with the Container Service API.
+Il suffit de se rendre sur l'url [www.bluemix.net](www.bluemix.net) et de rentrer ses identifiants de connexion.
 
 1. Generate a Bluemix API key
 
