@@ -2,6 +2,25 @@
 
 Formation Bluemix
 
+
+ <center>
+      <img src="Bluemix.png" width="600" />
+   </center>
+
+Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
+   <center>
+      <a href="https://youtu.be/p9dZiMpbVH0"><img src="youtube.png" width="600" /></a>
+   </center>
+
+
+## A propos de Bluemix
+
+
+Selon [Wikipedia](https://fr.wikipedia.org/wiki/Bluemix):
+IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que service (PaaS) développé par IBM. Il permet d'utiliser plusieurs langages de programmation et services avec des outils de type DevOps. Bluemix est basé sur Cloud Foundry, ainsi que des technologies spécifiques à IBM, et tourne sur SoftLayer1,2. La plate-forme a coûté 1 milliard de dollars en 18 mois3. Elle a d'abord été en beta publique à partir de février 2014, puis disponible publiquement en juin4.
+
+
+
 ## Prérequis pour débuter sur Bluemix
 
 * An IBM Bluemix account. Either [sign up][bluemix_signup_url], or use an existing account.
@@ -14,32 +33,9 @@ Formation Bluemix
 * [Docker CLI](https://docs.docker.com/engine/installation/) version 1.9 (or later)
 
 
-# One micro-service, multiple deployment options
-
-This project contains one simple micro-service that gets deployed:
-
-* as a [Cloud Foundry](https://www.cloudfoundry.org/) application,
-* as a container in a [Kubernetes cluster](https://kubernetes.io/),
-* and as an [OpenWhisk](http://openwhisk.org/) action.
-
-   <center>
-      <img src="architecture.png" width="600" />
-   </center>
-
-Watch this Youtube video that walks you through the deployment of the service and test the behavior of the deployment options when the service crashes:
-
-   <center>
-      <a href="https://youtu.be/Bdl9s2LxUZo"><img src="youtube.png" width="600" /></a>
-   </center>
 
 
-## A propos de Bluemix
-
-
-Selon [Wikipedia](https://fr.wikipedia.org/wiki/Bluemix):
-IBM Bluemix est un outil de Cloud computing de type plate-forme en tant que service (PaaS) développé par IBM. Il permet d'utiliser plusieurs langages de programmation et services avec des outils de type DevOps. Bluemix est basé sur Cloud Foundry, ainsi que des technologies spécifiques à IBM, et tourne sur SoftLayer1,2. La plate-forme a coûté 1 milliard de dollars en 18 mois3. Elle a d'abord été en beta publique à partir de février 2014, puis disponible publiquement en juin4.
-
-
+  
 ## Deploy the service in Bluemix with the toolchain
 
 Follow [these instructions](./DEPLOY_TOOLCHAIN.md).
