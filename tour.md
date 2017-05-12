@@ -47,8 +47,7 @@ Voila, vous etes connecté.
 </center>
 
 ```
-Chaque utilisateur peut avoir accès à des régions, des organisations, 
-des espaces suivant les autorisations qu'il a reçu.
+Chaque utilisateur peut avoir accès à différentes régions, différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
 Il peut ainsi déployer des applications, des conteneurs ou des services.
 ```
 <center>
