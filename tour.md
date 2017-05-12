@@ -32,16 +32,10 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
       <img src="tour-login-pwd.png" width="600" />
 </center>
 
-
-
-1. .....
-
+```
+   Voila, vous etes connecté.
    ```
-   .......
-   ```
-
-   > .....
-
-1. ....
-
-## 2. ....
+   
+   <center>
+      <img src="dashboard.png" width="600" />
+</center>
