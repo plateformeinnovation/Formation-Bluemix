@@ -38,20 +38,20 @@ Elle a d'abord été en beta publique à partir de février 2014, puis disponibl
   
 ## 1 : Un tour de l'interface graphique
 
-Suivre [ce tuto](./tour.md).
+Suivre [ce guide](./tour.md).
 
 
 ## 2 : Déployer une application
 
-Suivre [ce tuto](./deploy.md).
+Suivre [ce guide](./deploy.md).
 
 
 ## 3 : Ajouter un service à votre application
 
-Suivre [ce tuto](./service.md).
+Suivre [ce guide](./service.md).
 
 
 ## 4 : DevOps avec Bluemix
 
-Suivre [ce tuto](./devops.md).
+Suivre [ce guide](./devops.md).
 
