@@ -43,7 +43,7 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
 ## 2. Compte/Region/Organisation/espace.
 
 ```
-    Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
+   Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
     ```
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
  
@@ -60,5 +60,3 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
    ```
 
    > *****.
-```
-   ```
