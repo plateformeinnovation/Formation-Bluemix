@@ -54,13 +54,17 @@ Il peut ainsi déployer des applications, des conteneurs ou des services.
 
 
 
-2.1 Regions.
+1. Regions.
+
+Une région correspond à un térritoire géographique (Datacenter) où l'on peut déployer des applications et utiliser des services.
+
+<center>
+      <img src="tour-4regions.png" width="600" />
+</center>
 
 ```
 L'offre Public de Bluemix propose 4 régions différentes par défaut.
 ```
-
-Une région correspond à un térritoire géographique (Datacenter) où l'on peut déployer des applications et utiliser des services.
 
 Si on utilise l'interface utilisateur (**GUI**), on peut passer d'une région à une autre.Pour cela, cliquer sur le lien du compte utilisateur, étendre le choix **Region** et choisir la région parmi la liste donnée.
 
@@ -85,7 +89,7 @@ cf api https://api.eu-gb.bluemix.net
 
 
 
-2.2 Organisations.
+2. Organisations.
 
 Le responsable du compte Bluemix créer les organisations.
 exemple : Moodpeek, Gamo, ...
@@ -94,14 +98,14 @@ Le manager de l'organisation peut créer autant d'espace qu'il le souhaite.
 exmple : Prod, Preprod, Dev, ...
 
 
-
-
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
 
 
 
 
-2. Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à droite.
+3. Espaces.
+
+Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à droite.
 
 <center>
       <img src="tour-create-space.png" width="600" />
