@@ -17,8 +17,8 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
 
 
 ```
-   Rentrer son compte utilisateur.
-   ```
+Rentrer son compte utilisateur.
+```
 
 <center>
       <img src="tour-login-user.png" width="600" />
