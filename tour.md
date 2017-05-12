@@ -42,6 +42,10 @@ Voila, vous etes connecté.
 
 ## 2. Compte/Region/Organisation/espace.
 
+<center>
+      <img src="tour-region-org-space.png" width="600" />
+</center>
+
 ```
 Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
 ```
