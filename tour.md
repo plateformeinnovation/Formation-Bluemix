@@ -49,8 +49,14 @@ Voila, vous etes connecté.
 ```
 Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
 ```
+<center>
+      <img src="tour-ibm-account.png" width="600" />
+</center>
+
+
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
  
+
 
 
 ## 3. .....
