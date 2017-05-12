@@ -26,25 +26,25 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
 
 
 ```
-   Rentrer son mot de passe.
-   ```
+Rentrer son mot de passe.
+```
 <center>
       <img src="tour-login-pwd.png" width="600" />
 </center>
 
 ```
-   Voila, vous etes connecté.
-   ```
+Voila, vous etes connecté.
+```
    
-   <center>
+<center>
       <img src="dashboard.png" width="600" />
 </center>
 
 ## 2. Compte/Region/Organisation/espace.
 
 ```
-   Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
-    ```
+Chaque utilisateur peut avoir accès à des régions, des organisations, des espaces suivant les autorisations qu'il a reçu.
+```
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
  
 
