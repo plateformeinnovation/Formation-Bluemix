@@ -105,7 +105,9 @@ exmple : Prod, Preprod, Dev, ...
 
 3. Espaces.
 
-Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à droite.
+> Attention, seul le responsable d'une organisation (org manager) est autoriser à créer des espaces.
+
+Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à droite et cliquer sur create a space.
 
 <center>
       <img src="tour-create-space.png" width="600" />
