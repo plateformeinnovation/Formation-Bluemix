@@ -69,7 +69,7 @@ L'offre Public de Bluemix propose 4 régions différentes à ce jour.
 Si on utilise l'interface utilisateur (**GUI**), on peut passer d'une région à une autre.Pour cela, cliquer sur le lien du compte utilisateur, étendre le choix **Region** et choisir la région parmi la liste donnée.
 
 <center>
-      <img src="tour-region.png" width="600" />
+      <img src="tour-region.png" width="400" />
 </center>
 
 Si on utilise l'interface en ligne de commande (**CLI**), il faut utilise la commande cf api et indiquer le **endpoint API** de la région souhaitée.
@@ -112,14 +112,25 @@ Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à dro
 
 
 <center>
-      <img src="tour-create-space.png" width="600" />
+      <img src="tour-create-space.png" width="400" />
 </center>
 
 
 
 
-## 3. .....
+## 3. Applications
 
+Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
+<center>
+      <img src="menu.png" width="60" />
+</center>
+
+Une fois le menu ouvert, voici les actions possibles.
+<center>
+      <img src="menu-ouvert.png" width="200" />
+</center>
+
+On peut ici controler ses applications,
 ....
 
 1.
@@ -130,3 +141,6 @@ Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à dro
    ```
 
    > .
+
+
+## 4. Services
