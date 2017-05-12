@@ -42,16 +42,23 @@ Voila, vous etes connecté.
 
 ## 2. Compte/Region/Organisation/espace.
 
+```
+Chaque utilisateur peut avoir accès à différentes régions, différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
+Il peut ainsi déployer des applications, des conteneurs ou des services.
+```
+
+
 <center>
       <img src="tour-ibm-account.png" width="600" />
 </center>
 
 
-<center>
-      <img src="tour-region-org-space.png" width="600" />
-</center>
 
-2.1 Regions
+2.1 Regions.
+
+```
+L'offre Public de Bluemix propose 4 régions différentes par défaut.
+```
 
 Une région correspond à un térritoire géographique (Datacenter) où l'on peut déployer des applications et utiliser des services.
 
@@ -77,12 +84,8 @@ cf api https://api.eu-gb.bluemix.net
 | Germany region | Frankfurt, Germany | eu-de | api.eu-de.bluemix.net | console.eu-de.bluemix.net |
 
 
-```
-Chaque utilisateur peut avoir accès à différentes régions, différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
-Il peut ainsi déployer des applications, des conteneurs ou des services.
-```
 
-
+2.2 Organisations.
 
 Le responsable du compte Bluemix créer les organisations.
 exemple : Moodpeek, Gamo, ...
@@ -90,23 +93,19 @@ Il créer les utilisateurs qui peuvent avoir le droit de gérer une ou plusieurs
 Le manager de l'organisation peut créer autant d'espace qu'il le souhaite.
 exmple : Prod, Preprod, Dev, ...
 
-1. Naviguer entre les régions.
 
-```
-L'offre Public de Bluemix propose 4 régions différentes par défaut.
-```
-<center>
-      <img src="tour-create-space.png" width="600" />
-</center>
+
+
+> Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
+
+
+
 
 2. Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à droite.
 
 <center>
       <img src="tour-create-space.png" width="600" />
 </center>
-
-
-> Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
 
 
 
