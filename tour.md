@@ -63,7 +63,7 @@ Une région correspond à un térritoire géographique (Datacenter) où l'on peu
 </center>
 
 ```
-L'offre Public de Bluemix propose 4 régions différentes par défaut.
+L'offre Public de Bluemix propose 4 régions différentes à ce jour.
 ```
 
 Si on utilise l'interface utilisateur (**GUI**), on peut passer d'une région à une autre.Pour cela, cliquer sur le lien du compte utilisateur, étendre le choix **Region** et choisir la région parmi la liste donnée.
