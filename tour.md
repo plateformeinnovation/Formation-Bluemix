@@ -1,6 +1,6 @@
 # Tour de l'interface graphique de Bluemix
 
-Voici un apperçu de ce que propose Bluemix au travers de son interface graphique
+Regarder cette vidéo pour faire un tour de son interface graphique
 <center>
       <a href="https://youtu.be/gq5MvY1nNOM"><img src="youtube-tour.png" width="600" /></a>
    </center>
@@ -12,11 +12,24 @@ Voici un apperçu de ce que propose Bluemix au travers de son interface graphiqu
 Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de rentrer ses identifiants de connexion.
 
 <center>
-      <img src="login.png" width="600" />
-   </center>
+      <img src="tour-login.png" width="600" />
+</center>
 
-Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
-   
+
+      ```
+   Rentrer son compte utilisateur.
+      ```
+<center>
+      <img src="tour-login-user.png" width="600" />
+</center>
+
+
+      ```
+   Rentrer son mot de passe.
+      ```
+<center>
+      <img src="tour-login-pwd.png" width="600" />
+</center>
 
 
 
