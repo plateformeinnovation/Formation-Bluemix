@@ -43,6 +43,11 @@ Voila, vous etes connecté.
 ## 2. Compte/Region/Organisation/espace.
 
 <center>
+      <img src="tour-ibm-account.png" width="600" />
+</center>
+
+
+<center>
       <img src="tour-region-org-space.png" width="600" />
 </center>
 
@@ -78,11 +83,6 @@ Il peut ainsi déployer des applications, des conteneurs ou des services.
 ```
 
 
-
-
-<center>
-      <img src="tour-ibm-account.png" width="600" />
-</center>
 
 Le responsable du compte Bluemix créer les organisations.
 exemple : Moodpeek, Gamo, ...
