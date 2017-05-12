@@ -39,3 +39,10 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
    <center>
       <img src="dashboard.png" width="600" />
 </center>
+
+## 2. Organisations.
+
+
+```
+   Seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
+   ```
