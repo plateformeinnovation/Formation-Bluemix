@@ -16,7 +16,7 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
 </center>
 
 
-      ```
+```
    Rentrer son compte utilisateur.
       ```
 <center>
@@ -24,7 +24,7 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
 </center>
 
 
-      ```
+```
    Rentrer son mot de passe.
       ```
 <center>
