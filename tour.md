@@ -141,6 +141,34 @@ En cliquant sur une application, on a accès à plus d'informations pour la gér
 <center>
       <img src="dashboard-details.png" width="600" />
 </center>
+
+
+## 4. Services
+
+A partir du menu (en haut à gauche), on navigue vers les services.
+<center>
+      <img src="menu.png" width="60" />
+</center>
+
+Une fois le menu ouvert, voici les actions possibles.
+<center>
+      <img src="menu-services.png" width="200" />
+</center>
+
+On peut ici controler ses services depuis son tableau de bord ou par thèmes.
+
+<center>
+      <img src="services-dashboard.png" width="600" />
+</center>
+
+En cliquant sur un service, on a accès à plus d'informations pour le gérer (Credentials, services associés,...)
+
+<center>
+      <img src="services-details.png" width="600" />
+</center>
+
+
+
 ....
 
 1.
@@ -151,6 +179,3 @@ En cliquant sur une application, on a accès à plus d'informations pour la gér
    ```
 
    > .
-
-
-## 4. Services
