@@ -133,10 +133,14 @@ Une fois le menu ouvert, voici les actions possibles.
 On peut ici controler ses applications depuis son tableau de bord.
 
 <center>
-      <img src="dashboard-details.png" width="600" />
+      <img src="dashboard.png" width="600" />
 </center>
 
 En cliquant sur une application, on a accès à plus d'informations pour la gérer finement (Nombres di'nstance, RAM, url, Logs, services associés,...)
+
+<center>
+      <img src="dashboard-details.png" width="600" />
+</center>
 ....
 
 1.
