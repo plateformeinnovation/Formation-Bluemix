@@ -166,16 +166,3 @@ En cliquant sur un service depuis le tableau de bord, on a accès à plus d'info
 <center>
       <img src="services-details.png" width="600" />
 </center>
-
-
-
-....
-
-1.
-
-
-```
-   ******.
-   ```
-
-   > .
