@@ -136,7 +136,7 @@ On peut ici controler ses applications depuis son tableau de bord.
       <img src="dashboard.png" width="600" />
 </center>
 
-En cliquant sur une application, on a accès à plus d'informations pour la gérer finement (Nombres di'nstance, RAM, url, Logs, services associés,...)
+En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombres di'nstance, RAM, url, Logs, services associés,...)
 
 <center>
       <img src="dashboard-details.png" width="600" />
@@ -161,7 +161,7 @@ On peut ici controler ses services depuis son tableau de bord ou par thèmes.
       <img src="services-dashboard.png" width="600" />
 </center>
 
-En cliquant sur un service, on a accès à plus d'informations pour le gérer (Credentials, services associés,...)
+En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, services associés,...)
 
 <center>
       <img src="services-details.png" width="600" />
