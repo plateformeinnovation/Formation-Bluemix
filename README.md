@@ -55,3 +55,4 @@ Suivre [ce guide](./service.md).
 
 Suivre [ce guide](./devops.md).
 
+[bluemix_signup_url]: https://console.ng.bluemix.net/
