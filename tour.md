@@ -175,21 +175,12 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 </center>
 
 
-**Identity and Access** - Permet de gérer les comptes utilisateurs.
+**Identity and Access** - Permet de gérer les comptes utilisateurs et les clés API.
 
 >Identity and Access
 
->Bluemix API keys - Permet de gérer les clés API pour se connecter à Bluemix.
+>Bluemix API keys
 
-11. Now click on the Support menu tab (Fig 3.7) to see additional options
-(Fig 3.7)
-Add/View Ticket - allows you to create Support tickets or to
-view currently open tickets.
-Find Answers - quickly access the search bar inside the Docs of
-Bluemix.
-Status – provides, in real time, the status of the Bluemix
-environment and the availability of services by region.
-IBM
 
 
 ## 4. Support
@@ -218,11 +209,14 @@ IBM
 
 ## 5. Cliquer sur **Catalog** pour accéder aux services disponibles dans le catalogue.
 
+La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services.
+
+
 <center>
       <img src="catalog.png" width="600" />
 </center>
 
-
+Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
 ## 6. Applications
 
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
@@ -250,9 +244,6 @@ En cliquant sur une application depuis le tableau de bord, on a accès à plus d
 
 ## 7. Services
 
-La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services.
-Les services sont rangés par famille:
--
 
 
 
