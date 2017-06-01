@@ -163,7 +163,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 </center>
 
 
-**Usage** - Permet d'afficher sa consommation Bluemix
+**Usage** - Permet d'afficher sa consommation Bluemix - Uniquement avec l'option Billing Manager activée
 
 >Usage Dashboard
 
