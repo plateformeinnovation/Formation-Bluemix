@@ -37,7 +37,7 @@ Voila, vous etes connecté.
 ```
 
 <center>
-      <img src="dashboard.png" width="600" />
+      <img src="dashboard.png" width="800" />
 </center>
 
 ## 2. Compte/Region/Organisation/espace.
@@ -216,10 +216,15 @@ IBM
 **Status** - Permet de connaitre le statut actuel de la plate-forme et des services
 >Status
 
+## 5. Catalog
+
+Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
+<center>
+      <img src="menu.png" width="60" />
+</center>
 
 
-
-## 5. Applications
+## 6. Applications
 
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
@@ -244,7 +249,7 @@ En cliquant sur une application depuis le tableau de bord, on a accès à plus d
 </center>
 
 
-## 6. Services
+## 7. Services
 
 La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services.
 Les services sont rangés par famille:
