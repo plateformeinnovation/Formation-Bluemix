@@ -272,6 +272,8 @@ En cliquant en haut à gauche sur le lien docs, on accède à la documentation e
       <img src="tour-docs.png" width="600" />
 </center>
 
+Il est possible de chercher via le moteur de recherches ou par thèmes.
+
 <center>
       <img src="tour-docs-details.png" width="1200" />
 </center>
