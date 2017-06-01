@@ -101,8 +101,6 @@ exmple : Prod, Preprod, Dev, ...
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
 
 
-
-
 3. Espaces.
 
 
@@ -115,10 +113,90 @@ Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à dro
       <img src="tour-create-space.png" width="400" />
 </center>
 
+## 3. Options de son compte
+Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manage**), à la gestion du support (**Support**) et au catalgue de services (**Catalog**).
+<center>
+      <img src="menu-haut-droite.png" width="400" />
+</center>
 
 
 
-## 3. Applications
+#### 3.1 Cliquer sur **Manage**>**Account** pour afficher les options de son compte.
+
+
+<center>
+      <img src="manage-account.png" width="400" />
+</center>
+
+**Users** - Permet de gérer les utilisateurs et les clés API
+>Identity & Access
+
+>Bluemix API keys
+
+
+
+**Organizations** - Permet de gérer ses Organisations et ses espaces.(autorisations des users, gestion des domaines, gestion des quotas)
+
+>Profile
+
+>Notifications
+
+>Usage Dashboard
+
+>Manage Organizations
+
+**Notifications** - Permet de parametrer les notifications par mail relatives à la plate-forme Bluemix
+>Incidents
+
+>Maintenances planifiées
+
+
+#### 3.2 Cliquer sur **Manage**>**Billing and Usage** pour afficher les options de facturation.
+
+**Usage** - Permet d'afficher sa consommation Bluemix
+
+>Usage Dashboard
+
+
+11. Now click on the Support menu tab (Fig 3.7) to see additional options
+(Fig 3.7)
+Add/View Ticket - allows you to create Support tickets or to
+view currently open tickets.
+Find Answers - quickly access the search bar inside the Docs of
+Bluemix.
+Status – provides, in real time, the status of the Bluemix
+environment and the availability of services by region.
+IBM
+
+
+## 4. Support
+
+
+### 4.1 Cliquer sur **Support** pour accéder aux options de support.
+
+<center>
+      <img src="support.png" width="400" />
+</center>
+
+**Add Ticket** - Permet de créer un ticket au support Bluemix
+
+>Add Ticket
+
+**View Ticket** - Permet d'afficher ses tickets Bluemix
+
+>View Ticket
+
+**Find Answers** - Permet d'accèder aux ressources documentaires Bluemix (documentation Bluemix et forum StackOverflow)
+
+>Find Answers
+
+**Status** - Permet de connaitre le statut actuel de la plate-forme et des services
+>Status
+
+
+
+
+## 5. Applications
 
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
@@ -130,20 +208,26 @@ Une fois le menu ouvert, voici les actions possibles.
       <img src="menu-ouvert.png" width="200" />
 </center>
 
-On peut ici controler ses applications depuis son tableau de bord.
+On peut ici contrôler ses applications depuis son tableau de bord.
 
 <center>
       <img src="dashboard.png" width="600" />
 </center>
 
-En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombres di'nstance, RAM, url, Logs, services associés,...)
+En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombre d'instances, RAM, url, Logs, services associés, prix ...)
 
 <center>
       <img src="dashboard-details.png" width="600" />
 </center>
 
 
-## 4. Services
+## 6. Services
+
+La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services.
+Les services sont rangés par famille:
+-
+
+
 
 A partir du menu (en haut à gauche), on navigue vers les services.
 <center>
@@ -151,17 +235,16 @@ A partir du menu (en haut à gauche), on navigue vers les services.
 </center>
 
 Une fois le menu ouvert, voici les actions possibles.
+On peut ici controler ses services depuis son tableau de bord ou par thèmes.
 <center>
       <img src="menu-services.png" width="200" />
 </center>
-
-On peut ici controler ses services depuis son tableau de bord ou par thèmes.
 
 <center>
       <img src="services-dashboard.png" width="600" />
 </center>
 
-En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, services associés,...)
+En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 
 <center>
       <img src="services-details.png" width="600" />
