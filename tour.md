@@ -123,9 +123,14 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 
 #### 3.1 Cliquer sur **Manage**>**Account** pour afficher les options de son compte.
 
+3 sous-menus sont disponibles.
+
+* Users.
+* Organizations.
+* Notifications.
 
 <center>
-      <img src="manage-account.png" width="400" />
+      <img src="account.png" width="600" />
 </center>
 
 **Users** - Permet de gérer les utilisateurs et les clés API
@@ -153,10 +158,28 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 
 #### 3.2 Cliquer sur **Manage**>**Billing and Usage** pour afficher les options de facturation.
 
+<center>
+      <img src="billing-usage.png" width="600" />
+</center>
+
+
 **Usage** - Permet d'afficher sa consommation Bluemix
 
 >Usage Dashboard
 
+
+#### 3.3 Cliquer sur **Manage**>**Security** pour afficher les options de sécurité.
+
+<center>
+      <img src="security.png" width="600" />
+</center>
+
+
+**Identity and Access** - Permet de gérer les comptes utilisateurs.
+
+>Identity and Access
+
+>Bluemix API keys - Permet de gérer les clés API pour se connecter à Bluemix.
 
 11. Now click on the Support menu tab (Fig 3.7) to see additional options
 (Fig 3.7)
