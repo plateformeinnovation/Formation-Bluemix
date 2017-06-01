@@ -8,77 +8,74 @@
 </center>
 
 
-The Catalog menu tab in Bluemix is probably where you will spend most of
-your time exploring. There are over 130 services and APIs so it could take
-you a few hours to study each of them in detail. Maybe not everyone will
-be interested in Databases or in Internet of Things, so in this guide, we will
-we avoid going into too much detail when walking through the catalog.
-For the demo, you are just going to talk about what you see. Each of the
-categories are listed along the left side menu, with Infrastructure
-(Compute, Storage, Network & Security), Apps and Services. In your demo,
-keep each category high level and only talk about the services you know
-the listener is interested in.
-Don’t forget that there is a YouTube video which points to a ‘typical demo’
-or walkthrough of the Bluemix catalog.
+Le catalogue de service Bluemix dispose de plus de 140 services et APIs.
 
-Compute – Bare Metal and Virtual Servers are offered in hourly
-and monthly pricing formats to fully customize your IT stack to
-meet your specific needs. VMware is also available for
-ordering.
-Here are the first set of category outlines with talking points for each
-section. Halfway through the catalog, you can open one of the services to
-show how all Bluemix services are laid out.
-First, start with Infrastructure, diving into Compute as you explore around,
-just like in Fig 4.1. Note how bare metal is offered in both monthly and
-hourly pricing…just like virtual servers.
-Infrastructure:
+Chaque catégorie est listée dans le menu de gauche avec  Infrastructure (Compute, Storage, Network & Security), Apps et Services.
+
+* Infrastructure.
+
+```
+Compute – Bare Metal et Virtual Servers sont consommables au mois ou à l'heure afin de concevoir finement votre architecture. VMware est également disponible à l'achat.
+```
+
+
+```
 Storage – Choose and order the type of storage you need.
 Bluemix has a range of storage options, like file storage, block
 storage and object storage, that can be customized by speed
 and performance.
-Let’s explore some highlights of each category.
-(Fig 4.1)
-IBM
-The Bluemix Catalog
-Page 16 2017
+```
+```
 Networking – A critical part of Infrastructure, so choices here
 again are plentiful, with Direct Link and VPN private
 connections, Load Balancing to improve availability and
 scalability, and VLAN spanning and Vyatta gateways for secure
 connections.
+```
+```
 Security– Ensure greater protection of your application.
 Bluemix offers a variety of hardware firewalls and SSL certs to
 help further lock down your app.
-Next, we move to the Apps (or Applications) section of the catalog.
+```
+
+* Apps (Applications).
+```
 Boilerplates – These are ready-made templates to show the
 power of Bluemix to get started quickly. The boilerplates are
 everything you need to get an application up and running in
 seconds, including sample code.
+```
+```
 Cloud Foundry Apps – A compute resource for developers who
 want an out-of-the-box development experience. This means
 they don’t need to worry about libraries, dependencies, and all
 of the usual boring stuff a developer needs to deal with before
 they can start to code. With Cloud Foundry, everything is ready
 for you to start coding.
+
+```
 Containers – Isolated and secure app environments (or a
 compute resource) which can support languages and
 workloads without requiring any programming tools. This
 makes Containers technology super portable and gives you
 control without the worry of handling the operating system.
 This technology is based on Docker.
-IBM
-The Bluemix Catalog
-Page 17 2017
-OpenWhisk – A serverless technology that is great for
+```
+
+```OpenWhisk – A serverless technology that is great for
 executing code in a highly scalable way. For example, you may
 only need a compute resource for when you receive an alert.
 OpenWhisk can fire up code only for the period it takes to react
 to the alert, and then shut down. You only pay for when the
 code is running.
+```
+```
 Mobile – Where those ideas can come from the back of your
 brain stem to the front of your user’s mobile device. With a rich
 set of capabilities for mobile development, this section offers a
 complete mobile app building platform.
+```
+
 As we continue through the catalog, next we move into the Services
 section of the catalog.
 You can always jump or skip sections in the catalog by using
