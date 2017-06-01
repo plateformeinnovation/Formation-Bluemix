@@ -208,13 +208,15 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 >Status
 
 ## 5. Cliquer sur **Catalog** pour accéder aux services disponibles dans le catalogue.
-
-La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services.
-
-
 <center>
       <img src="catalog.png" width="600" />
 </center>
+
+La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services classés par famille.
+<center>
+      <img src="services.png" width="200" />
+</center>
+
 
 Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
 ## 6. Applications
