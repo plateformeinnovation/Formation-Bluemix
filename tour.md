@@ -216,11 +216,10 @@ IBM
 **Status** - Permet de connaitre le statut actuel de la plate-forme et des services
 >Status
 
-## 5. Catalog
+## 5. Cliquer sur **Catalog** pour accéder aux services disponibles dans le catalogue.
 
-Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
-      <img src="menu.png" width="60" />
+      <img src="catalog.png" width="600" />
 </center>
 
 
