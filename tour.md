@@ -219,12 +219,15 @@ La force de Bluemix se situe au niveau de son catalogue de services riche de plu
 
 
 Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
-## 6. Applications
-
+## 6. Le Menu
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
       <img src="tour-menu.png" width="60" />
 </center>
+
+##### 6.1 Applications
+
+
 
 Une fois le menu ouvert, voici les actions possibles.
 <center>
@@ -239,7 +242,7 @@ On peut ici contrôler ses applications depuis son tableau de bord.
 
 Le [chapitre 3](./deploy.md) parle en détail des applications.
 
-## 7. Services
+##### 6.2. Services
 
 
 A partir du menu (en haut à gauche), on navigue vers les services.
@@ -262,3 +265,13 @@ En cliquant sur un service depuis le tableau de bord, on a accès à plus d'info
 
 
 Le [chapitre 2](./catalogue.md) parle en détail des applications.
+
+## 7. La documentation
+En cliquant en haut à gauche sur le lien docs, on accède à la documentation en ligne de Bluemix
+<center>
+      <img src="tour-docs.png" width="600" />
+</center>
+
+<center>
+      <img src="tour-docs-details.png" width="1200" />
+</center>
