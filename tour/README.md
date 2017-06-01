@@ -2,7 +2,7 @@
 
 Regarder cette vidéo pour faire un tour de son interface graphique
 <center>
-      <a href="https://youtu.be/gq5MvY1nNOM"><img src="youtube-tour.png" width="600" /></a>
+      <a href="https://youtu.be/gq5MvY1nNOM"><img src="tour-youtube.png" width="600" /></a>
    </center>
 
 
