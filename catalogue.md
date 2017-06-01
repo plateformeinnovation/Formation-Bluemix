@@ -1,7 +1,10 @@
 # Le catalogue de services Bluemix
 
+
+
+
 <center>
-      <img src="services-details.png" width="600" />
+      <img src="catalog.png" width="1200" />
 </center>
 
 
