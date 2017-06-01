@@ -37,7 +37,7 @@ Voila, vous etes connecté.
 ```
 
 <center>
-      <img src="dashboard.png" width="800" />
+      <img src="tour-dashboard.png" width="800" />
 </center>
 
 ## 2. Compte/Region/Organisation/espace.
@@ -116,7 +116,7 @@ Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à dro
 ## 3. Options de son compte
 Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manage**), à la gestion du support (**Support**) et au catalgue de services (**Catalog**).
 <center>
-      <img src="menu-haut-droite.png" width="400" />
+      <img src="tour-menu-haut-droite.png" width="400" />
 </center>
 
 
@@ -130,7 +130,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 * Notifications.
 
 <center>
-      <img src="account.png" width="600" />
+      <img src="tour-account.png" width="600" />
 </center>
 
 **Users** - Permet de gérer les utilisateurs et les clés API
@@ -159,7 +159,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 #### 3.2 Cliquer sur **Manage**>**Billing and Usage** pour afficher les options de facturation.
 
 <center>
-      <img src="billing-usage.png" width="600" />
+      <img src="tour-billing-usage.png" width="600" />
 </center>
 
 
@@ -171,7 +171,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 #### 3.3 Cliquer sur **Manage**>**Security** pour afficher les options de sécurité.
 
 <center>
-      <img src="security.png" width="600" />
+      <img src="tour-security.png" width="600" />
 </center>
 
 
@@ -189,7 +189,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 ### 4.1 Cliquer sur **Support** pour accéder aux options de support.
 
 <center>
-      <img src="support.png" width="400" />
+      <img src="tour-support.png" width="400" />
 </center>
 
 **Add Ticket** - Permet de créer un ticket au support Bluemix
@@ -209,12 +209,12 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 
 ## 5. Cliquer sur **Catalog** pour accéder aux services disponibles dans le catalogue.
 <center>
-      <img src="catalog.png" width="600" />
+      <img src="tour-catalog.png" width="600" />
 </center>
 
 La force de Bluemix se situe au niveau de son catalogue de services riche de plus de 140 services classés par famille.
 <center>
-      <img src="services.png" width="200" />
+      <img src="tour-services.png" width="200" />
 </center>
 
 
@@ -223,18 +223,18 @@ Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
 
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
-      <img src="menu.png" width="60" />
+      <img src="tour-menu.png" width="60" />
 </center>
 
 Une fois le menu ouvert, voici les actions possibles.
 <center>
-      <img src="menu-ouvert.png" width="200" />
+      <img src="tour-menu-ouvert.png" width="200" />
 </center>
 
 On peut ici contrôler ses applications depuis son tableau de bord.
 
 <center>
-      <img src="applications-dashboard.png" width="1200" />
+      <img src="tour-applications-dashboard.png" width="1200" />
 </center>
 
 Le [chapitre 3](./deploy.md) parle en détail des applications.
@@ -244,7 +244,7 @@ Le [chapitre 3](./deploy.md) parle en détail des applications.
 
 A partir du menu (en haut à gauche), on navigue vers les services.
 <center>
-      <img src="menu.png" width="60" />
+      <img src="tour-menu.png" width="60" />
 </center>
 
 Une fois le menu ouvert, voici les actions possibles.
@@ -252,12 +252,12 @@ On peut ici controler ses services depuis son tableau de bord ou par thèmes.
 
 
 <center>
-      <img src="menu-services.png" width="200" />
+      <img src="tour-menu-services.png" width="200" />
 </center>
 
 En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 <center>
-      <img src="services-dashboard.png" width="1200" />
+      <img src="tour-services-dashboard.png" width="1200" />
 </center>
 
 
