@@ -100,6 +100,7 @@ cf api https://api.eu-gb.bluemix.net
 | Sydney region | Sydney, Australia | au-syd | api.au-syd.bluemix.net | console.au-syd.bluemix.net |
 | Germany region | Frankfurt, Germany | eu-de | api.eu-de.bluemix.net | console.eu-de.bluemix.net |
 
+---
 
 
 2. Organisations.
@@ -112,7 +113,7 @@ exmple : Prod, Preprod, Dev, ...
 
 
 > Attention, seul le responsable du compte Bluemix d'OPEN groupe (account owner) est autoriser à créer des organisations.
-
+---
 
 3. Espaces.
 
@@ -126,13 +127,15 @@ Pour créer un espace, cliquer sur le nom de votre compte Bluemix en haut à dro
       <img src="images/tour-create-space.png" width="400" />
 </center>
 
+---
+
 ## 3. Options de son compte
 Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manage**), à la gestion du support (**Support**) et au catalgue de services (**Catalog**).
 <center>
       <img src="images/tour-menu-haut-droite.png" width="400" />
 </center>
 
-
+---
 
 #### 3.1 Cliquer sur **Manage**>**Account** pour afficher les options de son compte.
 
@@ -145,6 +148,8 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 <center>
       <img src="images/tour-account.png" width="600" />
 </center>
+
+---
 
 **Users** - Permet de gérer les utilisateurs et les clés API
 >Identity & Access
@@ -168,6 +173,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 
 >Maintenances planifiées
 
+---
 
 #### 3.2 Cliquer sur **Manage**>**Billing and Usage** pour afficher les options de facturation.
 
@@ -175,6 +181,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
       <img src="images/tour-billing-usage.png" width="600" />
 </center>
 
+---
 
 **Usage** - Permet d'afficher sa consommation Bluemix - Uniquement avec l'option Billing Manager activée
 
@@ -194,7 +201,7 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 
 >Bluemix API keys
 
-
+---
 
 ## 4. Support
 
