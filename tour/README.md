@@ -209,8 +209,10 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 ### 4.1 Cliquer sur **Support** pour accéder aux options de support.
 
 <center>
-      <img src="images/tour-support.png" width="400" />
+      <img src="images/tour-support.png" width="600" />
 </center>
+
+---
 
 **Add Ticket** - Permet de créer un ticket au support Bluemix
 
@@ -227,6 +229,8 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
 **Status** - Permet de connaitre le statut actuel de la plate-forme et des services
 >Status
 
+---
+
 ## 5. Cliquer sur **Catalog** pour accéder aux services disponibles dans le catalogue.
 <center>
       <img src="images/tour-catalog.png" width="600" />
@@ -237,13 +241,17 @@ La force de Bluemix se situe au niveau de son catalogue de services riche de plu
       <img src="images/tour-services.png" width="200" />
 </center>
 
-
 Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
+
+---
+
 ## 6. Le Menu
 Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos services.
 <center>
       <img src="images/tour-menu.png" width="60" />
 </center>
+
+---
 
 ##### 6.1 Applications
 
@@ -261,6 +269,8 @@ On peut ici contrôler ses applications depuis son tableau de bord.
 </center>
 
 Le [chapitre 3](./deploy.md) parle en détail des applications.
+
+---
 
 ##### 6.2. Services
 
@@ -286,6 +296,8 @@ En cliquant sur un service depuis le tableau de bord, on a accès à plus d'info
 
 Le [chapitre 2](./catalogue.md) parle en détail des applications.
 
+---
+
 ## 7. La documentation
 En cliquant en haut à gauche sur le lien [docs](https://console.ng.bluemix.net/docs/), on accède à la documentation en ligne de Bluemix
 <center>
@@ -297,3 +309,5 @@ Il est possible de chercher via le moteur de recherches ou par thèmes.
 <center>
       <img src="images/tour-docs-details.png" width="1200" />
 </center>
+
+---
