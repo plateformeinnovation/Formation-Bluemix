@@ -4,7 +4,9 @@ Regarder cette vidéo pour faire un tour de son interface graphique
 <center>
       <a href="https://youtu.be/gq5MvY1nNOM"><img src="images/tour-youtube.png" width="600" /></a>
    </center>
-
+   
+<!-- page_number: true -->
+<!-- $size: 16:9 -->
 ---
 
 ## 1. Se connecter à Bluemix
