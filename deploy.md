@@ -1,5 +1,11 @@
 # Deployer une application web avec Bluemix
 
+En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombre d'instances, RAM, url, Logs, services associés, prix ...)
+
+<center>
+      <img src="dashboard-details.png" width="600" />
+</center>
+
 ---
 
 
@@ -152,4 +158,3 @@ Then, by using the Cloud Integration service in the {{site.data.keyword.Bluemix_
 The integration developer adds the Push service to deliver mobile notifications to interested consumers. They also add a business partner service to tweet when a new customer record is created with a Twitter API.
 
 Next, as the application developer, you can log in to {{site.data.keyword.Bluemix_notm}}, download the Android development toolkit, and develop code that invokes the APIs that your integration developer created. You can develop a mobile app that enables users to enter their information on their mobile device. The mobile app then creates a customer record in the customer management system. When the record is created, the app pushes a notification to a mobile device and initiates a tweet about the new record.
-

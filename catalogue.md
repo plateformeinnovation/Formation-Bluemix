@@ -1,5 +1,10 @@
 # Le catalogue de services Bluemix
 
+<center>
+      <img src="services-details.png" width="600" />
+</center>
+
+
 The Catalog menu tab in Bluemix is probably where you will spend most of
 your time exploring. There are over 130 services and APIs so it could take
 you a few hours to study each of them in detail. Maybe not everyone will
@@ -12,9 +17,7 @@ keep each category high level and only talk about the services you know
 the listener is interested in.
 Don’t forget that there is a YouTube video which points to a ‘typical demo’
 or walkthrough of the Bluemix catalog.
-IBM
-The Bluemix Catalog
-Page 15 2017
+
 Compute – Bare Metal and Virtual Servers are offered in hourly
 and monthly pricing formats to fully customize your IT stack to
 meet your specific needs. VMware is also available for

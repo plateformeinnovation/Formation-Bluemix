@@ -237,16 +237,9 @@ On peut ici contrôler ses applications depuis son tableau de bord.
       <img src="dashboard.png" width="600" />
 </center>
 
-En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombre d'instances, RAM, url, Logs, services associés, prix ...)
-
-<center>
-      <img src="dashboard-details.png" width="600" />
-</center>
-
+Le [chapitre 3](./deploy.md) parle en détail des applications.
 
 ## 7. Services
-
-
 
 
 A partir du menu (en haut à gauche), on navigue vers les services.
@@ -256,16 +249,16 @@ A partir du menu (en haut à gauche), on navigue vers les services.
 
 Une fois le menu ouvert, voici les actions possibles.
 On peut ici controler ses services depuis son tableau de bord ou par thèmes.
+
+
 <center>
       <img src="menu-services.png" width="200" />
 </center>
 
+En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 <center>
       <img src="services-dashboard.png" width="600" />
 </center>
 
-En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 
-<center>
-      <img src="services-details.png" width="600" />
-</center>
+Le [chapitre 2](./catalogue.md) parle en détail des applications.
