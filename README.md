@@ -57,8 +57,3 @@ Suivre [ce guide](./service.md).
 ## 5 : DevOps avec Bluemix
 
 Suivre [ce guide](./devops.md).
-<<<<<<< HEAD
-=======
-
-[bluemix_signup_url]: https://console.ng.bluemix.net/
->>>>>>> 58ad1ec5aa335e4095f1500299be724520cbbce2
