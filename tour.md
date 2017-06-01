@@ -267,7 +267,7 @@ En cliquant sur un service depuis le tableau de bord, on a accès à plus d'info
 Le [chapitre 2](./catalogue.md) parle en détail des applications.
 
 ## 7. La documentation
-En cliquant en haut à gauche sur le lien docs, on accède à la documentation en ligne de Bluemix
+En cliquant en haut à gauche sur le lien [docs](https://console.ng.bluemix.net/docs/), on accède à la documentation en ligne de Bluemix
 <center>
       <img src="tour-docs.png" width="600" />
 </center>
