@@ -5,7 +5,7 @@ Regarder cette vidéo pour faire un tour de son interface graphique
       <a href="https://youtu.be/gq5MvY1nNOM"><img src="images/tour-youtube.png" width="600" /></a>
    </center>
 
-
+---
 
 ## 1. Se connecter à Bluemix
 
@@ -15,6 +15,7 @@ Il suffit de se rendre sur l'url [www.bluemix.net](http://www.bluemix.net) et de
       <img src="images/tour-login.png" width="600" />
 </center>
 
+---
 
 ```
 Rentrer son compte utilisateur.
@@ -24,6 +25,7 @@ Rentrer son compte utilisateur.
       <img src="images/tour-login-user.png" width="600" />
 </center>
 
+---
 
 ```
 Rentrer son mot de passe.
@@ -32,6 +34,8 @@ Rentrer son mot de passe.
       <img src="images/tour-login-pwd.png" width="600" />
 </center>
 
+---
+
 ```
 Voila, vous etes connecté.
 ```
@@ -39,6 +43,8 @@ Voila, vous etes connecté.
 <center>
       <img src="images/tour-dashboard.png" width="800" />
 </center>
+
+---
 
 ## 2. Compte/Region/Organisation/espace.
 
@@ -52,6 +58,7 @@ Il peut ainsi déployer des applications, des conteneurs ou des services.
       <img src="images/tour-ibm-account.png" width="600" />
 </center>
 
+---
 
 
 1. Regions.
@@ -62,6 +69,8 @@ Une région correspond à un térritoire géographique (Datacenter) où l'on peu
       <img src="images/tour-4regions.png" width="600" />
 </center>
 
+---
+
 ```
 L'offre Public de Bluemix propose 4 régions différentes à ce jour.
 ```
@@ -69,8 +78,10 @@ L'offre Public de Bluemix propose 4 régions différentes à ce jour.
 Si on utilise l'interface utilisateur (**GUI**), on peut passer d'une région à une autre.Pour cela, cliquer sur le lien du compte utilisateur, étendre le choix **Region** et choisir la région parmi la liste donnée.
 
 <center>
-      <img src="images/tour-region.png" width="400" />
+      <img src="images/tour-region.png" width="300" />
 </center>
+
+---
 
 Si on utilise l'interface en ligne de commande (**CLI**), il faut utilise la commande cf api et indiquer le **endpoint API** de la région souhaitée.
 Par exemple, la commande suivante permet de se connecter à la région d'Europe du Royaume Uni.
@@ -78,6 +89,8 @@ Par exemple, la commande suivante permet de se connecter à la région d'Europe 
 ```
 cf api https://api.eu-gb.bluemix.net
 ```
+---
+
 >Ci dessous, le tableau classe les 4 régions disponibles.
 
 | **Region name** | **Geographic location** | **Region prefix** | **cf API endpoint** | **UI console** |
