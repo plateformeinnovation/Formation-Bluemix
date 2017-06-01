@@ -234,7 +234,7 @@ Une fois le menu ouvert, voici les actions possibles.
 On peut ici contrôler ses applications depuis son tableau de bord.
 
 <center>
-      <img src="dashboard.png" width="600" />
+      <img src="applications-dashboard.png" width="1200" />
 </center>
 
 Le [chapitre 3](./deploy.md) parle en détail des applications.
@@ -257,7 +257,7 @@ On peut ici controler ses services depuis son tableau de bord ou par thèmes.
 
 En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 <center>
-      <img src="services-dashboard.png" width="600" />
+      <img src="services-dashboard.png" width="1200" />
 </center>
 
 
