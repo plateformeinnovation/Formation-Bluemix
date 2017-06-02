@@ -1,5 +1,9 @@
 # Le catalogue de services Bluemix
 
+<!-- page_number: true -->
+<!-- $size: 16:9 -->
+<!-- prerender: true -->
+<!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
 
 
@@ -180,3 +184,8 @@ potential technologies could arrive next on Bluemix.
 Experimental services are never for production use (Fig 4.4).
 (Fig 4.4)
 IBM
+
+
+---
+
+## Enjoy Bluemix ! :+1:

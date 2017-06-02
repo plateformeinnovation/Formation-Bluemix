@@ -54,8 +54,8 @@ Voila, vous etes connecté.
 ## 2. Compte/Region/Organisation/espace.
 
 ```
-Chaque utilisateur peut avoir accès à différentes régions, 
-différentes organisations ou différents espaces 
+Chaque utilisateur peut avoir accès à différentes régions,
+différentes organisations ou différents espaces
 suivant les autorisations qu'il a reçu.
 Il peut ainsi déployer des applications, des conteneurs ou des services.
 ```
@@ -188,11 +188,13 @@ Le menu en haut à droite permet d'accéder à la gestion de son compte (**Manag
       <img src="images/tour-billing-usage.png" width="600" />
 </center>
 
----
+
 
 **Usage** - Permet d'afficher sa consommation Bluemix - Uniquement avec l'option Billing Manager activée
 
 >Usage Dashboard
+
+---
 
 
 #### 3.3 Cliquer sur **Manage**>**Security** pour afficher les options de sécurité.
@@ -248,7 +250,7 @@ La force de Bluemix se situe au niveau de son catalogue de services riche de plu
       <img src="images/tour-services.png" width="200" />
 </center>
 
-Le [chapitre 2](catalog/readme.md) parle en détail du catalogue de services.
+Le [chapitre 2](catalog/README.md) parle en détail du catalogue de services.
 
 ---
 
@@ -258,63 +260,61 @@ Le menu (en haut à gauche) permet de naviguer entre vos applications ou vos ser
       <img src="images/tour-menu.png" width="60" />
 </center>
 
----
-
-##### 6.1 Applications
-
-
 
 Une fois le menu ouvert, voici les actions possibles.
 <center>
       <img src="images/tour-menu-ouvert.png" width="200" />
 </center>
 
-On peut ici contrôler ses applications depuis son tableau de bord.
+---
 
+##### 6.1 Applications
+
+On peut ici contrôler ses applications depuis son tableau de bord.
 <center>
-      <img src="images/tour-applications-dashboard.png" width="1200" />
+      <img src="images/tour-applications-dashboard.png" width="800" />
 </center>
 
-Le [chapitre 3](deploy/readme.md) parle en détail des applications.
+Le [chapitre 3](deploy/README.md) parle en détail des applications.
 
 ---
 
 ##### 6.2. Services
 
-
 A partir du menu (en haut à gauche), on navigue vers les services.
 <center>
       <img src="images/tour-menu.png" width="60" />
 </center>
-
 Une fois le menu ouvert, voici les actions possibles.
 On peut ici controler ses services depuis son tableau de bord ou par thèmes.
 
-
 <center>
-      <img src="images/tour-menu-services.png" width="200" />
+      <img src="images/tour-menu-services.png" width="180" />
 </center>
+
+---
 
 En cliquant sur un service depuis le tableau de bord, on a accès à plus d'informations pour le gérer (Credentials, applications associées,...)
 <center>
-      <img src="images/tour-services-dashboard.png" width="1200" />
+      <img src="images/tour-services-dashboard.png" width="800" />
 </center>
 
 
-Le [chapitre 2](catalog/readme.md) parle en détail des applications.
+Le [chapitre 2](catalog/README.md) parle en détail des applications.
 
 ---
 
 ## 7. La documentation
 En cliquant en haut à gauche sur le lien [docs](https://console.ng.bluemix.net/docs/), on accède à la documentation en ligne de Bluemix
 <center>
-      <img src="images/tour-docs.png" width="600" />
+      <img src="images/tour-docs.png" width="800" />
 </center>
 
+---
 Il est possible de chercher via le moteur de recherches ou par thèmes.
 
 <center>
-      <img src="images/tour-docs-details.png" width="1200" />
+      <img src="images/tour-docs-details.png" width="800" />
 </center>
 
 ---

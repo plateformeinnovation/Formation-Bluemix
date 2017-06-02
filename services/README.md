@@ -1,5 +1,11 @@
 # Deploy the service in Bluemix with the toolchain
 
+<!-- page_number: true -->
+<!-- $size: 16:9 -->
+<!-- prerender: true -->
+<!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
+
+
 This project comes with a partially automated toolchain capable of deploying the service to Cloud Foundry, OpenWhisk and Kubernetes. There is some information you need to get before creating the toolchain.
 
 > Although this section uses a toolchain, it assumes you have successfully configured the Bluemix CLI and its plugins. Some steps require you to use the command line.
@@ -95,3 +101,8 @@ Go through the steps detailed in the [manual instructions to create a Kubernetes
 1. Wait for the DEPLOY stage to complete.
 
 1. The services are ready. Review the [Service API](README.md#Service_API) to call the services.
+
+
+---
+
+## Enjoy Bluemix ! :+1:
