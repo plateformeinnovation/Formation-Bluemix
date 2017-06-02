@@ -36,19 +36,19 @@ Elle a d'abord été en beta publique à partir de février 2014, puis disponibl
 
 ---
 ## 1 : Un tour de l'interface graphique
-Suivre [ce guide](./tour.md).
+Suivre [ce guide](tour/.README.md).
 
 ## 2 : Le catalogue Bluemix
-Suivre [ce guide](./catalogue.md).
+Suivre [ce guide](catalog/README.md).
 
 ## 3 : Déployer une application
-Suivre [ce guide](./deploy.md).
+Suivre [ce guide](deploy/README.md).
 
 ## 4 : Enrichir votre application Bluemix avec les services
-Suivre [ce guide](./service.md).
+Suivre [ce guide](services/README.md).
 
 ## 5 : DevOps avec Bluemix
-Suivre [ce guide](./devops.md).
+Suivre [ce guide](devops/README.md).
 
 ---
 ## Enjoy Bluemix ! :+1:
