@@ -1,20 +1,17 @@
 # Le catalogue de services Bluemix
-
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
-
 Le catalogue de service Bluemix dispose de plus de 140 services et APIs.
-
 <center>
-      <img src="catalog.png" width="800" />
+      <img src="images/catalog.png" width="800" />
 </center>
 
 Chaque catégorie est listée dans le menu de gauche avec 3 grands thèmes:
->* Infrastructure (Compute, Storage, Network & Security)
+* Infrastructure (Compute, Storage, Network & Security)
 * Apps
-* Services.
+* Services
 
 ---
 
@@ -28,27 +25,34 @@ ou à l'heure afin de concevoir finement votre architecture. VMware est égaleme
       <img src="images/infra-compute.png" width="800" />
 </center>
 
+---
 
 ```
 Storage – Choississer le type de stockage que vous avez besoin.
 Bluemix dispose de plusieurs options comme file storage,
-block storage et object storage, configurable afin de choisir vitesse et performance.
+block storage et object storage, 
+configurable afin de choisir vitesse et performance.
 ```
 <center>
       <img src="images/infra-storage.png" width="800" />
 </center>
 
+---
 ```
 Networking – Partie critique de la partie Infrastructure.
-Plusieurs choix possible ici également avec Direct Link et  réseaux privés VPN, Load Balancing, VLAN spanning et Vyatta gateways pour des connexions sécurisées.
+Plusieurs choix possible ici également avec Direct Link
+et  réseaux privés VPN, Load Balancing, VLAN spanning et Vyatta gateways 
+pour des connexions sécurisées.
 ```
 <center>
       <img src="images/infra-network.png" width="800" />
 </center>
 
+---
 ```
 Security – Assurer la meilleur protection de votre application.
-Bluemix offre une variété de pare-feux physiques et de certificats SSL pour garantir la sécurité de vos applications.
+Bluemix offre une variété de pare-feux physiques et de certificats SSL 
+pour garantir la sécurité de vos applications.
 ```
 <center>
       <img src="images/infra-security.png" width="800" />
@@ -57,17 +61,20 @@ Bluemix offre une variété de pare-feux physiques et de certificats SSL pour ga
 ---
 * Apps (Applications).
 ```
-Boilerplates – Ce sont des kits de démarrage prêts à l'emploi démontrant ainsi la puissance de Bluemix.
-Les Boilerplates sont déployables en quelques secondes avec le code source réutilisable et modifiable.
+Boilerplates – Ce sont des kits de démarrage prêts à l'emploi
+démontrant ainsi la puissance de Bluemix.
+Les Boilerplates sont déployables en quelques secondes 
+avec le code source réutilisable et modifiable.
 ```
 <center>
       <img src="images/apps-boilerplates.png" width="800" />
 </center>
 
+---
 ```
-Cloud Foundry Apps – Une ressource pour les développeurs désirant une expérience de développement sur l'étagère (out-of-the-box).
-Plus besoin de gérer les dépendances et les library.
-Seul le code est important
+Cloud Foundry Apps – Une ressource pour les développeurs désirant 
+une expérience de développement sur l'étagère (out-of-the-box).
+Plus besoin de gérer les dépendances et les library. Seul le code est important
 ```
 <center>
       <img src="images/apps-cloudfoundryapps.png" width="800" />
@@ -75,12 +82,11 @@ Seul le code est important
 
 ---
 ```
-Containers – Isolated and secure app environments (or a
-compute resource) which can support languages and
-workloads without requiring any programming tools. This
-makes Containers technology super portable and gives you
-control without the worry of handling the operating system.
-This technology is based on Docker.
+Containers – Un environneement isolé et sécurisé pour vos applications 
+qui supporte plusieurs langages et charge de travail 
+sans avoir besoin d'outils de programmation.
+Cela fait que la technologie des containers extrement portable .
+Cette technologie est basée sur Docker.
 ```
 <center>
       <img src="images/apps-containers.png" width="800" />
@@ -88,12 +94,11 @@ This technology is based on Docker.
 
 ---
 ```
-OpenWhisk – A serverless technology that is great for
-executing code in a highly scalable way. For example, you may
-only need a compute resource for when you receive an alert.
-OpenWhisk can fire up code only for the period it takes to react
-to the alert, and then shut down. You only pay for when the
-code is running.
+OpenWhisk – Une technologie sans serveur pour éxécuter son code sur événement.
+Par exemple, vous ne voulez utiliser un programme que lorsque vous recevez 
+une alerte.
+
+Vous ne payez que pour le temps d'éxécution (en ms)
 ```
 <center>
       <img src="images/apps-openwhisk.png" width="800" />
@@ -101,10 +106,7 @@ code is running.
 
 ---
 ```
-Mobile – Where those ideas can come from the back of your
-brain stem to the front of your user’s mobile device. With a rich
-set of capabilities for mobile development, this section offers a
-complete mobile app building platform.
+Mobile – Des services autour du développement d'applications mobiles.
 ```
 <center>
       <img src="images/apps-mobile.png" width="800" />
@@ -115,51 +117,48 @@ complete mobile app building platform.
 Passons maintenant à la section Services du catalogue.
 Il est possible de consulter le catalogue en entier ou bien de choisir les familles de services avec le menu de gauche.
 <center>
-      <img src="images/services-dataetanalytics.png" width="800" />
+      <img src="images/catalog.png" width="800" />
 </center>
+
 ---
+
 ```
-Data & Analytics – a set of services and APIs to help you store
-and analyze data. As we are creating data all of the time, that
-data needs a place to be stored using services like Cloudant or
-the Compose offerings. There are services to analyse the data
-too. You can also see the fruits of a strategic partnership
-between IBM and Twitter, unlocking the data to one of the
-world’s biggest social platforms.
+Data & Analytics – Un ensemble de services et d'APIs 
+pour stocker et analyzer vos données.
+
 ```
 <center>
       <img src="images/services-dataetanalytics.png" width="800" />
 </center>
+
 ---
 ```
-Watson – IBM delivers cognitive capabilities through Watson.
-Here is where you can enrich your application with services like
-machine learning and visual recognition. The array of Watson
-services spans capabilities like analyzing unstructured data like
-text and images, to gaining a deeper understanding of a
-person’s personality traits.
+Watson – IBM délivre les capacités cognitives via Watson.
+Vous pouvez enrichir vos applications avec des services 
+de machine learning et de reconnaissance d'images.
+Watson permet d'analyser des données non structurées, traduire des documents
+ou encore d'analyser votre personnalité.
 ```
 <center>
       <img src="images/services-watson.png" width="800" />
 </center>
+
 ---
 ```
-Internet of Things – Any device that can connect to a network
-can be IoT, just like your mobile phone. Bluemix offers a
-complete IoT Platform, which is a set of capabilities to quickly
-get any device connected to the IBM Cloud. You can stream
-and analyze that data in real time with IoT services.
+Internet of Things – Tout objet connecté à un réseau peut etre de l'IoT,
+tout comme votre téléphone portable. 
+Bluemix dispose d'une plate-forme IoT complète. 
+Une fois votre objet connecté, tirez parti des services IoT
+pour analyser toutes ces données.
 ```
 <center>
       <img src="images/services-iot.png" width="800" />
 </center>
 
+---
 ```
-APIs – Whether you are leveraging map or traffic data from
-Google maps, or using a Facebook profile to identify a user, you
-can create new APIs to consume, monetize, or manage existing
-APIs with API Connect. This service is a great way to manage
-the lifecycle of an API.
+APIs – Ce service est indispensable pour gérer le cycle 
+de vie de vos APIs.
 ```
 <center>
       <img src="images/services-api.png" width="800" />
@@ -167,34 +166,10 @@ the lifecycle of an API.
 
 ---
 
-In the API category, we are going to pause to see that all Bluemix services
-and APIs within the Bluemix catalog are laid out in the same way.
-1. Click and open the API Connect service (Fig 4.2).
-2. On the top left, you will see a summary of the service
-(Fig 4.2)
-
-Note:
-The pricing section is laid out in a very simple way. For Bluemix
-Public, pricing is always based on tiers. Services have different tiers
-depending on how they are measured, like # API calls, or #
-Gigabytes or Terabytes used, or # Instances. The majority of our
-services will have a free tier, just like API Connect, so you can test
-drive the service and ensure that it is a fit for your need.
-3. Towards the center of the page, you will see the key benefits and
-features of the service you have opened.
-(Fig 4.3)
-4. Next up are screen shots of the service in action, videos or even slides.
-You can open these to see them in a larger view (Fig 4.2).
-5. Finally, in every service or API, you will find easy to follow pricing
-information (Fig 4.3).
-6. Now click ‘View All’ on the very top of this page to continue with the
-rest of the Bluemix services.
----
-
-
 ```
-Network – you have already seen this in the Infrastructure
-section.
+Network – En plus des services Réseaux dans la partie infrastructure,
+un VPN est disponible pour les containers.
+
 ```
 <center>
       <img src="images/services-network.png" width="800" />
@@ -203,15 +178,11 @@ section.
 ---
 
 ```
-Security – The Security service offerings have been designed
-especially to provide added security for an application, with
-services like Application Security on Cloud that scans your web
-or mobile application for vulnerabilities, or Single Sign-On for
-implementing user authentication.
-Going back to the catalog will bring you to the top section, so scroll down
-to Network and let’s continue to explain what we see.
-Bluemix is very secure, but every application
-should consider additional Security
+Security – Le service Sécurité permet de renforcer la sécurité des applications
+(scan des failles de sécurité d'applications Web ou mobile
+ou SSO pour implémenter de l'authentification)
+Même si Bluemix est sécurisé de part son architecture, 
+il se doit de considérer plus de sécurité à chaque application.
 ```
 <center>
       <img src="images/services-security.png" width="800" />
@@ -220,17 +191,14 @@ should consider additional Security
 ---
 ```
 
-DevOps – Development Operations describes the lifecycle of an
-application, from inception to production to upgrades to
-eventual retirement. The range of DevOps services within
-Bluemix helps you respond to markets changes faster, improve
-code quality, scale without disruption, and foster a new world
-where business, IT and Operations come together.
-Third Party
-IBM doesn’t just provide IBM services on Bluemix. We also
-host a range of services from third party providers, like Load
-Impact or New Relic. You will see here that IBM services have
-an IBM tag, in blue, while Third Party services carry a green tag
+DevOps – Adoptez une approche DevOps en utilisant les services
+de gestion du cycle de vie d'applications.
+Cela inclut une chaîne d'outils ouverte automatisant 
+la génération et le déploiement d'applications. 
+Vous pouvez commencer en créant une chaîne d'outils de déploiement simple 
+qui prend en charge les tâches de développement, 
+de déploiement et les opérations. 
+
 ```
 <center>
       <img src="images/services-devops.png" width="800" />
@@ -239,31 +207,30 @@ an IBM tag, in blue, while Third Party services carry a green tag
 ---
 
 ```
-Application Services – provides a huge range of services to
-complement a web or mobile application. These services help
-developers spend less time coding and more time innovating.
-Integrate – A rich set of integration services to create a truly
-hybrid experience, with services that help you leverage your
-existing on-premises investments. Bluemix has services like
-Secure Gateway for connecting another source to Bluemix, and
-a third party service like Rocket Mainframe Data to easily
-leverage existing mainframe data.
+Application Services – Un large choix de services pour 
+donner de la valeur à votre application web ou mobile.
+Ces services laissent aux développeurs plus de temps 
+pour coder leur applications et du temps pour l'innovation.
 ```
 <center>
       <img src="images/services-application.png" width="800" />
 </center>
 
 ---
+```
+Integrate – Des services pour créer un cloud hybride.
+```
+<center>
+      <img src="images/services-integrate.png" width="800" />
+</center>
+
+---
 
 ```
-A la fin du catalogue, vous noterez une section pour des services  Bluemix experimentaux.
-Experimental Services
-Located at the bottom of the catalog is a link to the Bluemix
-experimental services. These are services that IBM is assessing
-to understand the value they might provide to our users.
-Experimental services are also a great way to see what
-potential technologies could arrive next on Bluemix.
-Experimental services are never for production use (Fig 4.4).
+A la fin du catalogue, vous noterez une section 
+pour des services  Bluemix experimentaux.
+Ce sont les services qui sont en cours de développement 
+par les LABs IBM, qui potentiellement seront intégrés au catalogue général.
 
 ```
 <center>
