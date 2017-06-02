@@ -3,7 +3,7 @@
 Formation Bluemix
 
 <center>
-      <a href="www.bluemix.net"><img src="Bluemix.png" width="400" /></a>
+      <a href="https://www.bluemix.net"><img src="Bluemix.png" width="400" /></a>
 </center>
 
 Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
