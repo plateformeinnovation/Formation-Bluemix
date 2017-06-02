@@ -55,7 +55,8 @@ Voila, vous etes connecté.
 
 ```
 Chaque utilisateur peut avoir accès à différentes régions, 
-différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
+différentes organisations ou différents espaces 
+suivant les autorisations qu'il a reçu.
 Il peut ainsi déployer des applications, des conteneurs ou des services.
 ```
 
@@ -247,7 +248,7 @@ La force de Bluemix se situe au niveau de son catalogue de services riche de plu
       <img src="images/tour-services.png" width="200" />
 </center>
 
-Le [chapitre 2](./catalogue.md) parle en détail du catalogue de services.
+Le [chapitre 2](catalog/readme.md) parle en détail du catalogue de services.
 
 ---
 
@@ -274,7 +275,7 @@ On peut ici contrôler ses applications depuis son tableau de bord.
       <img src="images/tour-applications-dashboard.png" width="1200" />
 </center>
 
-Le [chapitre 3](./deploy.md) parle en détail des applications.
+Le [chapitre 3](deploy/readme.md) parle en détail des applications.
 
 ---
 
@@ -300,7 +301,7 @@ En cliquant sur un service depuis le tableau de bord, on a accès à plus d'info
 </center>
 
 
-Le [chapitre 2](./catalogue.md) parle en détail des applications.
+Le [chapitre 2](catalog/readme.md) parle en détail des applications.
 
 ---
 
