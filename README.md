@@ -1,12 +1,12 @@
-# Cursus de formation afin de développer des applications avec Bluemix
-
-Formation Bluemix
+# Développer des applications avec Bluemix
 
 <center>
       <a href="https://www.bluemix.net"><img src="Bluemix.png" width="400" /></a>
 </center>
 
+
 Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
+
 
 <center>
       <a href="https://youtu.be/p9dZiMpbVH0"><img src="youtube.png" width="400" /></a>
@@ -14,6 +14,7 @@ Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibl
 
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
+<!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
 ---
 

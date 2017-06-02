@@ -7,6 +7,8 @@ Regarder cette vidéo pour faire un tour de son interface graphique
 
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
+<!-- prerender: true -->
+<!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
 ---
 
@@ -52,7 +54,8 @@ Voila, vous etes connecté.
 ## 2. Compte/Region/Organisation/espace.
 
 ```
-Chaque utilisateur peut avoir accès à différentes régions, différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
+Chaque utilisateur peut avoir accès à différentes régions, 
+différentes organisations ou différents espaces suivant les autorisations qu'il a reçu.
 Il peut ainsi déployer des applications, des conteneurs ou des services.
 ```
 
