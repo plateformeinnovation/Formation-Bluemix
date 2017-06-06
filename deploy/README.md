@@ -1,171 +1,425 @@
-# Deployer une application web avec Bluemix
-
+![](./images/cloudfoundry.png)
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
+# Introduction
 
-En cliquant sur une application depuis le tableau de bord, on a accès à plus d'informations pour la gérer finement (Nombre d'instances, RAM, url, Logs, services associés, prix ...)
-
-<center>
-      <img src="dashboard-details.png" width="600" />
-</center>
-
----
-
-
-copyright:
-  years: 2016, 2017
-lastupdated: "2017-03-20"
+Dans cet exercice, vous allez découvrir les concepts de développement avec Cloud Foundry et les services Bluemix.
+Dans cet exercice, vous allez créer une simple application web.
+![Todo](./images/screenshot.png)
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+# Objectif
 
-# How Bluemix Cloud Foundry works
-{: #howwork}
+Dans l'exercice suivant, vous allez apprendre à :
 
-When you deploy an app to {{site.data.keyword.Bluemix_notm}} Cloud Foundry, you must configure {{site.data.keyword.Bluemix_notm}} with enough information to support the app.
++ Déployer une nouvelle application Cloud Foundry  basée sur le runtime Node.js
++ Utiliser la ligne de commande Cloud Foundry
 
-* For a mobile app, {{site.data.keyword.Bluemix_notm}} contains an artifact that represents the mobile app's back end, such as the services that the mobile app uses to communicate with a server.
-* For a web app, you must ensure that information about the runtime and framework is communicated to {{site.data.keyword.Bluemix_notm}}, so that {{site.data.keyword.Bluemix_notm}} can set up the appropriate execution environment to run the app.
+---
 
-Each execution environment, including both mobile and web, is isolated from the execution environment of other apps. The execution environments are isolated even though these apps are on the same physical machine. The following figure shows the basic flow of how {{site.data.keyword.Bluemix_notm}} Cloud Foundry manages the deployment of apps:
+# Prérequis
 
-![Deploying an app](images/deploy-diego.png)
++ Avoir un [Bluemix IBM id](https://bluemix.net), ou  utiliser son compte existant.
++ Installer le [Bluemix CLI](http://clis.ng.bluemix.net)
++ Installer un [Git client](https://git-scm.com/downloads)
++ Installer [Node.js](https://nodejs.org)
 
-Figure 3. Deploying an app
+---
 
-When you create an app and deploy it to {{site.data.keyword.Bluemix_notm}} Cloud Foundry, the {{site.data.keyword.Bluemix_notm}} environment determines an appropriate virtual server to send the app, or the artifacts that the app represents, to. For a mobile app, a mobile back-end projection is created on {{site.data.keyword.Bluemix_notm}}. Any code for the mobile app running in the cloud eventually runs in the {{site.data.keyword.Bluemix_notm}} environment. For a web app, the code running in the cloud is the app itself that the developer deploys to {{site.data.keyword.Bluemix_notm}}. The determination of the virtual server is based on several factors, including:
+# Etapes
 
-* The load already on the machine
-* Runtimes or frameworks supported by that virtual server.
+1. [Créer une nouvelle application web](#etape-1---creer une-nouvelle-application-web)
+1. [Contôler le code localement](#step-3---checkout-the-code-locally)
+1. [Exécuter l'application localement](#step-4---run-the-app-locally)
+1. [Changer un  fichier localement](#step-5---change-a-file-locally)
+1. [Pousser  votre changement  local sur le cloud](#step-6---push-your-local-change-to-the-cloud)
+1. [Soumettre votre changement et voir le déploiement automatically](#step-7---commit-your-changes-and-see-them-deployed-automatically)
 
-After a virtual server is chosen, an application manager on each virtual server installs the appropriate framework and runtime for the app. Then, the app can be deployed into that framework. When the deployment completes, the application artifacts are started.
+---
 
-The following figure shows the structure of a virtual server, also known as Droplet execution agent (DEA), that has multiple apps deployed to it:
+# Etape 1 - Créer une nouvelle application web depuis l'interface web
 
-![Design of a virtual server](images/container-diego.png)
+1. Se connecter à la [Console Bluemix](https://console.bluemix.net).
 
-Figure 4. Design of a virtual server
+1. Choisir  la  Région **United Kingdom** pour créer votre application.
 
-In each virtual server, an application manager communicates with the rest of the {{site.data.keyword.Bluemix_notm}} infrastructure, and manages the apps that are deployed to this virtual server. Each virtual server has containers to separate and protect apps. In each container, {{site.data.keyword.Bluemix_notm}} installs the appropriate framework and runtime that are required for each app.
+1. Aller dans le  **Catalogue** Bluemix.
 
-When the app is deployed, if it has a web interface (as for a Java web app), or other REST-based services (such as mobile services exposed publicly to the mobile app), users of the app can communicate with it by using normal HTTP requests.
+1. Dans la catégorie **Apps** , Choisir **Cloud Foundry Apps**
 
-![Invoking a {{site.data.keyword.Bluemix_notm}} app](images/execute-diego.png)
+1. Créer  une nouvelle application avec le runtime ***SDK for Node.js***.
+![Node.js](./images/nodejs.png)
+1. Donner un nom unique à votre application (exemple:webapp-[vos-initials])
+![Create app](./images/deploy-create-app.png)
 
-Figure 5. Invoking a {{site.data.keyword.Bluemix_notm}} app
+On visualise facilement aux détails de cette application.
+![Create app](./images/deploy-app-created.png)
 
-Each app can have one or more URLs associated with it, but they must all point to the {{site.data.keyword.Bluemix_notm}} endpoint. When a request comes in, {{site.data.keyword.Bluemix_notm}} examines the request, determines which app it is intended for, then selects an instance of the app to receive the request.
+1. Accéder à votre application.
 
+Le runtime SDK for Node.js a créer une simple application web "Hello World!" qui nous servira comme point de départ.
+![Create app](./images/deploy-app-helloworld.png)
 
-## {{site.data.keyword.Bluemix_notm}} Cloud Foundry architecture
-{: #architecture}
+---
 
-In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.Bluemix_notm}} in Cloud Foundry. Layers such as root filesystems and middleware components are abstracted so that you can focus on your application code. However, you can learn more about these layers if you need specifics on where your app is running.
+# Etape 2 - Déployer une application web depuis la ligne de commande
 
-See [Viewing {{site.data.keyword.Bluemix_notm}} infrastructure layers](/docs/manageapps/infra.html#viewinfra) for details.
-
-As a developer, you can interact with the {{site.data.keyword.Bluemix_notm}} infrastructure by using a browser-based user interface. You can also use a Cloud Foundry command line interface, called cf, to deploy web apps.
-
-Clients--which can be mobile apps, apps that run externally, apps that are built on {{site.data.keyword.Bluemix_notm}}, or developers that are using browsers--interact with the {{site.data.keyword.Bluemix_notm}}-hosted apps. Clients use REST or HTTP APIs to route requests through {{site.data.keyword.Bluemix_notm}} to one of the app instances or the composite services.
-
-The following figure shows the high-level {{site.data.keyword.Bluemix_notm}} Cloud Foundry architecture.
-
-![{{site.data.keyword.Bluemix_notm}} architecture](images/arch-diego.png)
-
-Figure 1. {{site.data.keyword.Bluemix_notm}} Cloud Foundry architecture
-
-You can deploy your apps to different {{site.data.keyword.Bluemix_notm}} regions, for latency or security considerations. You can choose to deploy either to one region or across multiple regions.
+1. Une fois l'application HelloWorld déployée, on peut récupérer le code source utilisé pour s'en inspirer à partir du menu Getting Started de l'application.
 
 
-![Multi-region application development](images/multi-region.png)
+# Etape 3 - Vérifier le code  localement
 
-Figure 2. Multi-region application deployment
+1. Ouvrir un terminal ou une invite de commande afin de cloner le repository git
 
+    ```
+    git clone <URL-OF-YOUR-GIT-REPO>
+    ```
 
-## Regions
-{: #ov_intro_reg}
+1. Cette commande crée un répertoire de votre projet localement sur votr disque dur.
 
-A {{site.data.keyword.Bluemix_notm}} region is a defined geographical territory that you can deploy your apps to. You can create apps and service instances in different regions with the same {{site.data.keyword.Bluemix_notm}} infrastructure for application management and the same usage details view for billing. You can select the region that is nearest to your customers and deploy your apps to this region to get low application latency. You can also select the region where you want to keep the application data to address security issues. When you build apps in multiple regions, if one region becomes unavailable, the apps that are in the other regions continue to run. Your resource allowance is the same for each region that you use.
+---
 
-If you use the {{site.data.keyword.Bluemix_notm}} user interface, you can switch to a different region to work with the spaces in that region. Click the user account preferences link, expand the **Region** selector, then select the region you require from the list.
+# Etape 4 - Exécuter l'application localement
 
-If you use the cf command line interface, to connect to the {{site.data.keyword.Bluemix_notm}} region that you want to work with, use the cf api command and specify the API endpoint of the region. For example, enter the following command to connect to {{site.data.keyword.Bluemix_notm}} Europe United Kingdom region:
+1. Se déplacer sur le répertoire du projet
 
-```
-cf api https://api.eu-gb.{{site.data.keyword.Bluemix_notm}}.net
-```
+    ```
+    cd webapp-[your-initials]
+    ```
 
-A unique prefix is assigned to each region. {{site.data.keyword.Bluemix_notm}} provides the following regions and region prefixes.
+1. Installer les dépendances node.js pour ce projet
 
-<!-- PRODUCTION ONLY: Ensure that URLs are production URLs, not stage1-->
+    ```
+    npm install
+    ```
 
-| **Region name** | **Geographic location** | **Region prefix** | **cf API endpoint** | **UI console** |
-|-----------------|-------------------------|-------------------|---------------------|----------------|
-| US South region | Dallas, US | ng | api.ng.bluemix.net | console.ng.bluemix.net |
-| United Kingdom region | London, England | eu-gb | api.eu-gb.bluemix.net | console.eu-gb.bluemix.net |
-| Sydney region | Sydney, Australia | au-syd | api.au-syd.bluemix.net | console.au-syd.bluemix.net |
-| Germany region | Frankfurt, Germany | eu-de | api.eu-de.bluemix.net | console.eu-de.bluemix.net |
-{: caption="Table 1. {{site.data.keyword.Bluemix_notm}} region list" caption-side="top"}
+1. Démarrer l'application
 
+    ```
+    npm start
+    ```
 
+    Une fois démarrée, la console doit affichée:
 
-## {{site.data.keyword.Bluemix_notm}} resilience
-{: #resiliency}
+    ```
+    > NodejsStarterApp@0.0.1 start /Users/jeromedruais/Documents/OPEN/codes/webapp-jd
+    > node app.js
 
-{{site.data.keyword.Bluemix_notm}} is designed to host scalable resilient apps and application artifacts that can scale to meet your needs, remain highly available, and be quick to recover from problems. {{site.data.keyword.Bluemix_notm}} separates components that track the state of interactions (stateful) from components that do not (stateless). This separation allows {{site.data.keyword.Bluemix_notm}} to move apps flexibly as needed to achieve scalability and resilience.
+    server starting on http://localhost:[port-number]
+    ```
 
-You can have one or more instances running for your app. For multiple instances of a single app, the app is uploaded only once. However, {{site.data.keyword.Bluemix_notm}} deploys the requested number of instances of the app, and distributes them across as many virtual servers as possible.
+1. Accéder à l'application avec votre navigateur web
+![Create app](./images/deploy-app-local.png)
 
-You must save all persistent data in a stateful data store that is outside of your app, such as on one of the data store services that {{site.data.keyword.Bluemix_notm}} provides. Because anything cached in memory or on disk might not be available even after a restart, you can use the memory space or file system of a single {{site.data.keyword.Bluemix_notm}} instance as a brief single-transaction cache. With a single instance setup, the request to your app might be interrupted because of the stateless nature of {{site.data.keyword.Bluemix_notm}}. A best practice is to use at least three instances for each app to ensure its availability.
+---
 
-All {{site.data.keyword.Bluemix_notm}} infrastructure, Cloud Foundry components, and {{site.data.keyword.IBM_notm}}-specific management components are highly available. Multiple instances of the infrastructure are used to balance the load.
+# Etape 5 - Changer un fichier localement
 
-## Integration with systems of record
-{: #sor}
+1. Ouvrir le fichier **public/index.html**, modifier le message d'accueil à la ligne 19
 
-{{site.data.keyword.Bluemix_notm}} can help developers by connecting two broad categories of systems in a cloud environment:
-
-* *Systems of record* include apps and databases that store business records and automate standardized processes.
-* *Systems of engagement* are capabilities that expand the usefulness of systems of record and make them more engaging to users.
-
-By integrating a system of record with the app that you create in {{site.data.keyword.Bluemix_notm}}, you can perform the following actions:
-
- * Enable secure communication between the app and the back-end database by downloading and installing a secure connector on premise.
- * Invoke a database in a secure way.
- * Create APIs from integration flows with databases and back-end systems, such as customer relationship management system.
- * Expose only the schemas and tables that you want to be exposed to the app.
- * As a {{site.data.keyword.Bluemix_notm}} organization manager, publish an API as a private service that is visible only to your organization members.
-
-To integrate a system of record with the app that you create in {{site.data.keyword.Bluemix_notm}}, use the Cloud Integration service. By using the Cloud Integration service, you can create a Cloud Integration API and publish the API as a private service for your organization.
-
-<dl>
-<dt>Cloud Integration API</dt>
-    <dd>A Cloud Integration API provides secured access to the systems of record that reside behind a firewall through web APIs. When you create the Cloud Integration API, you choose the resource that you want to access through the web API, specify the operations that are permitted, and include SDKs and samples to access the API. For more information about how to create a Cloud Integration API, see [Getting started with Cloud Integration](/docs/services/CloudIntegration/CldInt_GetStart.html).</dd>
-<dt>Private service</dt>
-    <dd>A private service consists of a Cloud Integration API, SDKs, and entitlement policies. The private service might also  contain documentation or other items from the service provider. Only the organization manager can publish a Cloud Integration API as a private service. To see the private services that are available to you, select the Private checkbox in the {{site.data.keyword.Bluemix_notm}} catalog. You can select and bind a private service to an app without connecting to the Cloud Integration service. You bind private services to your app in the same way as you do for other {{site.data.keyword.Bluemix_notm}} services. For information about how to publish an API as a private service, see Publishing an API as a private service.</dd>
-</dl>
-
-### Scenario: Creating a rich mobile app to connect with your system of record
-{: #scenario}
-
-{{site.data.keyword.Bluemix_notm}} provides a platform where you can integrate your mobile app, cloud services, and enterprise systems of record to provide an app that interacts with your on-premises data.
-
-For example, you can build a mobile app to interact with your customer relationship management system that resides on-premises behind a firewall. You can invoke the system of record in a secure way and leverage the mobile services in {{site.data.keyword.Bluemix_notm}} so that you can build a rich mobile app.
-
-First, your integration developer creates the mobile back-end app in {{site.data.keyword.Bluemix_notm}}. They use the Mobile Cloud boilerplate that uses the Node.js runtime that they are most familiar with.
-
-Then, by using the Cloud Integration service in the {{site.data.keyword.Bluemix_notm}} user interface, they expose an API through a secure connector. Your integration developer downloads the secure connector and installs it on-premises to enable secure communication between his API and the database. After they create the database endpoint, they can look at all the schemas and extract the tables that they want to expose as APIs to the app.
-
-The integration developer adds the Push service to deliver mobile notifications to interested consumers. They also add a business partner service to tweet when a new customer record is created with a Twitter API.
-
-Next, as the application developer, you can log in to {{site.data.keyword.Bluemix_notm}}, download the Android development toolkit, and develop code that invokes the APIs that your integration developer created. You can develop a mobile app that enables users to enter their information on their mobile device. The mobile app then creates a customer record in the customer management system. When the record is created, the app pushes a notification to a mobile device and initiates a tweet about the new record.
+1. Recharger la page web pour confirmer le changement localement
+![Create app](./images/deploy-app-local-modif.png)
 
 
 ---
 
-## Enjoy Bluemix ! :+1:
+# Etape 6 - Pousser votre changement local sur le cloud
+
+Cloud Foundry repose sur le fichier *manifest.yml* pour savoir ce qu'il faut faire quand vous poussez une application sur Bluemix.
+Un fichier manifest.yml a été généré par défaut pour votre application. Il ressemble à cela:
+
+  ```yml
+  applications:
+  - path: .
+    memory: 256M
+    instances: 1
+    domain: eu-gb.mybluemix.net
+    name: webapp-[your-initials]
+    host: webapp-[your-initials]
+    disk_quota: 1024M
+  ```
+---
+
+  Il définit l'infrastructure de l'application à partir du répertoire courant, qui déploiera avec **256MB**, avec **une** instance, sous le domaine  **eu-g.mybluemix.net** .
+L'applicationsera nommée **webapp-[your-initials]** et il utilisera **webapp-[your-initials]** comme nom de hote.
+Il utilisera **1024MB** de disque comme espace disponible.
+
+1. Spécifier le buildpack a utiliser quand on pousse une application Cloud Foundry app est toujours plus rapide que de 'appuyer sur la détection du buildpack . Modifier le fichier Manifest généré en spécifiant le **buildpack** par la ligne suivante:
+
+    ```yml
+    applications:
+    - path: .
+      memory: 256M
+      instances: 1
+      domain: eu-gb.mybluemix.net
+      buildpack: sdk-for-nodejs
+      name: webapp-[your-initials]
+      host: webapp-[your-initials]
+      disk_quota: 1024M
+    ```
+
+1. Se connecter à Bluemix en indiquant le endpoint Bluemix de l'URL avec la région où l'application a été crée.
+
+    ```
+    bx api https://api.eu-gb.bluemix.net
+    ```
+
+1. S'authentifier à Bluemix
+
+    ```
+    bx login
+    ```
+
+1. Pousser l'application sur Bluemix
+
+    ```
+    bx cf push
+    ```
+
+1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
+
+    ```
+    requested state: started
+    instances: 1/1
+    usage: 256M x 1 instances
+    urls: webapp-jd.eu-gb.mybluemix.net
+    last uploaded: Tue Jun 6 15:11:45 UTC 2017
+    stack: unknown
+    buildpack: sdk-for-nodejs
+
+     state     since                    cpu    memory          disk          details
+     #0   running   2017-06-06 05:12:28 PM   0.0%   59.7M of 256M   67.7M of 1G
+    ```
+
+    ![Create app](./images/deploy-app-bluemix-modif.png)
+
+
+---
+
+# Step 7 - Commit your changes and see them deployed automatically
+
+1. Open **public/index.html**.
+
+1. Change the page title at line 5.
+
+1. Confirm the change works locally.
+
+1. Commit your changes locally
+    ```
+    git commit -a -m "updated title"
+    ```
+
+    Note: you might be prompted to configure git for the first time:
+    ```
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    ```
+
+1. Push your changes
+    ```
+    git push
+    ```
+
+1. Back to the Bluemix console, go to your application **Overview**.
+
+1. Click on the **View Toolchain** button in the Continuous Delivery section.
+
+1. Click the **Delivery Pipeline** that was created automatically in a previous step.
+
+1. Watch how the Delivery pipeline notice your commit and redeploy the application
+
+1. When the command completes, access the application running in the cloud to confirm your change was deployed
+
+
+---
+
+# Step 8 - Get the Todo App code
+
+In previous steps, we've seen the basic of modifying code and deploying the application.
+Now let's focus on our task to build a Todo App. The application has already been developed and is available in this Git repository.
+
+Your first task is to integrate this code in the app you created, replacing the existing app code.
+
+1. Delete all files and folders from your app **except the manifest.yml and .git folder**.
+
+1. Download the complete Todo application from [this archive](./solution/node-todo-master.zip) into a temp directory.
+
+1. Unzip the files in a temp directory. It creates a *node-todo-master* folder.
+
+1. Copy all files and directories from the extract to your app folder.
+
+Note: Make sure the hidden files (.gitignore, .cfignore and .bowerrc) were also copied.
+
+---
+
+# Step 9 - Create and bind a Cloudant service
+
+In order to store the todo, we will need a persistent storage. To do so, we will use a Cloudant NoSQL database, a JSON document oriented store, compatible with CouchDB.
+
+1. Back to the Bluemix console, go to your application **Overview**.
+
+1. Click **Connect New** to add a service to your application
+
+1. Search for **Cloudant** in the catalog
+
+1. Select the free **Lite** plan
+
+1. Give the service a name such as **todo-cloudant-[your-initials]**
+
+1. Click **Create**. Bluemix will provision a Cloudant service and connect it to your application.
+
+1. Select **Restage** when prompted to do so.
+
+    Your application will restart and the service connection information will be made available to your application.
+
+    Note: All the steps above could have been scripted using the three commands below:
+    ```
+    cf create-service cloudantNoSQLDB Lite todo-cloudant-[your-initials]
+    cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
+    cf restage todo-[your-initials]
+    ```
+
+---
+
+# Step 10 - Connect the Cloudant DB to the application code
+
+When your application runs in Cloud Foundry, all service information bound to the application are available in the **VCAP_SERVICES** variable.
+
+Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a straightforward approach is to set this variable in your environment by creating a local env file (JSON or key=value format), to test for this file in your app and to load the values if found.
+
+1. In the Bluemix console, go to your application dashboard.
+
+1. Select **Runtime**, then **Environment Variables**
+
+1. Copy the full content of the **VCAP_SERVICES** into the file vcap-local.json of your project. Make sure to copy the content on line 3 below the services element. It should look as follows:
+
+    ```json
+    {
+      "services":
+      {
+        "cloudantNoSQLDB": [
+          {
+            "credentials": {
+                "username": "XXXX",
+                "password": "XXXX",
+                "host": "XXXXXX-bluemix.cloudant.com",
+                "port": 443,
+                "url": "https://....-bluemix.cloudant.com"
+            },
+            "name": "todo-cloudant",
+            "label": "cloudantNoSQLDB",
+            "plan": "Lite",
+            ...
+          }
+        ]
+      }
+    }
+    ```
+
+---
+
+# Step 11 - Run the Todo App locally
+
+1. Get the dependencies for the Todo App. In your app directory, run:
+
+    ```
+    npm install
+    ```
+
+1. Run the application
+
+    ```
+    npm start
+    ```
+
+1. Access the local application
+
+---
+
+# Step 12 - Commit the changes
+
+1. Add all new files to Git:
+
+    ```
+    git add .
+    ```
+
+1. Commit:
+
+    ```
+    git commit -a -m "full solution"
+    ```
+
+1. Push to remote Git
+
+    ```
+    git push
+    ```
+
+1. Watch the Delivery Pipeline processing your commit and deploying a new version of your app.
+
+Congratulations! You completed this lab. You can get familiar with the application code content.
+
+
+---
+
+## Source code
+
+### Back-end
+
+| File | Description |
+| ---- | ----------- |
+|**package.json**|Lists the node.js dependencies|
+|**.cfignore**|List of files and directories ignored when calling **cf push**. Typically we ignore everything that can be retrieved with bower or npm. This speeds up the push process.|
+|**manifest.yml**|Used by Cloud Foundry when pushing the application to define the application environment, connected services, number of instances, etc.|
+|**app.js**|Web app backend entry point. It initializes the environment and imports the Todo API endpoints|
+|**todos.js**|Todo API implementation. It declares endpoints for PUT/GET/DELETE (create/retrieve/delete) and handles the *in-memory* storage.
+
+---
+
+### Front-end
+
+| File | Description |
+| ---- | ----------- |
+|**.bowerrc**|Configuration file for the [bower](http://bower.io/) web package manager to put our web dependencies under public/vendor|
+|**bower.json**|Web dependencies (bootstrap, angular)|
+|**index.html**|Web front-end implementation. It displays the todo list and has a form to submit new todos.|
+|**todo.js**|Declares the Angular app|
+|**todo.service.js**|Implements the connection between the front-end and the back-end. It has methods to create/retrieve/delete Todos|
+|**todo.controller.js**|Controls the main view, loading the current todos and adding/removing todos by delegating to the Todo service|
+
+---
+
+# Resources
+
+For additional resources pay close attention to the following:
+
+- [GitHub Guides](https://guides.github.com/)
+- [Get started guides for your favorite runtimes](https://www.ibm.com/blogs/bluemix/2017/03/runtimes-get-started-guides/?social_post=829410659&fst=Learn&linkId=35308736)
+
+
+
+1. Choisir  la  Région **United Kingdom** pour créer votre application.
+
+1. Aller dans le  **Catalogue** Bluemix.
+
+1. Dans la catégorie **Apps** , Choisir **Cloud Foundry Apps**
+
+1. Créer  une nouvelle application avec le runtime ***SDK for Node.js***.
+![Node.js](./images/nodejs.png)
+1. Donner un nom unique à votre application (exemple:webapp-[vos-initials])
+![Create app](./images/deploy-create-app.png)
+
+On visualise facilement aux détails de cette application.
+![Create app](./images/deploy-app-created.png)
+
+1. Accéder à votre application.
+
+Le runtime SDK for Node.js a créer une simple application web "Hello World!" qui nous servira comme point de départ.
+![Create app](./images/deploy-app-helloworld.png)
+
+---
