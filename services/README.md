@@ -166,7 +166,8 @@ Afin de tester cette approche, nous allons créer un fichier local d'environneme
 
 1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
 
-    ```
+
+```
 requested state: started
 instances: 1/1
 usage: 256M x 1 instances
@@ -177,7 +178,7 @@ buildpack: sdk-for-nodejs
 
      state     since                    cpu    memory      disk      details
 #0   running   2017-06-07 04:47:58 PM   0.0%   0 of 256M   0 of 1G
-    ```
+```
 
 ![Create app cloud](./images/services-app-cloud.png)
 
