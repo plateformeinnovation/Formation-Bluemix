@@ -35,7 +35,7 @@ Dans l'exercice suivant, vous allez apprendre à :
 1. [Créer une nouvelle application web depuis la console](#etape-1---Creer une-nouvelle-application-web-depuis-la-console)
 1. [Déployer une application web depuis la ligne de commande](#etape-2---Deployer-une-application-web-depuis-la-ligne-de-commande)
 1. [Contrôler le code localement](#etape-3---controler-le-code-localement)
-1. [Exécuter l'application localement](#etape-4---executer-l'application-localement)
+1. [Exécuter l'application localement](#etape-4---executer-une application-localement)
 1. [Changer un  fichier localement](#etape-5---changer -un-fichier-localement)
 1. [Pousser  votre changement  local sur le cloud](#etape-6---pousser-votre-changement-local-sur-le-cloud)
 ---
@@ -70,7 +70,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 
 ---
 
-# Etape 2 - Déployer une application web depuis la ligne de commande
+# Etape 2 - Deployer une application web depuis la ligne de commande
 
 1. Une fois l'application HelloWorld déployée, on peut récupérer le code source utilisé pour s'en inspirer à partir du menu Getting Started de l'application ou depuis un REPO Git.
 
@@ -87,7 +87,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 
 ---
 
-# Etape 4 - Executer l'application localement
+# Etape 4 - Executer une application localement
 
 1. Se déplacer sur le répertoire du projet
 
