@@ -36,10 +36,10 @@ Dans l'exercice suivant, vous allez apprendre à :
 # Etapes
 
 
-1. [Récupérer le code source de l'application Todo](#etape-1---recuperer-le-code-source-de-l-'-applicaton-Todo)
-1. [Créer et associer le sercice Cloudant](#etape-2---creer-et-associer-le-service-cloudant)
-1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-DB-Cloudant-avec-le-code-de-l-'-application)
-1. [Exécuter l'application Todo localement](#etape-4---executer-l-'-application-Todo-localement)
+1. [Récupérer le code source de l'application Todo](#etape-1---récupérer-le-code-source-de-lapplication-todo)
+1. [Créer et associer le sercice Cloudant](#etape-2---créer-et-associer-le-sercice-cloudant)
+1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-DB-Cloudant-avec-le-code-de-lapplication)
+1. [Exécuter l'application Todo localement](#etape-4---executer-lapplication-Todo-localement)
 1. [Pousser  votre changement  local sur le cloud](#etape-5---pousser-votre-changement-local-sur-le-cloud)
 
 ---
@@ -89,7 +89,7 @@ Afin d'enregistrer nos todos, nous aurons besoin d'un stockage persistant. Pour 
     cf restage todo-[your-initials]
     ```
 
-# Step 10 - Connect the Cloudant DB to the application code
+# Etape 3 - Connect the Cloudant DB to the application code
 
 When your application runs in Cloud Foundry, all service information bound to the application are available in the **VCAP_SERVICES** variable.
 
