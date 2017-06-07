@@ -37,7 +37,7 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 
 1. [Récupérer le code source de l'application Todo](#etape-1---récupérer-le-code-source-de-lapplication-todo)
-1. [Créer et associer le sercice Cloudant](#etape-2---créer-et-associer-le-sercice-cloudant)
+1. [Créer et associer le service Cloudant](#etape-2---créer-et-associer-le-service-cloudant)
 1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-DB-Cloudant-avec-le-code-de-lapplication)
 1. [Exécuter l'application Todo localement](#etape-4---executer-lapplication-Todo-localement)
 1. [Pousser  votre code local sur le cloud](#etape-5---pousser-votre-code-local-sur-le-cloud)
@@ -83,7 +83,8 @@ Afin d'enregistrer nos todos, nous aurons besoin d'un stockage persistant. Pour 
     Votre application va redemarrée et les informations de connexion du service seront disponible dans votre application.
 
     Note: Toutes ces étapes sont réalisables en ligne de commande:
-```
+
+    ```
     cf create-service cloudantNoSQLDB Lite todo-cloudant-[your-initials]
     cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
     cf restage todo-[your-initials]
