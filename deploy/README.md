@@ -32,14 +32,14 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 # Etapes
 
-1. [Créer une nouvelle application web depuis la console](#etape-1---creer une-nouvelle-application-web-depuis-la-console)
-1. [Contôler le code localement](#etape-3---contôler-le-code-localement)
-1. [Exécuter l'application localement](#etape-4---exécuter-l'application-localement)
+1. [Créer une nouvelle application web depuis la console](#etape-1---Creer une-nouvelle-application-web-depuis-la-console)
+1. [Contôler le code localement](#etape-3---controler-le-code-localement)
+1. [Exécuter l'application localement](#etape-4---executer-l'application-localement)
 1. [Changer un  fichier localement](#etape-5---changer -un-fichier-localement)
 1. [Pousser  votre changement  local sur le cloud](#etape-6---pousser-votre-changement-local-sur-le-cloud)
 ---
 
-# Etape 1 - Créer une nouvelle application web depuis la console
+# Etape 1 - Creer une nouvelle application web depuis la console
 
 1. Se connecter à la [Console Bluemix](https://console.bluemix.net).
 
@@ -50,16 +50,21 @@ Dans l'exercice suivant, vous allez apprendre à :
 1. Dans la catégorie **Apps** , Choisir **Cloud Foundry Apps**
 
 1. Créer  une nouvelle application avec le runtime ***SDK for Node.js***.
+
 ![Node.js](./images/nodejs.png)
+
 1. Donner un nom unique à votre application (exemple:webapp-[vos-initials])
+
 ![Create app](./images/deploy-create-app.png)
 
 1. On visualise facilement aux détails de cette application.
+
 ![Create app](./images/deploy-app-created.png)
 
 1. Accéder à votre application.
 
 Le runtime SDK for Node.js a créer une simple application web "Hello World!" qui nous servira comme point de départ.
+
 ![Create app](./images/deploy-app-helloworld.png)
 
 ---
@@ -69,7 +74,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 1. Une fois l'application HelloWorld déployée, on peut récupérer le code source utilisé pour s'en inspirer à partir du menu Getting Started de l'application ou depuis un REPO Git.
 
 
-# Etape 3 - Contrôler le code localement
+# Etape 3 - Controler le code localement
 
 1. Ouvrir un terminal ou une invite de commande afin de cloner le repository git
 
@@ -81,7 +86,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 
 ---
 
-# Etape 4 - Exécuter l'application localement
+# Etape 4 - Executer l'application localement
 
 1. Se déplacer sur le répertoire du projet
 
@@ -111,6 +116,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
     ```
 
 1. Accéder à l'application avec votre navigateur web
+
 ![Create app](./images/deploy-app-local.png)
 
 ---
@@ -120,6 +126,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 1. Ouvrir le fichier **public/index.html**, modifier le message d'accueil à la ligne 19
 
 1. Recharger la page web pour confirmer le changement localement
+
 ![Create app](./images/deploy-app-local-modif.png)
 
 
@@ -193,7 +200,7 @@ Il utilisera **1024MB** de disque comme espace disponible.
      #0   running   2017-06-06 05:12:28 PM   0.0%   59.7M of 256M   67.7M of 1G
     ```
 
-    ![Create app](./images/deploy-app-bluemix-modif.png)
+![Create app](./images/deploy-app-bluemix-modif.png)
 
 
 ---
