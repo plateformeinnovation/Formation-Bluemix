@@ -38,10 +38,9 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 1. [Récupérer le code source de l'application Todo](#etape-1---récupérer-le-code-source-de-lapplication-todo)
 1. [Créer et associer le service Cloudant](#etape-2---créer-et-associer-le-service-cloudant)
-1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-DB-Cloudant-avec-le-code-de-lapplication)
-1. [Exécuter l'application Todo localement](#etape-4---executer-lapplication-Todo-localement)
-1. [Pousser  votre code local sur le cloud](#etape-5---pousser-votre-code-local-sur-le-cloud)
-
+1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-db-cloudant-avec-le-code-de-lapplication)
+1. [Exécuter l'application Todo localement](#etape-4---exécuter-lapplication-todo-localement)
+1. [Pousser  votre code local sur le cloud](#etape-5---pousser--votre-code-local-sur-le-cloud)
 ---
 
 # Etape 1 - Récupérer le code source de l'application Todo
