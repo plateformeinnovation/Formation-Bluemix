@@ -40,7 +40,7 @@ Dans l'exercice suivant, vous allez apprendre à :
 1. [Créer et associer le sercice Cloudant](#etape-2---créer-et-associer-le-sercice-cloudant)
 1. [Connecter la DB Cloudant avec le code de l'application](#etape-3---connecter-la-DB-Cloudant-avec-le-code-de-lapplication)
 1. [Exécuter l'application Todo localement](#etape-4---executer-lapplication-Todo-localement)
-1. [Pousser  votre changement  local sur le cloud](#etape-5---pousser-votre-changement-local-sur-le-cloud)
+1. [Pousser  votre code local sur le cloud](#etape-5---pousser-votre-code-local-sur-le-cloud)
 
 ---
 
@@ -62,7 +62,7 @@ Votre premiere tache consiste à intégrer ce code dans l'application que vous v
 Note: Assurez vous que les fichiers cachés (.gitignore, .cfignore et .bowerrc) seront aussi copiés.
 
 
-# Etape 2 - Créer et associer le sercice Cloudant
+# Etape 2 - Créer et associer le service Cloudant
 
 Afin d'enregistrer nos todos, nous aurons besoin d'un stockage persistant. Pour cela, nous allons utiliser une base de données Cloudant NoSQL, base de données documents, compatible avec CouchDB.
 
@@ -89,17 +89,17 @@ Afin d'enregistrer nos todos, nous aurons besoin d'un stockage persistant. Pour 
     cf restage todo-[your-initials]
     ```
 
-# Etape 3 - Connect the Cloudant DB to the application code
+# Etape 3 - Connecter la DB Cloudant avec le code de l'application
 
-When your application runs in Cloud Foundry, all service information bound to the application are available in the **VCAP_SERVICES** variable.
+Quand votre application s'éxécute sur Cloud Foundry, toutes les informations des services associés à votre application sont disponible dans la variable d'environnement **VCAP_SERVICES**.
 
-Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a straightforward approach is to set this variable in your environment by creating a local env file (JSON or key=value format), to test for this file in your app and to load the values if found.
+Afin de tester cette approche, nous allons créer un fichier local d'environnement  (JSON), et valider si les valeurs sont bien chargées avec notre application déployée localement.
 
-1. In the Bluemix console, go to your application dashboard.
+1. Dans la console Bluemix, aller sur le dashboardde votre dashboard.
 
-1. Select **Runtime**, then **Environment Variables**
+1. Choisir **Runtime**, et **Environment Variables**
 
-1. Copy the full content of the **VCAP_SERVICES** into the file vcap-local.json of your project. Make sure to copy the content on line 3 below the services element. It should look as follows:
+1. Copier tout le contenu de **VCAP_SERVICES** dans le fichier local vcap-local.json de votre projet. S'assurer de copier le contenu en dessous de l'élément services. Cela doit ressembler à ça:
 
     ```json
     {
@@ -125,46 +125,66 @@ Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a st
     ```
 
 
-# Step 11 - Run the Todo App locally
+# Etape 4 - Exécuter l'application Todo localement
 
-1. Get the dependencies for the Todo App. In your app directory, run:
+1. Installer les dépendances node.js
 
     ```
     npm install
     ```
 
-1. Run the application
+1. Démarrer l'application
 
     ```
     npm start
     ```
 
-1. Access the local application
+1. Accéder à l'application avec votre navigateur web
+
+![Create app local](./images/services-app-local.png)
 
 
-# Step 12 - Commit the changes
+# Etape 5 - Pousser  votre code local sur le cloud
 
-1. Add all new files to Git:
-
-    ```
-    git add .
-    ```
-
-1. Commit:
+1. Se connecter à Bluemix en indiquant le endpoint Bluemix de l'URL avec la région où l'application a été crée.
 
     ```
-    git commit -a -m "full solution"
+    bx api https://api.eu-gb.bluemix.net
     ```
 
-1. Push to remote Git
+1. S'authentifier à Bluemix
 
     ```
-    git push
+    bx login
     ```
 
-1. Watch the Delivery Pipeline processing your commit and deploying a new version of your app.
+1. Pousser l'application sur Bluemix
 
-Congratulations! You completed this lab. You can get familiar with the application code content.
+    ```
+    bx cf push
+    ```
+
+1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
+
+    ```
+requested state: started
+instances: 1/1
+usage: 256M x 1 instances
+urls: webapp-jd.eu-gb.mybluemix.net
+last uploaded: Wed Jun 7 14:46:39 UTC 2017
+stack: unknown
+buildpack: sdk-for-nodejs
+
+     state     since                    cpu    memory      disk      details
+#0   running   2017-06-07 04:47:58 PM   0.0%   0 of 256M   0 of 1G
+    ```
+
+![Create app cloud](./images/services-app-cloud.png)
+
+
+
+Félicitations ! Vous avez complété cet exercice.
+Vous pouvez prendre connaissance du code source de l'application.
 
 ## Source code
 
