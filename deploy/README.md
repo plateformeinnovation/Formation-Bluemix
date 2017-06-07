@@ -32,7 +32,8 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 # Etapes
 
-1. [Créer une nouvelle application web depuis la console](#etape-1---Creer une-nouvelle-application-web-depuis-la-console)
+
+1. [Créer une nouvelle application web depuis la console](#etape-1---creer-une-nouvelle-application-web-depuis-la-console)
 1. [Déployer une application web depuis la ligne de commande](#etape-2---Deployer-une-application-web-depuis-la-ligne-de-commande)
 1. [Contrôler le code localement](#etape-3---controler-le-code-localement)
 1. [Exécuter l'application localement](#etape-4---executer-une application-localement)
