@@ -75,7 +75,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 
 1. Une fois l'application HelloWorld déployée, on peut récupérer le code source utilisé pour s'en inspirer à partir du menu Getting Started de l'application ou depuis un REPO Git.
 Le code source est également disponible ici:
-[code source](./solution/webapp-jd-maste.zip)
+[code source](./solution/webapp-jd-master.zip)
 
 # Etape 3 - Controler le code localement
 
