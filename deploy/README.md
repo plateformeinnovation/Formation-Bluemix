@@ -1,4 +1,3 @@
-![](./images/cloudfoundry.png)
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
 <!-- prerender: true -->
