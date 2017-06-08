@@ -228,7 +228,7 @@ La force de Bluemix se situe au niveau de son catalogue de services riche de plu
 ![tour-services](./images/tour-services.png)
 
 
-Le [chapitre 2](catalog/README.md) parle en détail du catalogue de services.
+Le [chapitre 2](../catalog) parle en détail du catalogue de services.
 
 ---
 
@@ -249,7 +249,7 @@ Une fois le menu ouvert, voici les actions possibles.
 On peut ici contrôler ses applications depuis son tableau de bord.
 ![tour-applications-dashboard](./images/tour-applications-dashboard.png)
 
-Le [chapitre 3](deploy/README.md) parle en détail des applications.
+Le [chapitre 3](../deploy) parle en détail des applications.
 
 ---
 
