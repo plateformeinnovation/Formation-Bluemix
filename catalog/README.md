@@ -239,7 +239,7 @@ par les LABs IBM, qui potentiellement seront intégrés au catalogue général.
 
 
 ---
-Suivre le chapitre suivant [Déployer une application](../../deploy/README.md).
+Suivre le chapitre suivant [Déployer une application](./tree/master/deploy/README.md).
 ---
 
 ## Enjoy Bluemix ! :+1:
