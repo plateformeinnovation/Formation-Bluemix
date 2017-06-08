@@ -207,7 +207,8 @@ Il utilisera **1024MB** de disque comme espace disponible.
 
 
 ---
-Suivre le chapitre suivant [Enrichir votre application Bluemix avec les services](../blob/master/services/README.md).
+Suivre le chapitre suivant [Enrichir votre application Bluemix avec les services](../services).
+
 ---
 
 ## Enjoy Bluemix ! :+1:
