@@ -4,10 +4,10 @@
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
-# Introduction
+# Déployer une application
 
-Dans cet exercice, vous allez découvrir les concepts de développement avec Cloud Foundry et les services Bluemix.
-Dans cet exercice, vous allez créer une simple application web.
+Vous allez découvrir les concepts de développement avec Cloud Foundry et les services Bluemix.
+Dans cet exemple, vous allez créer une simple application web.
 ![webapp](./images/HelloWorld.png)
 
 ---
@@ -59,9 +59,9 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 ![Create app](./images/deploy-create-app.png)
 
-1. On visualise facilement aux détails de cette application.
+1. On visualise facilement les détails de cette application(son statut, sa mise à l'échelle, sa RAM, son prix,...).
 
-![Create app](./images/deploy-app-created.png)
+![Create app](./images/deploy-dashboard-details.png)
 
 1. Accéder à votre application.
 
