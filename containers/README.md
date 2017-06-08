@@ -1,84 +1,136 @@
-# DevOps avec Bluemix
+# Les containers avec Bluemix
 
 <!-- page_number: true -->
 <!-- $size: 16:9 -->
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
-Adoptez une approche DevOps en utilisant le Continuous Delivery, qui inclut une chaîne d'outils ouverte automatisant la génération et le déploiement d'applications. Vous pouvez commencer en créant une chaîne d'outils de déploiement simple qui prend en charge les tâches de développement, de déploiement et les opérations.
-Vous utiliserez l'application Todo avec les outils DevOps de Bluemix.
+
+This project comes with a partially automated toolchain capable of deploying the service to Cloud Foundry, OpenWhisk and Kubernetes. There is some information you need to get before creating the toolchain.
+
+> Although this section uses a toolchain, it assumes you have successfully configured the Bluemix CLI and its plugins. Some steps require you to use the command line.
+
+> Only the US South region is currently supported.
+
+## 1. Obtain a Bluemix API key
+
+A Bluemix API key is used in place of your Bluemix credentials. It allows to access the Bluemix API. The toolchain uses the API key to interact with the Container Service API.
+
+1. Generate a Bluemix API key
+
+   ```
+   bx iam api-key-create for-cli
+   ```
+
+   > You can also use an existing API key.
+
+1. Make note of the generated API key. It won't be shown again.
+
+## 2. Get the namespace where you will push the Docker image
+
+1. Check the existing namespaces
+
+   ```
+   bx cr namespace-list
+   ```
+
+   > You can use any of the namespaces listed.
+
+1. If you want to create a new namespace, use
+
+   ```
+   bx cr namespace-add fibonacci
+   ```
+
+1. Make note of the namespace. You will need it later.
+
+## 3. Build the Docker image
+
+### If you have used IBM Containers in the past, you can have the toolchain build the Docker image for you
+
+The toolchain is able to build the Docker image but only if you have used IBM Containers in the past - the [*single and scalable containers*](https://console.ng.bluemix.net/docs/containers/cs_classic.html#cs_classic) option before Kubernetes was made available. If you did, you should be familiar with the notion of namespace and quota.
+
+To build the Docker image in the toolchain, you will need to specify a Bluemix space that has quota assigned for IBM Containers. You can find which space has quotas for the IBM Containers by looking at your organization:
+
+  ![](./quotas.png)
+
+In the screenshot above, two spaces have Containers quota available. One will need to be selected when creating the toolchain.
+
+### but if this is your first time using IBM Container with Kubernetes, you need to build the Docker image manually
+
+Go through the steps detailed in the [manual instructions to build the Docker image](DEPLOY_MANUALLY.md#build-the-docker-image).
+
+## 4. Create a Kubernetes cluster
+
+Go through the steps detailed in the [manual instructions to create a Kubernetes cluster](DEPLOY_MANUALLY.md#create-a-kubernetes-cluster). Make sure to wait for the cluster to be in a Ready state before continuing to the next step.
+
+## 5. Create the toolchain
+
+1. Ensure your organization has enough quota for one web application using 256MB of memory, one Kubernetes cluster, and one OpenWhisk action.
+
+1. Click ***Create toolchain*** to start the Bluemix DevOps wizard:
+
+   [![Deploy To Bluemix](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM-Bluemix/multiple-deployment-options&branch=master)
+
+1. Select the **GitHub** box.
+
+1. Decide whether you want to clone or fork the repository.
+
+1. If you decide to Clone, set a name for your GitHub repository.
+
+1. Select the **Delivery Pipeline** box.
+
+1. Select the region, organization and space where you want to deploy the web application. A random route will be used for the application.
+
+   :warning: Make sure the organization and the space have no space in their names.
+
+   :warning: Only the US South region is currently supported.
+
+1. Select the region, organization and space where quota for IBM Containers have been specified. If you never use the IBM Containers before, you may need to build the Docker image outside of the toolchain as explained earlier in this document.
+
+1. Optionally set the Bluemix API key. If you don't set the key, the Fibonacci service will NOT be deployed to a Kubernetes cluster and you will need to use the manual instructions.
+
+1. Optionally set the name of an existing Kubernetes cluster if you have one, if you do NOT have an existing cluster then the toolChain will create one by default.
+
+1. Replace the *<namespace>* value with the namespace where the Docker image has been or will be pushed.
+
+1. Click **Create**.
+
+1. Select the Delivery Pipeline.
+
+1. Wait for the DEPLOY stage to complete.
+
+1. The services are ready. Review the [Service API](README.md#Service_API) to call the services.
 
 
-![Todo](./images/screenshot.png)
+---
+
+## Enjoy Bluemix ! :+1:
 
 
-# Objectif
-
-Dans l'exercice suivant, vous allez apprendre à :
-
-+ Mettre en place un dépot pour votre code source afin de collaborer
-+ Gérer l'intégration continue et le déploiement continu
-
-# Prérequis
-
-+ Avoir un [Bluemix IBM id](https://bluemix.net), ou  utiliser son compte existant.
-+ Installer le [Bluemix CLI](http://clis.ng.bluemix.net)
-+ Installer un [Git client](https://git-scm.com/downloads)
-+ Installer [Node.js](https://nodejs.org)
-
-
-----
-
-# Etapes
-
-
-1. [Activer le déploiement continu](#etape-1---activer-le-deploiement-continu)
-1. [Déployer une application web depuis la ligne de commande](#etape-2---deployer-une-application-web-depuis-la-ligne-de-commande)
-1. [Contrôler le code localement](#etape-3---controler-le-code-localement)
-1. [Exécuter l'application localement](#etape-4---executer-une-application-localement)
-1. [Changer un  fichier localement](#etape-5---changer-un-fichier-localement)
-1. [Pousser  votre changement  local sur le cloud](#etape-6---pousser-votre-changement-local-sur-le-cloud)
 ---
 
 
-# Steps
 
-1. [Create a new web application](#step-1---create-a-new-web-application)
-1. [Enable Continuous Delivery](#step-2---enable-continuous-delivery)
-1. [Checkout the code locally](#step-3---checkout-the-code-locally)
-1. [Run the app locally](#step-4---run-the-app-locally)
-1. [Change a file locally](#step-5---change-a-file-locally)
-1. [Push your local change to the cloud](#step-6---push-your-local-change-to-the-cloud)
-1. [Commit your changes and see them deployed automatically](#step-7---commit-your-changes-and-see-them-deployed-automatically)
-1. [Get the Todo App code](#step-8---get-the-todo-app-code)
-1. [Create and bind a Cloudant service](#step-9---create-and-bind-a-cloudant-service)
-1. [Connect the Cloudant DB to the application code](#step-10---connect-the-cloudant-db-to-the-application-code)
-1. [Run the Todo App locally](#step-11---run-the-todo-app-locally)
-1. [Commit the changes](#step-12---commit-the-changes)
+# Step 2 - Enable Continuous Delivery
 
+Now let's add a source code repository and an automatic build pipeline to our project. The Git repository and issue tracking is hosted by IBM and built on GitLab Community Edition.
 
-# Etape 2 - Activer le déploiement continu
+1. In your application **Overview** page, search **Continuous Delivery** and click the **Enable** button.
 
-Maintenant ajoutez un dépot pour votre code source et un pipeline de déploiement automatique à votre projet. Le dépot Git et la gestion des issue tracking est géré par IBM et fonctionne avec GitLab Community Edition.
+1. A new window opens to configure the Toolchain.
 
-1. Depuis la page **Overview** de votre application, recherchez **Continuous Delivery** et cliquez sur le bouton **Enable**.
+    ![Toolchain](./images/toolchain-gitlab.png)
 
-![Toolchain](./images/devops-enable.png)
+1. The toolchain gets a default name you can change. In **Configurable Integrations** at the bottom, select **Git Repos and Issue Tracking**.
 
+1. Keep the Default options to **Clone** the starter code for the "Hello World!" application into your GitLab account.
 
-1. Une nouvelle fenêtre s'ouvre pour configurer la chaine d'outil, Toolchain.
+1. The toolchain has been configured successfully. A new Git Repository has been created, as well as a Build Pipeline so that your app gets automatically redeployed after every commit.
 
-![Toolchain](./images/devops-enabled.png)
+1. Open the Git repo and make note of the Git URL.
 
-1. La toolchain propose un nom par défaut qui est modifiable. Dans **Configurable Integrations** en bas, selectionner **Git Repos et Issue Tracking**.
-
-1. Garder les options par défaut **Clone** pour cloner le code source de l'application
- "Hello World!" dans votre compte GitLab.
-
-1. La toolchain a été configuré avec succès. A nUn nouveau dépot Git a été créé, ainsi qu'un Pipeline qui pourra déployer votre application automatiquement à chaque commit.
-
-1. Ouvrez le dépot Git et notez son URL.
-
+---
 
 # Step 3 - Checkout the code locally
 
@@ -90,6 +142,7 @@ Maintenant ajoutez un dépot pour votre code source et un pipeline de déploieme
 
 1. This command creates a directory of your project locally on your disk.
 
+---
 
 # Step 4 - Run the app locally
 
@@ -122,6 +175,7 @@ Maintenant ajoutez un dépot pour votre code source et un pipeline de déploieme
 
 1. Access the app with your web browser
 
+---
 
 # Step 5 - Change a file locally
 
@@ -129,6 +183,7 @@ Maintenant ajoutez un dépot pour votre code source et un pipeline de déploieme
 
 1. Reload the page in your web browser to confirm the change locally
 
+---
 
 # Step 6 - Push your local change to the cloud
 
@@ -145,6 +200,7 @@ A default manifest.yml file was generated for our app. It looks like:
     host: todo-[your-initials]
     disk_quota: 1024M
   ```
+---
 
 It basically defines one application taking its content from the current directory,
 being deployed with **256MB**, with **one** instance, under the **mybluemix.net** domain.
@@ -201,6 +257,7 @@ It has **1024MB** of disk space available.
 Changing files locally and pushing them worked but we can do better.
 In a previous step we set up a Git repository and a build pipeline was automatically configured.
 
+---
 
 # Step 7 - Commit your changes and see them deployed automatically
 
@@ -237,6 +294,8 @@ In a previous step we set up a Git repository and a build pipeline was automatic
 1. When the command completes, access the application running in the cloud to confirm your change was deployed
 
 
+---
+
 # Step 8 - Get the Todo App code
 
 In previous steps, we've seen the basic of modifying code and deploying the application.
@@ -254,6 +313,7 @@ Your first task is to integrate this code in the app you created, replacing the 
 
 Note: Make sure the hidden files (.gitignore, .cfignore and .bowerrc) were also copied.
 
+---
 
 # Step 9 - Create and bind a Cloudant service
 
@@ -281,6 +341,8 @@ In order to store the todo, we will need a persistent storage. To do so, we will
     cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
     cf restage todo-[your-initials]
     ```
+
+---
 
 # Step 10 - Connect the Cloudant DB to the application code
 
@@ -317,6 +379,7 @@ Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a st
     }
     ```
 
+---
 
 # Step 11 - Run the Todo App locally
 
@@ -334,6 +397,7 @@ Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a st
 
 1. Access the local application
 
+---
 
 # Step 12 - Commit the changes
 
@@ -359,6 +423,9 @@ Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a st
 
 Congratulations! You completed this lab. You can get familiar with the application code content.
 
+
+---
+
 ## Source code
 
 ### Back-end
@@ -371,6 +438,8 @@ Congratulations! You completed this lab. You can get familiar with the applicati
 |**app.js**|Web app backend entry point. It initializes the environment and imports the Todo API endpoints|
 |**todos.js**|Todo API implementation. It declares endpoints for PUT/GET/DELETE (create/retrieve/delete) and handles the *in-memory* storage.
 
+---
+
 ### Front-end
 
 | File | Description |
@@ -382,6 +451,7 @@ Congratulations! You completed this lab. You can get familiar with the applicati
 |**todo.service.js**|Implements the connection between the front-end and the back-end. It has methods to create/retrieve/delete Todos|
 |**todo.controller.js**|Controls the main view, loading the current todos and adding/removing todos by delegating to the Todo service|
 
+---
 
 # Resources
 
@@ -389,7 +459,3 @@ For additional resources pay close attention to the following:
 
 - [GitHub Guides](https://guides.github.com/)
 - [Get started guides for your favorite runtimes](https://www.ibm.com/blogs/bluemix/2017/03/runtimes-get-started-guides/?social_post=829410659&fst=Learn&linkId=35308736)
-
-
----
-## Enjoy Bluemix ! :+1:
