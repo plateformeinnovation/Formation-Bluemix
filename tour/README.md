@@ -277,6 +277,8 @@ En cliquant en haut à gauche sur le lien [docs](https://console.ng.bluemix.net/
 Il est possible de chercher via le moteur de recherches ou par thèmes.
 ![tour-docs-details](./images/tour-docs-details.png)
 
+---
+Suivre le chapitre suivant [Le catalogue Bluemix](catalog/README.md).
 
 ---
 

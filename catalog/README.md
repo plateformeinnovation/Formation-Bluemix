@@ -30,7 +30,7 @@ ou à l'heure afin de concevoir finement votre architecture. VMware est égaleme
 ```
 Storage – Choississer le type de stockage que vous avez besoin.
 Bluemix dispose de plusieurs options comme file storage,
-block storage et object storage, 
+block storage et object storage,
 configurable afin de choisir vitesse et performance.
 ```
 <center>
@@ -41,7 +41,7 @@ configurable afin de choisir vitesse et performance.
 ```
 Networking – Partie critique de la partie Infrastructure.
 Plusieurs choix possible ici également avec Direct Link
-et  réseaux privés VPN, Load Balancing, VLAN spanning et Vyatta gateways 
+et  réseaux privés VPN, Load Balancing, VLAN spanning et Vyatta gateways
 pour des connexions sécurisées.
 ```
 <center>
@@ -51,7 +51,7 @@ pour des connexions sécurisées.
 ---
 ```
 Security – Assurer la meilleur protection de votre application.
-Bluemix offre une variété de pare-feux physiques et de certificats SSL 
+Bluemix offre une variété de pare-feux physiques et de certificats SSL
 pour garantir la sécurité de vos applications.
 ```
 <center>
@@ -63,7 +63,7 @@ pour garantir la sécurité de vos applications.
 ```
 Boilerplates – Ce sont des kits de démarrage prêts à l'emploi
 démontrant ainsi la puissance de Bluemix.
-Les Boilerplates sont déployables en quelques secondes 
+Les Boilerplates sont déployables en quelques secondes
 avec le code source réutilisable et modifiable.
 ```
 <center>
@@ -72,7 +72,7 @@ avec le code source réutilisable et modifiable.
 
 ---
 ```
-Cloud Foundry Apps – Une ressource pour les développeurs désirant 
+Cloud Foundry Apps – Une ressource pour les développeurs désirant
 une expérience de développement sur l'étagère (out-of-the-box).
 Plus besoin de gérer les dépendances et les library. Seul le code est important
 ```
@@ -82,8 +82,8 @@ Plus besoin de gérer les dépendances et les library. Seul le code est importan
 
 ---
 ```
-Containers – Un environneement isolé et sécurisé pour vos applications 
-qui supporte plusieurs langages et charge de travail 
+Containers – Un environneement isolé et sécurisé pour vos applications
+qui supporte plusieurs langages et charge de travail
 sans avoir besoin d'outils de programmation.
 Cela fait que la technologie des containers extrement portable .
 Cette technologie est basée sur Docker.
@@ -95,7 +95,7 @@ Cette technologie est basée sur Docker.
 ---
 ```
 OpenWhisk – Une technologie sans serveur pour éxécuter son code sur événement.
-Par exemple, vous ne voulez utiliser un programme que lorsque vous recevez 
+Par exemple, vous ne voulez utiliser un programme que lorsque vous recevez
 une alerte.
 
 Vous ne payez que pour le temps d'éxécution (en ms)
@@ -123,7 +123,7 @@ Il est possible de consulter le catalogue en entier ou bien de choisir les famil
 ---
 
 ```
-Data & Analytics – Un ensemble de services et d'APIs 
+Data & Analytics – Un ensemble de services et d'APIs
 pour stocker et analyzer vos données.
 
 ```
@@ -134,7 +134,7 @@ pour stocker et analyzer vos données.
 ---
 ```
 Watson – IBM délivre les capacités cognitives via Watson.
-Vous pouvez enrichir vos applications avec des services 
+Vous pouvez enrichir vos applications avec des services
 de machine learning et de reconnaissance d'images.
 Watson permet d'analyser des données non structurées, traduire des documents
 ou encore d'analyser votre personnalité.
@@ -146,8 +146,8 @@ ou encore d'analyser votre personnalité.
 ---
 ```
 Internet of Things – Tout objet connecté à un réseau peut etre de l'IoT,
-tout comme votre téléphone portable. 
-Bluemix dispose d'une plate-forme IoT complète. 
+tout comme votre téléphone portable.
+Bluemix dispose d'une plate-forme IoT complète.
 Une fois votre objet connecté, tirez parti des services IoT
 pour analyser toutes ces données.
 ```
@@ -157,7 +157,7 @@ pour analyser toutes ces données.
 
 ---
 ```
-APIs – Ce service est indispensable pour gérer le cycle 
+APIs – Ce service est indispensable pour gérer le cycle
 de vie de vos APIs.
 ```
 <center>
@@ -181,7 +181,7 @@ un VPN est disponible pour les containers.
 Security – Le service Sécurité permet de renforcer la sécurité des applications
 (scan des failles de sécurité d'applications Web ou mobile
 ou SSO pour implémenter de l'authentification)
-Même si Bluemix est sécurisé de part son architecture, 
+Même si Bluemix est sécurisé de part son architecture,
 il se doit de considérer plus de sécurité à chaque application.
 ```
 <center>
@@ -193,11 +193,11 @@ il se doit de considérer plus de sécurité à chaque application.
 
 DevOps – Adoptez une approche DevOps en utilisant les services
 de gestion du cycle de vie d'applications.
-Cela inclut une chaîne d'outils ouverte automatisant 
-la génération et le déploiement d'applications. 
-Vous pouvez commencer en créant une chaîne d'outils de déploiement simple 
-qui prend en charge les tâches de développement, 
-de déploiement et les opérations. 
+Cela inclut une chaîne d'outils ouverte automatisant
+la génération et le déploiement d'applications.
+Vous pouvez commencer en créant une chaîne d'outils de déploiement simple
+qui prend en charge les tâches de développement,
+de déploiement et les opérations.
 
 ```
 <center>
@@ -207,9 +207,9 @@ de déploiement et les opérations.
 ---
 
 ```
-Application Services – Un large choix de services pour 
+Application Services – Un large choix de services pour
 donner de la valeur à votre application web ou mobile.
-Ces services laissent aux développeurs plus de temps 
+Ces services laissent aux développeurs plus de temps
 pour coder leur applications et du temps pour l'innovation.
 ```
 <center>
@@ -227,9 +227,9 @@ Integrate – Des services pour créer un cloud hybride.
 ---
 
 ```
-A la fin du catalogue, vous noterez une section 
+A la fin du catalogue, vous noterez une section
 pour des services  Bluemix experimentaux.
-Ce sont les services qui sont en cours de développement 
+Ce sont les services qui sont en cours de développement
 par les LABs IBM, qui potentiellement seront intégrés au catalogue général.
 
 ```
@@ -238,7 +238,9 @@ par les LABs IBM, qui potentiellement seront intégrés au catalogue général.
 </center>
 
 
+---
 
+Suivre le chapitre suivant [Déployer une application](deploy/README.md).
 ---
 
 ## Enjoy Bluemix ! :+1:
