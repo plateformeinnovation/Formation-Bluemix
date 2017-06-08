@@ -39,6 +39,11 @@ Rentrer son mot de passe.
 
 ```
 Voila, vous etes connecté.
+Vous allez ainsi pouvoir créer des applications web
+ou mobiles innovantes.Vous allez tirer profit des
+services variés disponible dans le catalogue.
+Méler les technologies IaaS et PaaS, allant de la machine
+virtulle jusqu'au containeur Docker.
 ```
 
 ![tour-dashboard](./images/tour-dashboard.png)
