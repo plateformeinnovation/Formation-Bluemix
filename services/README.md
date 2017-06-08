@@ -5,9 +5,6 @@
   <!-- prerender: true -->
   <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
-
-  # Introduction
-
   Dans ce chapitre, vous allez enrichir votre application nouvellement crééé avec des services additionnels provenant du catalogue Bluemix.
   A trevers cet exercice, vous allez créer une application basée sur le stack CLEAN (CLoudant NoSQL database, Express, Angular et Node.js).
 
@@ -80,14 +77,17 @@
   1. Choisir **Restage** quand on vous le demande.
 
       Votre application va redemarrée et les informations de connexion du service seront disponible dans votre application.
+      Noter les informations disponibles concernant votre service.
 
+![Create app local](./images/services-details.png)
+
+```
       Note: Toutes ces étapes sont réalisables en ligne de commande:
 
-      ```
       cf create-service cloudantNoSQLDB Lite todo-cloudant-[your-initials]
       cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
       cf restage todo-[your-initials]
-      ```
+  ```
 
   # Etape 3 - Connecter la DB Cloudant avec le code de l'application
 
@@ -95,7 +95,7 @@
 
   Afin de tester cette approche, nous allons créer un fichier local d'environnement  (JSON), et valider si les valeurs sont bien chargées avec notre application déployée localement.
 
-  1. Dans la console Bluemix, aller sur le dashboardde votre dashboard.
+  1. Dans la console Bluemix, aller sur le dashboard de votre application.
 
   1. Choisir **Runtime**, et **Environment Variables**
 
