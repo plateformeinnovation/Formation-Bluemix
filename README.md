@@ -6,13 +6,13 @@
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
 <a href="https://www.bluemix.net">
-![Bluemix](./Bluemix.png)
+![Bluemix](./intro/images/Bluemix.png)
 </a>
 
 Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
 
 <a href="https://youtu.be/p9dZiMpbVH0">
-![youtube](./youtube.png)
+![youtube](./intro/images/youtube.png)
 </a>
 
 ---
