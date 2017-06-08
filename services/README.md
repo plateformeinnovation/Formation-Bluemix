@@ -219,7 +219,7 @@
   - [Get started guides for your favorite runtimes](https://www.ibm.com/blogs/bluemix/2017/03/runtimes-get-started-guides/?social_post=829410659&fst=Learn&linkId=35308736)
 
 ---
-Suivre le chapitre suivant [DevOps avec Bluemix](../../devops/README.md).
+Suivre le chapitre suivant [DevOps avec Bluemix](../blob/master/devops/README.md).
 ---
 
 

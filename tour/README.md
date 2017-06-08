@@ -278,7 +278,7 @@ Il est possible de chercher via le moteur de recherches ou par thèmes.
 ![tour-docs-details](./images/tour-docs-details.png)
 
 ---
-Suivre le chapitre suivant [Le catalogue Bluemix](../../catalog/README.md).
+Suivre le chapitre suivant [Le catalogue Bluemix](../blob/master/catalog/README.md).
 
 ---
 
