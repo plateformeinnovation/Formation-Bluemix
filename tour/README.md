@@ -7,9 +7,8 @@
 
 Regarder cette vidéo pour faire un tour de son interface graphique
 
-<a href="https://youtu.be/gq5MvY1nNOM">
-![tour-youtube](./images/tour-youtube.png)
-</a>
+[![tour-youtube](./images/tour-youtube.png)](https://youtu.be/gq5MvY1nNOM)
+
 
 ---
 

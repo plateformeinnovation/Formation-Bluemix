@@ -5,15 +5,14 @@
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
-<a href="https://www.bluemix.net">
-![Bluemix](./intro/images/Bluemix.png)
-</a>
+
+[![Bluemix](./intro/images/Bluemix.png)](https://www.bluemix.net)
+
 
 Regarder cette vidéo pour vous donner un aperçu des fonctionnalités disponibles avec Bluemix:
 
-<a href="https://youtu.be/p9dZiMpbVH0">
-![youtube](./intro/images/youtube.png)
-</a>
+[![youtube](./intro/images/youtube.png)](https://youtu.be/p9dZiMpbVH0)
+
 
 ---
 
