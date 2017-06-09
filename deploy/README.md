@@ -78,13 +78,7 @@ Le code source est également disponible ici:
 
 # Etape 3 - Controler le code localement
 
-1. Ouvrir un terminal ou une invite de commande afin de cloner le repository git
-
-    ```
-    git clone <URL-OF-YOUR-GIT-REPO>
-    ```
-
-1. Cette commande crée un répertoire de votre projet localement sur votr disque dur.
+1. Récupérer le code source disponible et extraire les données du fichier zip dans un répertoire temporaire
 
 ---
 

@@ -53,7 +53,7 @@
 
   1. Extraire les fichiers  dans un  répertoire temporaire.. Cela va créer un dossier  *node-todo-master*.
 
-  1. Copier tous ces fichiers et dossiers vers le dossier de  votre application.
+  1. Copier tous ces fichiers et dossiers vers le dossier de  votre application **webapp-[your-initials]**.
 
   Note: Assurez vous que les fichiers cachés (.gitignore, .cfignore et .bowerrc) seront aussi copiés.
 
@@ -70,7 +70,7 @@
 
   1. Choisir le plan gratuit **Lite**
 
-  1. Donner un nom à votre service comme **todo-cloudant-[your-initials]**
+  1. Donner un nom à votre service comme **webapp-cloudant-[your-initials]**
 
   1. Cliquer sur **Create**. Bluemix va ainsi provisionner une base de données Cloudant et la connecter à votre application.
 
