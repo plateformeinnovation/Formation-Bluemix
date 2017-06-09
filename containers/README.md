@@ -6,456 +6,468 @@
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
 
-This project comes with a partially automated toolchain capable of deploying the service to Cloud Foundry, OpenWhisk and Kubernetes. There is some information you need to get before creating the toolchain.
+![](./images/kubernetes.png)
 
-> Although this section uses a toolchain, it assumes you have successfully configured the Bluemix CLI and its plugins. Some steps require you to use the command line.
+In this lab, you’ll gain a high level understanding of the Kubernetes architecture, features, and development concepts related to the IBM Container Service. Throughout the lab, you’ll get a chance to use the Command Line Interface (CLI) for creating a Kubernetes cluster, manage your running cluster, and bind a service.
 
-> Only the US South region is currently supported.
 
-## 1. Obtain a Bluemix API key
+# Prérequis
++ Avoir un [id IBM Bluemix](https://bluemix.net)
++ Installer le [Bluemix CLI](http://clis.ng.bluemix.net)
++ Installer docker pour [Mac](https://docs.docker.com/engine/installation/mac/) ou [Windows](https://docs.docker.com/engine/installation/windows/)
++ Installer [Kubectl](https://kubernetes.io/docs/user-guide/prereqs/)
++ Installer un [client Git](https://git-scm.com/downloads)
++ Installer [Node.js](https://nodejs.org)
 
-A Bluemix API key is used in place of your Bluemix credentials. It allows to access the Bluemix API. The toolchain uses the API key to interact with the Container Service API.
 
-1. Generate a Bluemix API key
+# Etapes
 
-   ```
-   bx iam api-key-create for-cli
-   ```
+1. [Installer les plugins Bluemix Container Service et Registry ](#step-1---install-bluemix-container-service-and-registry-plugins)
+1. [Se Connecter à Bluemix](#step-2---connect-to-bluemix)
+1. [Créer un  cluster](#step-3---create-a-cluster)
+1. [Avoir et concevoir le code de l'application ](#step-4---get-and-build-the-application-code)
+1. [Concevoir et pousser le containeur de l'application ](#step-5---build-and-push-the-application-container)
+1. [BAssocier un service Bluemix au cluster Kubernetes ](#step-6---bind-a-bluemix-service-to-a-kubernetes-namespace)
+1. [Créer les Services et Deployments Kubernetes](#step-7---Create-kubernetes-services-and-deployments)
+1. [Surveiller vos containeurs avec Weave Scope](#step-8---monitor-your-container-with-weave-scope)
+1. [Passer à l'échelle et nettoyer vos services](#step-9---scale-and-clean-your-services)
 
-   > You can also use an existing API key.
 
-1. Make note of the generated API key. It won't be shown again.
+## Etape 1 - Installer les plugins Bluemix Container Service et Registry
 
-## 2. Get the namespace where you will push the Docker image
+Pour créer des clusters  Kubernetes, et gérer les worker nodes, il faut installer le plug-in Container Service.
 
-1. Check the existing namespaces
+1. Ouvrir un terminal ligne de commande.
 
-   ```
-   bx cr namespace-list
-   ```
-
-   > You can use any of the namespaces listed.
-
-1. If you want to create a new namespace, use
-
-   ```
-   bx cr namespace-add fibonacci
-   ```
-
-1. Make note of the namespace. You will need it later.
-
-## 3. Build the Docker image
-
-### If you have used IBM Containers in the past, you can have the toolchain build the Docker image for you
-
-The toolchain is able to build the Docker image but only if you have used IBM Containers in the past - the [*single and scalable containers*](https://console.ng.bluemix.net/docs/containers/cs_classic.html#cs_classic) option before Kubernetes was made available. If you did, you should be familiar with the notion of namespace and quota.
-
-To build the Docker image in the toolchain, you will need to specify a Bluemix space that has quota assigned for IBM Containers. You can find which space has quotas for the IBM Containers by looking at your organization:
-
-  ![](./quotas.png)
-
-In the screenshot above, two spaces have Containers quota available. One will need to be selected when creating the toolchain.
-
-### but if this is your first time using IBM Container with Kubernetes, you need to build the Docker image manually
-
-Go through the steps detailed in the [manual instructions to build the Docker image](DEPLOY_MANUALLY.md#build-the-docker-image).
-
-## 4. Create a Kubernetes cluster
-
-Go through the steps detailed in the [manual instructions to create a Kubernetes cluster](DEPLOY_MANUALLY.md#create-a-kubernetes-cluster). Make sure to wait for the cluster to be in a Ready state before continuing to the next step.
-
-## 5. Create the toolchain
-
-1. Ensure your organization has enough quota for one web application using 256MB of memory, one Kubernetes cluster, and one OpenWhisk action.
-
-1. Click ***Create toolchain*** to start the Bluemix DevOps wizard:
-
-   [![Deploy To Bluemix](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM-Bluemix/multiple-deployment-options&branch=master)
-
-1. Select the **GitHub** box.
-
-1. Decide whether you want to clone or fork the repository.
-
-1. If you decide to Clone, set a name for your GitHub repository.
-
-1. Select the **Delivery Pipeline** box.
-
-1. Select the region, organization and space where you want to deploy the web application. A random route will be used for the application.
-
-   :warning: Make sure the organization and the space have no space in their names.
-
-   :warning: Only the US South region is currently supported.
-
-1. Select the region, organization and space where quota for IBM Containers have been specified. If you never use the IBM Containers before, you may need to build the Docker image outside of the toolchain as explained earlier in this document.
-
-1. Optionally set the Bluemix API key. If you don't set the key, the Fibonacci service will NOT be deployed to a Kubernetes cluster and you will need to use the manual instructions.
-
-1. Optionally set the name of an existing Kubernetes cluster if you have one, if you do NOT have an existing cluster then the toolChain will create one by default.
-
-1. Replace the *<namespace>* value with the namespace where the Docker image has been or will be pushed.
-
-1. Click **Create**.
-
-1. Select the Delivery Pipeline.
-
-1. Wait for the DEPLOY stage to complete.
-
-1. The services are ready. Review the [Service API](README.md#Service_API) to call the services.
-
-
----
-
-## Enjoy Bluemix ! :+1:
-
-
----
-
-
-
-# Step 2 - Enable Continuous Delivery
-
-Now let's add a source code repository and an automatic build pipeline to our project. The Git repository and issue tracking is hosted by IBM and built on GitLab Community Edition.
-
-1. In your application **Overview** page, search **Continuous Delivery** and click the **Enable** button.
-
-1. A new window opens to configure the Toolchain.
-
-    ![Toolchain](./images/toolchain-gitlab.png)
-
-1. The toolchain gets a default name you can change. In **Configurable Integrations** at the bottom, select **Git Repos and Issue Tracking**.
-
-1. Keep the Default options to **Clone** the starter code for the "Hello World!" application into your GitLab account.
-
-1. The toolchain has been configured successfully. A new Git Repository has been created, as well as a Build Pipeline so that your app gets automatically redeployed after every commit.
-
-1. Open the Git repo and make note of the Git URL.
-
----
-
-# Step 3 - Checkout the code locally
-
-1. Open a terminal or a command prompt to clone the repository
-
+1. Avant d'installer le plugin container, il faut ajouter le dépot Bluemix CLI.
     ```
-    git clone <URL-OF-YOUR-GIT-REPO>
+    bx plugin repos
+    ```
+    Output:
+    ```
+    Listing added plug-in repositories...
+
+    Repo Name   URL
+    Bluemix     https://plugins.ng.bluemix.net
     ```
 
-1. This command creates a directory of your project locally on your disk.
+1. Si vous ne voyez aucun dépot Bluemix, lancez la commande suivante:
+    ```
+    bx plugin repo-add Bluemix https://plugins.ng.bluemix.net
+    ```
 
----
+1. Pour installer le plugin Container Service , lancez la commande suivante:
+    ```
+    bx plugin install container-service -r Bluemix
+    ```
 
-# Step 4 - Run the app locally
+1. Pour gérér un registre d'images privées, installez le plug-in Registry. Ce plug-in permet d'accéder au dépot d'images privées Bluemix, où vous pourrez stocker vos images Docker qui seront utilisées pour construire vos containeurs. Le préfixe pour lancer la commande au registre est **bx cr**.
+    ```
+    bx plugin install container-registry -r Bluemix
+    ```
+
+1. Pour vérifier que le plug-in est correctement installé, lancez la commande suivante:
+    ```
+    bx plugin list
+    ```
+    et deux plug-ins doivent s'afficher:
+    ```
+    Listing installed plug-ins...
+
+    Plugin Name          Version
+    container-registry   0.1.104
+    container-service    0.1.219
+    ```
+
+## Etape 2 - Se Connecter à Bluemix
+
+1. Se connecter à Bluemix
+    ```
+    bx login -a https://api.ng.bluemix.net
+    ```
+
+1. Se connecter au plug-in IBM Bluemix Container Service Kubernetes .
+Le préfixe pour se connecter à ce plug-in est is **bx cs**.
+    ```
+    bx cs init
+    ```
+
+# Etape 3 - Créer un  cluster
+
+Pour créer un cluster, vous avez deux options entre un cluster gratuit ou un cluster payant.
+
++ Un cluster gratuit **free cluster** ne contient qu'un seul worker node pour déployer des containeurs.
+Le worker node est la machine hôte, typiquement une machine virtuelle, qui héberge vos applications.
+ with one worker node to deploy container pods upon. A worker node is the compute host, typically a virtual machine, Aller à l'étape 3.1 *Créer votre cluster Kubernetes gratuit*
+
++ Un cluster payant **paid cluster** peut avoir autant de worker nodes que vous voulez.
+ Un cluter payant nécessite d'avoir un compte Bluemix Infrastructure (SoftLayer).
+ Aller à l'étape 3.2 *définir ses accès SoftLayer*.
+
+1. Créer votre cluster Kubernetes gratuit.
+    ```
+    bx cs cluster-create --name <your-cluster-name>
+    ```
+    Once the cluster reaches the **deployed** state you can provision pods, but they will be enqueued until the cluster’s pods are finished provisioning. Note that it takes up to 15 minutes for the worker node machine to be ordered and for the cluster to be set up and provisioned.
+
+    If you have created a free cluster in the step above, go to the Step 3.7 **Verify that the creation of the cluster was requested.**.
+
+1. Set SoftLayer credentials
+    ```
+    bx cs credentials-set --softlayer-username <YOUR-USER-NAME> --softlayer-api-key <YOUR-API-KEY>
+    ```
+
+1. Review the data centers that are available.
+    ```
+    bx cs locations
+    ```
+    and you should get back something like this if you are connected to Germany
+    ```
+    ams03
+    fra02
+    ```
+
+1. Review the machine types available in the data center
+    ```
+    bx cs machine-types <datacenter>
+    ```
+    and you should get back something like:
+    ```
+    bx cs machine-types dal10
+    Getting machine types list...
+    OK
+    Machine Types
+    Name         Cores   Memory   Network Speed   OS             Storage   Server Type   
+    u1c.2x4      2       4GB      100Mbps         UBUNTU_16_64   100GB     virtual
+    b1c.4x16     4       16GB     1000Mbps        UBUNTU_16_64   100GB     virtual
+    b1c.16x64    16      64GB     1000Mbps        UBUNTU_16_64   100GB     virtual
+    b1c.32x128   32      128GB    1000Mbps        UBUNTU_16_64   100GB     virtual
+    b1c.56x242   56      242GB    1000Mbps        UBUNTU_16_64   100GB     virtual
+    ```
+
+1. Get the available VLANs in your account
+    ```
+    bx cs vlans <datacenter>
+    ```
+    and you should get back something like:
+    ```
+    Getting VLAN list...
+    OK
+    ID        Name   Number   Type      Router
+    1556821          1860     private   bcr01a.dal10
+    1556815          1626     public    fcr01a.dal10
+    ```
+    Note: When you create a Kube cluster with no vlans in create command, those should get created for you.
+
+1. Create cluster
+    ```
+    bx cs cluster-create --name <YOUR-CLUSTER-NAME> --location dal10 --workers 3 --machine-type u1c.2x4 --hardware shared --public-vlan <ID-PRIVATE-VLAN> --private-vlan <ID-PUBLIC-VLAN>
+    ```
+
+1. Verify that the creation of the cluster was requested.
+    ```
+    bx cs clusters
+    ```
+
+1. Check the status of the worker nodes.
+    ```
+    bx cs workers <cluster_name_or_id>
+    ```
+
+1. You will need the kubeconfig data and certs to connect to your cluster using kubectl. You can download the config to your local machine via the CLI. Issue the following CLI command to download your kubeconfig for a given cluster.
+    ```
+    bx cs cluster-config <cluster_name_or_id>
+    ```
+
+1. Use the result of the previous command to set the path to your Kubernetes configuration file as an environment variable.
+    For Mac: ```export KUBECONFIG=/Users/ibm/.bluemix/plugins...```
+    For Win: ```set KUBECONFIG=/Users/ibm/.bluemix/plugins...```
+
+1. Access your Kubernetes dashboard with the default port 8001.
+    ```
+    kubectl proxy
+    Starting to serve on 127.0.0.1:8001
+    ```
+
+1. Open the Kubernetes dashboard: <a href="http://localhost:8001/ui" target="_blank">http://localhost:8001/ui</a>
+
+# Step 4 - Get and build the application code
+
+1. Clone or download the source code for the Todo web app.
+    ```
+    git clone https://github.com/lionelmace/mytodo
+    ```
+    This command creates a directory of your project locally on your disk.
 
 1. Change to the directory of the checkout
-
     ```
-    cd todo-[your-initials]
+    cd mytodo
     ```
 
 1. Get the node.js dependencies for this project
-
     ```
     npm install
     ```
 
-1. Start the app
+# Step 5 - Build and Push the application container
 
+1. Log in to the private Container Registry of Bluemix. Only required if you haven't `bx login` before.
     ```
-    npm start
+    bx cr login
     ```
+    `bx cr login` is a wrapper for `docker login` , it is only needed to log your local docker daemon into the registry, which enables you to push/pull images.
 
-    Once started, the console output will look as follows:
-
+1. To create the namespace of your image registry
     ```
-    > NodejsStarterApp@0.0.1 start /Users/mace/todo-[your-initials]
-    > node app.js
-
-    server starting on http://localhost:[port-number]
+    bx cr namespace-add <YOUR-NAMESPACE-NAME>
     ```
 
-1. Access the app with your web browser
+1. If you forgot the namespace for your image registry, run the command.
+    ```
+    bx cr namespace-list
+    ```
 
----
+1. Build a Docker image that includes the app files of the directory.
+    ```
+    docker build -t registry.ng.bluemix.net/<namespace>/mytodos:v1 .
+    ```
 
-# Step 5 - Change a file locally
+    Note: If you already have an image, just need to tag this image before pushing it.
+    ```
+    docker tag mytodos:v1 registry.ng.bluemix.net/<namespace>/mytodos:v1
+    ```
 
-1. Open **public/index.html**, modify the welcome message at line 19
+1. Push the image to your private images registry.
+    ```
+    docker push registry.ng.bluemix.net/<namespace>/mytodos:v1
+    ```
 
-1. Reload the page in your web browser to confirm the change locally
+1. Verify that the image was successfully added to your registry.
+    ```
+    bx cr images
+    ```
+    Output:
+    ```
+    Listing images...
 
----
+    REPOSITORY                                  NAMESPACE   TAG       DIGEST         CREATED        SIZE     VULNERABILITY STATUS
+    registry.ng.bluemix.net/your-namespace/mytodos   namespace   1   0d90cb732881   1 minute ago   264 MB   OK
+    ```
 
-# Step 6 - Push your local change to the cloud
 
-Cloud Foundry relies on the *manifest.yml* file to know what to do when you push the app on Bluemix.
-A default manifest.yml file was generated for our app. It looks like:
+## Step 6 - Bind a Bluemix service to a Kubernetes namespace
 
-  ```yml
-  applications:
-  - path: .
-    memory: 256M
-    instances: 1
-    domain: mybluemix.net
-    name: todo-[your-initials]
-    host: todo-[your-initials]
-    disk_quota: 1024M
-  ```
----
+This web application uses a Cloudant DBaaS to store the todo task.
 
-It basically defines one application taking its content from the current directory,
-being deployed with **256MB**, with **one** instance, under the **mybluemix.net** domain.
-The app is named **todo-[your-initials]** and it is using **todo-[your-initials]** as host name.
-It has **1024MB** of disk space available.
+1. See all the available services in the catalog
+    ```
+    bx service offerings
+    ```
 
-1. Specifying the buildpack to be used when pushing a Cloud Foundry app is always faster than relying on buildpack detection. Modify the generated Manifest to specify the **buildpack** by adding one line as follows:
+1. Create an instance of a service
+    ```
+    bx service create <service_name> <service_plan> <service_instance_name>
+    ```
+    Example: ```bx service create cloudantNoSQLDB Lite mycloudantinstance```
 
+1. Verify you created your service
+    ```
+    bx service list
+    ```
+
+1. Find your Kubernetes namespace you will need in the next step.
+    ```
+    kubectl get namespaces
+    ```
+    Output:
+    ```
+    NAME          STATUS    AGE
+    default       Active    7d
+    ibm-system    Active    7d
+    kube-system   Active    7d
+    ```
+
+1. Bind your service to your Kubernetes namespace
+    ```
+    bx cs cluster-service-bind <cluster_id> <kube_namespace> <service_instance_name>
+    ```
+    Example:
+    ```
+    bx cs cluster-service-bind ad35aacc139b4e11a6f3182fb13d24af default todo-cloudant
+    ```
+    Note: Use the namepsace **default** or create your own namespace.
+
+1. Control that your secret was successfully created
+    ```
+    kubectl get secrets
+    ```
+
+
+# Step 7 - Create Kubernetes Services and Deployments
+
+1. Edit the YAML file `deploy2kubernetes.yml` to set the namespace of your private registry. If you don't remember this namespace, run the following command:
+    ```
+    bx cr namespace-list
+    ```
+
+    Your YAML file should look as follows:
     ```yml
-    applications:
-    - path: .
-      memory: 256M
-      instances: 1
-      domain: mybluemix.net
-      buildpack: sdk-for-nodejs
-      name: todo-[your-initials]
-      host: todo-[your-initials]
-      disk_quota: 1024M
+    ---
+    # Service to expose frontend
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: mytodos
+      labels:
+        app: mytodos
+        tier: frontend
+    spec:
+      # if your cluster supports it, uncomment the following to automatically create
+      # an external load-balanced IP for the frontend service.
+      # type: LoadBalancer
+      type: NodePort
+      ports:
+      - port: 8080
+        nodePort: 31513
+      selector:
+        app: mytodos
+        tier: frontend
+    ---
+    # Application to deploy
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    metadata:
+      name: mytodos
+    spec:
+      replicas: 2 # tells deployment to run 2 pods matching the template
+      template: # create pods using pod definition in this template
+        metadata:
+          labels:
+            app: mytodos
+            tier: frontend
+        spec:
+          containers:
+          - name: mytodos
+            image: registry.ng.bluemix.net/<your-namespace>/mytodos:v1
+            imagePullPolicy: Always
+            resources:
+              requests:
+                cpu: 100m
+                memory: 100Mi
+            volumeMounts:
+              - mountPath: /opt/service-bind # Mount the "service-bind-volume" volume into the pod.
+                name: service-bind-volume
+          volumes:
+            - name: service-bind-volume
+              secret:
+                defaultMode: 420
+                secretName: binding-todo-cloudant
     ```
+    Note: The secret name is the contatenation of **binding-** and the service name.
 
-1. Connect to Bluemix by passing the Bluemix endpoint of the URL region where you created your app.
-
+1. Deploy the app to a pod in your Kubernetes cluster.
     ```
-    bx api https://api.ng.bluemix.net
+    kubectl create -f deploy2kubernetes.yml
+
+    service "mytodos" created
+    deployment "mytodos" created    
     ```
+    This command will make the app accessible to the world by exposing the deployment as a NodePort service.
 
-1. Login to Bluemix
-
+1. To test your app in a browser, get the details to form the URL.
     ```
-    bx login
+    kubectl describe service mytodos
     ```
-
-1. Push the app to Bluemix
-
+    Output:
     ```
-    bx cf push
+    Name:			mytodos
+    Namespace:		default
+    Labels:			app=mytodos
+    			tier=frontend
+    Selector:		app=mytodos,tier=frontend
+    Type:			NodePort
+    IP:			10.10.10.205
+    Port:			<unset>	3000/TCP
+    NodePort:		<unset>	31513/TCP
+    Endpoints:		172.30.51.102:3000,172.30.51.103:3000
+    Session Affinity:	None
+    No events.
     ```
+    The NodePorts are randomly assigned when they are generated with the expose command, but within 30000-32767. In this example, the NodePort is 30872.
 
-1. When the command completes, access the application running in the cloud to confirm your change was deployed
-
-    ```
-    requested state: started
-    instances: 1/1
-    usage: 256M x 1 instances
-    urls: todo-[your-initials].mybluemix.net
-    last uploaded: Mon Jan 16 21:20:54 UTC 2017
-    stack: cflinuxfs2
-    buildpack: SDK for Node.js(TM) (ibm-node.js-4.6.2, buildpack-v3.9-20161128-1327)
-
-         state     since                    cpu    memory          disk          details
-    #0   running   2017-01-16 10:22:17 PM   4.6%   22.1M of 256M   65.8M of 1G    
-    ```
-
-Changing files locally and pushing them worked but we can do better.
-In a previous step we set up a Git repository and a build pipeline was automatically configured.
-
----
-
-# Step 7 - Commit your changes and see them deployed automatically
-
-1. Open **public/index.html**.
-
-1. Change the page title at line 5.
-
-1. Confirm the change works locally.
-
-1. Commit your changes locally
-    ```
-    git commit -a -m "updated title"
-    ```
-
-    Note: you might be prompted to configure git for the first time:
-    ```
-    git config --global user.email "you@example.com"
-    git config --global user.name "Your Name"
-    ```
-
-1. Push your changes
-    ```
-    git push
-    ```
-
-1. Back to the Bluemix console, go to your application **Overview**.
-
-1. Click on the **View Toolchain** button in the Continuous Delivery section.
-
-1. Click the **Delivery Pipeline** that was created automatically in a previous step.
-
-1. Watch how the Delivery pipeline notice your commit and redeploy the application
-
-1. When the command completes, access the application running in the cloud to confirm your change was deployed
-
-
----
-
-# Step 8 - Get the Todo App code
-
-In previous steps, we've seen the basic of modifying code and deploying the application.
-Now let's focus on our task to build a Todo App. The application has already been developed and is available in this Git repository.
-
-Your first task is to integrate this code in the app you created, replacing the existing app code.
-
-1. Delete all files and folders from your app **except the manifest.yml and .git folder**.
-
-1. Download the complete Todo application from [this archive](./solution/node-todo-master.zip) into a temp directory.
-
-1. Unzip the files in a temp directory. It creates a *node-todo-master* folder.
-
-1. Copy all files and directories from the extract to your app folder.
-
-Note: Make sure the hidden files (.gitignore, .cfignore and .bowerrc) were also copied.
-
----
-
-# Step 9 - Create and bind a Cloudant service
-
-In order to store the todo, we will need a persistent storage. To do so, we will use a Cloudant NoSQL database, a JSON document oriented store, compatible with CouchDB.
-
-1. Back to the Bluemix console, go to your application **Overview**.
-
-1. Click **Connect New** to add a service to your application
-
-1. Search for **Cloudant** in the catalog
-
-1. Select the free **Lite** plan
-
-1. Give the service a name such as **todo-cloudant-[your-initials]**
-
-1. Click **Create**. Bluemix will provision a Cloudant service and connect it to your application.
-
-1. Select **Restage** when prompted to do so.
-
-    Your application will restart and the service connection information will be made available to your application.
-
-    Note: All the steps above could have been scripted using the three commands below:
-    ```
-    cf create-service cloudantNoSQLDB Lite todo-cloudant-[your-initials]
-    cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
-    cf restage todo-[your-initials]
-    ```
-
----
-
-# Step 10 - Connect the Cloudant DB to the application code
-
-When your application runs in Cloud Foundry, all service information bound to the application are available in the **VCAP_SERVICES** variable.
-
-Given a Cloud Foundry app relies on the VCAP_SERVICES environment variable, a straightforward approach is to set this variable in your environment by creating a local env file (JSON or key=value format), to test for this file in your app and to load the values if found.
-
-1. In the Bluemix console, go to your application dashboard.
-
-1. Select **Runtime**, then **Environment Variables**
-
-1. Copy the full content of the **VCAP_SERVICES** into the file vcap-local.json of your project. Make sure to copy the content on line 3 below the services element. It should look as follows:
-
-    ```json
-    {
-      "services":
-      {
-        "cloudantNoSQLDB": [
-          {
-            "credentials": {
-                "username": "XXXX",
-                "password": "XXXX",
-                "host": "XXXXXX-bluemix.cloudant.com",
-                "port": 443,
-                "url": "https://....-bluemix.cloudant.com"
-            },
-            "name": "todo-cloudant",
-            "label": "cloudantNoSQLDB",
-            "plan": "Lite",
-            ...
-          }
-        ]
-      }
-    }
-    ```
-
----
-
-# Step 11 - Run the Todo App locally
-
-1. Get the dependencies for the Todo App. In your app directory, run:
+1. Get the public IP of the worker node in the cluster by running one of the command
 
     ```
-    npm install
+    kubectl get nodes
+    NAME             STATUS    AGE
+    169.47.227.138   Ready     23h
+    ```
+    OR
+    ```
+    bx cs workers <cluster_name_or_id>
+    Listing cluster workers...
+    OK
+    ID                                            Public IP        Private IP      Machine Type   State      Status
+    dal10-pa10c8f571c84d4ac3b52acbf50fd11788-w1   169.47.227.138   10.171.53.188   free           deployed   Deploy Automation Successful
     ```
 
-1. Run the application
-
+1. Open a browser and check out the app with the following URL:
     ```
-    npm start
+    http://<IP_address>:<NodePort>
     ```
+    In this example, the url would be ```http://169.47.227.138:30872```
 
-1. Access the local application
 
----
+## Step 8 - Monitor your container with Weave Scope
 
-# Step 12 - Commit the changes
+Weaveworks scope provides a visual diagram of your resources within the kube cluster including services, pods, containers, processes, nodes, etc. Scope provides you interactive metrics for CPU and Memory and provides tools to tail and exec into a container. Scope is a powerful tool that you do NOT want to expose on the public internet.
 
-1. Add all new files to Git:
+To use weave scope securely with your Kubernetes cluster you can follow these steps.
 
+1. Update the Role Based Access Control
     ```
-    git add .
-    ```
-
-1. Commit:
-
-    ```
-    git commit -a -m "full solution"
+    kubectl apply -f "https://gist.githubusercontent.com/dcberg/0ae9b50cb2a94a18dc69c80dbb7c4d60/raw/e23a1bbbad877499f0e817f519176bf5e1e4aae9/weave-scope-rbac-alpha.yaml"
     ```
 
-1. Push to remote Git
-
+1. Deploy weave scope service (privately accessible via cluster IP).
     ```
-    git push
+    kubectl apply --namespace kube-system -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
     ```
 
-1. Watch the Delivery Pipeline processing your commit and deploying a new version of your app.
+1. Run a port forward:
+    ```
+    kubectl port-forward -n kube-system "$(kubectl get -n kube-system pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')" 4040
+    ```
 
-Congratulations! You completed this lab. You can get familiar with the application code content.
+1. Open your web browser to
+    <a href="http://localhost:4040" target="_blank">http://localhost:4040</a>
+
+    Note: Weave Scope is a cpu heavy (especially the app). Scope is best utilized in a large cluster.
 
 
----
+## Step 9 - Scale and Clean your services
 
-## Source code
+1. Let's scale up to 3 replicas
+    ```
+    kubectl scale --replicas=3 -f deploy2kubernetes.yml
+    ```
 
-### Back-end
+1. Then, inspect our Pods again.
+    ```
+    kubectl get pods
+    ```
 
-| File | Description |
-| ---- | ----------- |
-|**package.json**|Lists the node.js dependencies|
-|**.cfignore**|List of files and directories ignored when calling **cf push**. Typically we ignore everything that can be retrieved with bower or npm. This speeds up the push process.|
-|**manifest.yml**|Used by Cloud Foundry when pushing the application to define the application environment, connected services, number of instances, etc.|
-|**app.js**|Web app backend entry point. It initializes the environment and imports the Todo API endpoints|
-|**todos.js**|Todo API implementation. It declares endpoints for PUT/GET/DELETE (create/retrieve/delete) and handles the *in-memory* storage.
+1. Finally, delete your deployment
+    ```
+    kubectl delete -f deploy2kubernetes.yml
+    ```
 
----
-
-### Front-end
-
-| File | Description |
-| ---- | ----------- |
-|**.bowerrc**|Configuration file for the [bower](http://bower.io/) web package manager to put our web dependencies under public/vendor|
-|**bower.json**|Web dependencies (bootstrap, angular)|
-|**index.html**|Web front-end implementation. It displays the todo list and has a form to submit new todos.|
-|**todo.js**|Declares the Angular app|
-|**todo.service.js**|Implements the connection between the front-end and the back-end. It has methods to create/retrieve/delete Todos|
-|**todo.controller.js**|Controls the main view, loading the current todos and adding/removing todos by delegating to the Todo service|
-
----
 
 # Resources
 
 For additional resources pay close attention to the following:
 
-- [GitHub Guides](https://guides.github.com/)
-- [Get started guides for your favorite runtimes](https://www.ibm.com/blogs/bluemix/2017/03/runtimes-get-started-guides/?social_post=829410659&fst=Learn&linkId=35308736)
+- [Running Kubernetes clusters with IBM Bluemix Container Service](https://console.ng.bluemix.net/docs/containers/cs_cluster.html#cs_cluster_cli)
+- [Container Service Swagger API](https://us-south.containers.bluemix.net/swagger)
+- [Bash script to tail Kubernetes logs from multiple pods at the same time](https://github.com/johanhaleby/kubetail)
+- [Bluemix CLI Plug-in Repository](http://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)
