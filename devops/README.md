@@ -32,32 +32,14 @@ Dans l'exercice suivant, vous allez apprendre à :
 # Etapes
 
 
-1. [Activer le déploiement continu](#etape-1---activer-le-deploiement-continu)
-1. [Déployer une application web depuis la ligne de commande](#etape-2---deployer-une-application-web-depuis-la-ligne-de-commande)
-1. [Contrôler le code localement](#etape-3---controler-le-code-localement)
-1. [Exécuter l'application localement](#etape-4---executer-une-application-localement)
-1. [Changer un  fichier localement](#etape-5---changer-un-fichier-localement)
-1. [Pousser  votre changement  local sur le cloud](#etape-6---pousser-votre-changement-local-sur-le-cloud)
+1. [Activer le déploiement continu](#etape-1------activer-le-déploiement-continu)
+
+1. [Soumettre votre changement et le voir se déployer automatiquement](#etape-2------soumettre-votre-changement-et-le-voir-se-déployer-automatiquement)
+
 ---
 
 
-# Steps
-
-1. [Create a new web application](#step-1---create-a-new-web-application)
-1. [Enable Continuous Delivery](#step-2---enable-continuous-delivery)
-1. [Checkout the code locally](#step-3---checkout-the-code-locally)
-1. [Run the app locally](#step-4---run-the-app-locally)
-1. [Change a file locally](#step-5---change-a-file-locally)
-1. [Push your local change to the cloud](#step-6---push-your-local-change-to-the-cloud)
-1. [Commit your changes and see them deployed automatically](#step-7---commit-your-changes-and-see-them-deployed-automatically)
-1. [Get the Todo App code](#step-8---get-the-todo-app-code)
-1. [Create and bind a Cloudant service](#step-9---create-and-bind-a-cloudant-service)
-1. [Connect the Cloudant DB to the application code](#step-10---connect-the-cloudant-db-to-the-application-code)
-1. [Run the Todo App locally](#step-11---run-the-todo-app-locally)
-1. [Commit the changes](#step-12---commit-the-changes)
-
-
-# Etape 2 - Activer le déploiement continu
+# Etape 1 - Activer le déploiement continu
 
 Maintenant ajoutez un dépot pour votre code source et un pipeline de déploiement automatique à votre projet. Le dépot Git et la gestion des issue tracking est géré:
   + soit par IBM et fonctionne avec GitLab Community Edition en mode privé.
@@ -100,7 +82,7 @@ La Toolchain contient un dépot Git, un Pipeline de déploiement et un IDE web.
 
 Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vous bénéficierez des fonctionnalités du dépot Git et du pipeline de déploiement automatique.
 
-# Etape 3 - Soumettre votre changement et le voir se déployer automatiquement
+# Etape 2 - Soumettre votre changement et le voir se déployer automatiquement
 
 1. Ouvrir le fichier **public/index.html**.
 
