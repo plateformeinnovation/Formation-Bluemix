@@ -32,9 +32,10 @@ Dans l'exercice suivant, vous allez apprendre à :
 # Etapes
 
 
-1. [Activer le déploiement continu](#etape-1------activer-le-déploiement-continu)
+1. [Activer le déploiement continu](#etape-1---activer-le-déploiement-continu)
 
-1. [Soumettre votre changement et le voir se déployer automatiquement](#etape-2------soumettre-votre-changement-et-le-voir-se-déployer-automatiquement)
+1. [Soumettre votre changement et le voir se déployer automatiquement](#etape-2---soumettre-votre-changement-et-le-voir-se-déployer-automatiquement)
+
 
 ---
 
