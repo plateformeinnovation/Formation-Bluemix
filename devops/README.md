@@ -85,13 +85,37 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
 
 # Etape 2 - Soumettre votre changement et le voir se déployer automatiquement
 
+
+1. Depuis la console Bluemix, aller dans l'onglet **Overview** de votre application.
+
+1. Cliquer sur le bouton **View Toolchain** dans la section Continuous Delivery.
+
+1. Cliquer sur ORION, la Web IDE
+
+1. Une nouvelle fenêtre s'ouvre, vous permettant d'accèder en édition à votre code source.
+![Toolchain](./images/devops-editing-code.png)
+
 1. Ouvrir le fichier **public/index.html**.
 
 1. Changer le titre de la page à la ligne 5.
 
-1. Valider que le changement fonctionne en local.
+1. Sauvegarder le changement.
 
-1. Soumettre votre changement localement
+1. Soumettre le changement via l'icône Git.
+![Toolchain](./images/devops-commit-code.png)
+
+1. Revenir sur **Delivery Pipeline**.
+
+1. Regarder la prise en compte de votre changement par le Delivery pipeline  qui rédéploie l'application.
+![Toolchain](./images/devops-deployed-app.png)
+
+
+1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé.
+![Toolchain](./images/devops-updated-app.png)
+
+
+
+1. Il est aussi possible de soumettre votre changement en ligne de commande.
     ```
     git commit -a -m "updated title"
     ```
@@ -102,20 +126,9 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
     git config --global user.name "Your Name"
     ```
 
-1. Pousser votre changement
+1. Pousser votre changement.
     ```
     git push
-    ```
-
-1. Revenir à la console Bluemix, aller dans l'onglet **Overview** de votre application.
-
-1. Cliquer sur le bouton **View Toolchain** dans la section Continuous Delivery.
-
-1. Cliquer sur **Delivery Pipeline** qui a été créé précédemment.
-
-1. Regarder la prise en compte de votre changement par le Delivery pipeline  qui rédéploie l'application.
-
-1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
 
 ---
 ## Enjoy Bluemix ! :+1:
