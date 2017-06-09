@@ -61,35 +61,28 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 Maintenant ajoutez un dépot pour votre code source et un pipeline de déploiement automatique à votre projet. Le dépot Git et la gestion des issue tracking est géré:
   + soit par IBM et fonctionne avec GitLab Community Edition en mode privé.
-
-![Toolchain](./images/toolchain-gitlab.png)
+  ![Toolchain](./images/toolchain-gitlab.png)
 
 
   + soit par GitHub.com en mode public et/ou privé avec un abonnement.
-
-![Toolchain](./images/toolchain-github.png)
+  ![Toolchain](./images/toolchain-github.png)
 
 
 
 1. Depuis la page **Overview** de votre application, recherchez **Continuous Delivery** et cliquez sur le bouton **Enable**.
 
-
-
 1. Une nouvelle fenêtre s'ouvre pour configurer la chaine d'outil, Toolchain.
 La Toolchain contient un dépot Git, un Pipeline de déploiement et un IDE web.
-
 ![Toolchain](./images/devops-enable.png)
 
 1. La toolchain propose un nom par défaut qui est modifiable. Dans **Configurable Integrations** en bas, selectionner **Git Repos et Issue Tracking**.
 
 1. Garder les options par défaut **Clone** pour cloner le code source de l'application
  "Hello World!" dans votre compte GitLab ou GitHub.
-
-![Toolchain](./images/devops-enabled.png)
+ ![Toolchain](./images/devops-enabled.png)
 
 
 1. La toolchain a été configuré avec succès. Un nouveau dépot Git a été créé, ainsi qu'un Pipeline qui pourra déployer votre application automatiquement à chaque commit.
-
 ![Toolchain](./images/devops-created.png)
 
 
