@@ -125,7 +125,7 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
 
 1. Soumettre le changement.
     ```
-    git commit -a -m "updated title"
+    git commit -a -m "full solution"
     ```
 
     Note: Vous devrez peut-etre configurer pour la premierè fois:
