@@ -91,6 +91,7 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
 1. Cliquer sur le bouton **View Toolchain** dans la section Continuous Delivery.
 
 1. Cliquer sur ORION, la Web IDE
+![Toolchain](./images/devops-web-ide.png)
 
 1. Une nouvelle fenêtre s'ouvre, vous permettant d'accèder en édition à votre code source.
 ![Toolchain](./images/devops-editing-code.png)
