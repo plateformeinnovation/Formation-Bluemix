@@ -116,7 +116,14 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
 
 
 
-1. Il est aussi possible de soumettre votre changement en ligne de commande.
+1. Il est maintenant nécessaire de copier le code source de l'application Todo vers ce nouveau répertoire local créé par la commande git clone.
+
+1. Ajouter les nouveaux fichiers à Git.
+    ```
+    git add .
+    ```
+
+1. Soumettre le changement.
     ```
     git commit -a -m "updated title"
     ```
@@ -128,8 +135,20 @@ Dans le chapitre précédent, vous poussiez le changement manuellement. Ici, vou
     ```
 
 1. Pousser votre changement.
+
     ```
     git push
+    ```
+
+
+1. Revenir sur **Delivery Pipeline**.
+
+1. Regarder la prise en compte de votre changement par le Delivery pipeline  qui rédéploie l'application.
+    ![Toolchain](./images/devops-commit-full-solution.png)
+
+
+1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé.
+    ![Toolchain](./images/devops-todo.png)
 
 ---
 ## Enjoy Bluemix ! :+1:
