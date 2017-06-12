@@ -10,7 +10,18 @@
 
 Vous allez découvrir les concepts liés à kubernetes, son architecture, ses fonctionalités, ces concepts de développement en relation avec le service IBM Container.
 Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour créer un cluster, le gérer et y associer un service Bluemix.
-![](./images/kubelabarchi.png)
+
+![](./images/kubearchi.png)
+
+Un cluster Kubernetes contient au moins un **Master** et une multitudes de **Worker Nodes**.
+Le Master est chargé d'exposer les API, organiser les déploiements et gérer l'ensemble du cluster.
+Chaque node éxécute un container docker, communiquant avec le master via un agent.
+Les nodes éxécutent aussi des programmes additionnels pour la gestion des logs, le monitoring, la découverte de service et d'autres options supplémentaires. 
+Les Nodes exposent les computes, le réseau et le stockage aux applications.
+Les Nodes sont des machines virtuelles (VMs) qui sont éxécutées dans Bluemix Infrastructure.
+Les Nodes récupèrent les images depuis le registre d'images containeurs.
+Source: [https://thenewstack.io/kubernetes-an-overview/](https://thenewstack.io/kubernetes-an-overview/)
+
 
 # Prérequis
 + Avoir un [id IBM Bluemix](https://bluemix.net)
@@ -206,6 +217,8 @@ Lancer la commande suivante pour un cluster donné.
 
 
 ## Etape 4 - Avoir et concevoir le code de l'application
+
+![](./images/kubelabarchi.png)
 
 1. Cloner ou télécharger le code source de l'application Todo.
     ```
