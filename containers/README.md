@@ -26,12 +26,13 @@ Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour cré
 1. [Installer les plugins Bluemix Container Service et Container Registry](#etape-1---installer-les-plugins-bluemix-container-service-et-registry)
 1. [Se Connecter à Bluemix](#etape-2---se-connecter-à-bluemix)
 1. [Créer un  cluster](#etape-3---créer-un--cluster)
-1. [Avoir et concevoir le code de l'application](#step-4---avoir-et-concevoir-le-code-de-lapplication)
-1. [Concevoir et pousser le containeur de l'application](#etape-5---Concevoir-et-pousser-le-containeur-de-lapplication)
-1. [Associer un service Bluemix au cluster Kubernetes](#etape-6---Associer-un-service-Bluemix-au-cluster-Kubernetes)
-1. [Créer les Services et Deployments Kubernetes](#etape-7---Créer-les-Services-et-Deployments-Kubernetes)
-1. [Surveiller vos containeurs avec Weave Scope](#etape-8---Surveiller-vos-containeurs-avec-Weave-Scope)
-1. [Passer à l'échelle et nettoyer vos services](#etape-9---Passer-à-léchelle-et-nettoyer-vos-services)
+1. [Avoir et concevoir le code de l'application](#etape-4---avoir-et-concevoir-le-code-de-lapplication)
+1. [Concevoir et pousser le containeur de l'application](#etape-5---concevoir-et-pousser-le-containeur-de-lapplication)
+1. [Associer un service Bluemix au cluster Kubernetes](#etape-6---associer-un-service-bluemix-au-cluster-kubernetes)
+1. [Créer les Services et Deployments Kubernetes](#etape-7---créer-les-services-et-deployments-kubernetes)
+1. [Surveiller vos containeurs avec Weave Scope](#etape-8---surveiller-vos-containeurs-avec-weave-scope)
+1. [Passer à l'échelle et nettoyer vos services](#etape-9---passer-à-léchelle-et-nettoyer-vos-services)
+
 
 
 ## Etape 1 - Installer les plugins Bluemix Container Service et Registry
