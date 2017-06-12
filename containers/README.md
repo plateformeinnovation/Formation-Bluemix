@@ -8,8 +8,8 @@
 
 ![](./images/kubernetes.png)
 
-In this lab, you’ll gain a high level understanding of the Kubernetes architecture, features, and development concepts related to the IBM Container Service. Throughout the lab, you’ll get a chance to use the Command Line Interface (CLI) for creating a Kubernetes cluster, manage your running cluster, and bind a service.
-
+Vous allez découvrir les concepts liés à kubernetes, son architecture, ses fonctionalités, ces concepts de développement en relation avec le service IBM Container.
+Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour créer un cluster, le gérer et y associer un service Bluemix.
 
 # Prérequis
 + Avoir un [id IBM Bluemix](https://bluemix.net)
@@ -22,9 +22,9 @@ In this lab, you’ll gain a high level understanding of the Kubernetes architec
 
 # Etapes
 
-1. [Installer les plugins Bluemix Container Service et Registry ](#step-1---install-bluemix-container-service-and-registry-plugins)
-1. [Se Connecter à Bluemix](#step-2---connect-to-bluemix)
-1. [Créer un  cluster](#step-3---create-a-cluster)
+1. [Installer les plugins Bluemix Container Service et Registry](#etape-1---installer-les-plugins-bluemix-container-service-et-registry)
+1. [Se Connecter à Bluemix](#etape-2---se-connecter-à-bluemix)
+1. [Créer un  cluster](#etape-3---créer-un--cluster)
 1. [Avoir et concevoir le code de l'application ](#step-4---get-and-build-the-application-code)
 1. [Concevoir et pousser le containeur de l'application ](#step-5---build-and-push-the-application-container)
 1. [BAssocier un service Bluemix au cluster Kubernetes ](#step-6---bind-a-bluemix-service-to-a-kubernetes-namespace)
@@ -98,7 +98,7 @@ Pour créer un cluster, vous avez deux options entre un cluster gratuit ou un cl
 
 + Un cluster gratuit **free cluster** ne contient qu'un seul worker node pour déployer des containeurs.
 Le worker node est la machine hôte, typiquement une machine virtuelle, qui héberge vos applications.
- with one worker node to deploy container pods upon. A worker node is the compute host, typically a virtual machine, Aller à l'étape 3.1 *Créer votre cluster Kubernetes gratuit*
+Aller à l'étape 3.1 *Créer votre cluster Kubernetes gratuit*
 
 + Un cluster payant **paid cluster** peut avoir autant de worker nodes que vous voulez.
  Un cluter payant nécessite d'avoir un compte Bluemix Infrastructure (SoftLayer).
@@ -108,30 +108,31 @@ Le worker node est la machine hôte, typiquement une machine virtuelle, qui héb
     ```
     bx cs cluster-create --name <your-cluster-name>
     ```
-    Once the cluster reaches the **deployed** state you can provision pods, but they will be enqueued until the cluster’s pods are finished provisioning. Note that it takes up to 15 minutes for the worker node machine to be ordered and for the cluster to be set up and provisioned.
+    Une fois que le cluster affiche le message **deployed** vous pouvez provisioner des pods, but they will be enqueued until the cluster’s pods are finished provisioning. Note that it takes up to 15 minutes for the worker node machine to be ordered and for the cluster to be set up and provisioned.
+    Notez qu'il faut au moins 15 minutes pour la machine worker node et que le cluster soient configurés et provisionés.
 
-    If you have created a free cluster in the step above, go to the Step 3.7 **Verify that the creation of the cluster was requested.**.
+    Si vous avez créé un cluster gratuit dans l'étape précédente, passez à l'étape 3.7 **Vérifier que la création du cluster soit effective.**.
 
-1. Set SoftLayer credentials
+1. Définir les credentials SoftLayer
     ```
     bx cs credentials-set --softlayer-username <YOUR-USER-NAME> --softlayer-api-key <YOUR-API-KEY>
     ```
 
-1. Review the data centers that are available.
+1. Voir les data centers qui sont disponibles.
     ```
     bx cs locations
     ```
-    and you should get back something like this if you are connected to Germany
+    et vous devriez avoir une liste similaire si vous êtes connecté en Allemagne
     ```
     ams03
     fra02
     ```
 
-1. Review the machine types available in the data center
+1. Voir les types de machines disponibles dans le data center.
     ```
     bx cs machine-types <datacenter>
     ```
-    and you should get back something like:
+    et vous devriez avoir une liste similaire:
     ```
     bx cs machine-types dal10
     Getting machine types list...
@@ -145,11 +146,11 @@ Le worker node est la machine hôte, typiquement une machine virtuelle, qui héb
     b1c.56x242   56      242GB    1000Mbps        UBUNTU_16_64   100GB     virtual
     ```
 
-1. Get the available VLANs in your account
+1. Voir les VLANs disponibles avec votre compte.
     ```
     bx cs vlans <datacenter>
     ```
-    and you should get back something like:
+    et vous devriez avoir une liste similaire:
     ```
     Getting VLAN list...
     OK
@@ -157,39 +158,42 @@ Le worker node est la machine hôte, typiquement une machine virtuelle, qui héb
     1556821          1860     private   bcr01a.dal10
     1556815          1626     public    fcr01a.dal10
     ```
-    Note: When you create a Kube cluster with no vlans in create command, those should get created for you.
+    Note: Quand vous créez un cluster Kubernetes sans vlans, ils sont créés pour vous.
 
-1. Create cluster
+1. Créer un cluster
     ```
     bx cs cluster-create --name <YOUR-CLUSTER-NAME> --location dal10 --workers 3 --machine-type u1c.2x4 --hardware shared --public-vlan <ID-PRIVATE-VLAN> --private-vlan <ID-PUBLIC-VLAN>
     ```
 
-1. Verify that the creation of the cluster was requested.
+1. Valider la demande de création du cluster.
     ```
     bx cs clusters
     ```
 
-1. Check the status of the worker nodes.
+1. Vérifier l'état des worker nodes.
     ```
     bx cs workers <cluster_name_or_id>
     ```
 
-1. You will need the kubeconfig data and certs to connect to your cluster using kubectl. You can download the config to your local machine via the CLI. Issue the following CLI command to download your kubeconfig for a given cluster.
+1. Vous aurez besoin des données et certificats pour se connecter à votre cluster avec l'outil kubectl.
+Vous pouvez télécharger la configuration sur votre ordinateur avec la ligne de commande CLI.
+Lancer la commande suivante pour un cluster donné.
     ```
     bx cs cluster-config <cluster_name_or_id>
     ```
 
-1. Use the result of the previous command to set the path to your Kubernetes configuration file as an environment variable.
-    For Mac: ```export KUBECONFIG=/Users/ibm/.bluemix/plugins...```
-    For Win: ```set KUBECONFIG=/Users/ibm/.bluemix/plugins...```
+1. Utilisez le résultat de cette commande pour enregistrer la configuration Kubernetes comme variable d'environnement.
+    Pour Mac: ```export KUBECONFIG=/Users/ibm/.bluemix/plugins...```
+    Pour Windows: ```set KUBECONFIG=/Users/ibm/.bluemix/plugins...```
 
-1. Access your Kubernetes dashboard with the default port 8001.
+1. Accéder à votre tableau de bord Kubernetes avec le port par défaut 8001.
     ```
     kubectl proxy
     Starting to serve on 127.0.0.1:8001
     ```
 
-1. Open the Kubernetes dashboard: <a href="http://localhost:8001/ui" target="_blank">http://localhost:8001/ui</a>
+1. Ouvrir le tableau de bord Kubernetes: <a href="http://localhost:8001/ui" target="_blank">http://localhost:8001/ui</a>
+
 
 # Step 4 - Get and build the application code
 
