@@ -98,7 +98,7 @@ Le préfixe pour se connecter à ce plug-in est is **bx cs**.
     bx cs init
     ```
 
-# Etape 3 - Créer un  cluster
+## Etape 3 - Créer un  cluster
 
 Pour créer un cluster, vous avez deux options entre un cluster gratuit ou un cluster payant.
 
@@ -204,7 +204,7 @@ Lancer la commande suivante pour un cluster donné.
    ![](./images/kubedashboard.png)
 
 
-# Etape 4 - Avoir et concevoir le code de l'application
+## Etape 4 - Avoir et concevoir le code de l'application
 
 1. Cloner ou télécharger le code source de l'application Todo.
     ```
@@ -222,7 +222,7 @@ Lancer la commande suivante pour un cluster donné.
     npm install
     ```
 
-# Etape 5 - Concevoir et pousser le containeur de l'application
+## Etape 5 - Concevoir et pousser le containeur de l'application
 
 1. Se connecter au registre Privé des containeurs Bluemix. Utile si vous n'avez pas fait `bx login` précédemment.
     ```
@@ -269,7 +269,7 @@ Lancer la commande suivante pour un cluster donné.
     ```
 
 
-# Etape 6 - Associer un service Bluemix au cluster Kubernetes
+## Etape 6 - Associer un service Bluemix au cluster Kubernetes
 
 Cette application web utilise une base de données Cloudant pour stocker vos todo.
 
@@ -317,7 +317,7 @@ Cette application web utilise une base de données Cloudant pour stocker vos tod
     ```
 
 
-# Etape 7 - Créer les Services et Deployments Kubernetes
+## Etape 7 - Créer les Services et Deployments Kubernetes
 
 1. Editer le fichier YAML `deploy2kubernetes.yml` afin de définir le namespace de votre registre privé. Si vous avez oublié votre namespace, lancer la commande suivante:
     ```
