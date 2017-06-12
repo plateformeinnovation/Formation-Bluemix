@@ -26,12 +26,12 @@ Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour cré
 1. [Installer les plugins Bluemix Container Service et Container Registry](#etape-1---installer-les-plugins-bluemix-container-service-et-registry)
 1. [Se Connecter à Bluemix](#etape-2---se-connecter-à-bluemix)
 1. [Créer un  cluster](#etape-3---créer-un--cluster)
-1. [Avoir et concevoir le code de l'application](#etape-4---Avoir et concevoir le code de l'application)
-1. [Concevoir et pousser le containeur de l'application](#etape-5---Concevoir et pousser le containeur de l'application)
-1. [Associer un service Bluemix au cluster Kubernetes](#etape-6---Associer un service Bluemix au cluster Kubernetes)
-1. [Créer les Services et Deployments Kubernetes](#etape-7---Créer les Services et Deployments Kubernetes)
-1. [Surveiller vos containeurs avec Weave Scope](#etape-8---Surveiller vos containeurs avec Weave Scope)
-1. [Passer à l'échelle et nettoyer vos services](#etape-9---Passer à l'échelle et nettoyer vos services)
+1. [Avoir et concevoir le code de l'application](#step-4---avoir-et-concevoir-le-code-de-lapplication)
+1. [Concevoir et pousser le containeur de l'application](#etape-5---Concevoir-et-pousser-le-containeur-de-lapplication)
+1. [Associer un service Bluemix au cluster Kubernetes](#etape-6---Associer-un-service-Bluemix-au-cluster-Kubernetes)
+1. [Créer les Services et Deployments Kubernetes](#etape-7---Créer-les-Services-et-Deployments-Kubernetes)
+1. [Surveiller vos containeurs avec Weave Scope](#etape-8---Surveiller-vos-containeurs-avec-Weave-Scope)
+1. [Passer à l'échelle et nettoyer vos services](#etape-9---Passer-à-léchelle-et-nettoyer-vos-services)
 
 
 ## Etape 1 - Installer les plugins Bluemix Container Service et Registry
@@ -41,6 +41,7 @@ Pour créer des clusters  Kubernetes, et gérer les worker nodes, il faut instal
 1. Ouvrir un terminal ligne de commande.
 
 1. Avant d'installer le plugin container, il faut ajouter le dépot Bluemix CLI.
+
     ```
     bx plugin repos
     ```
@@ -58,16 +59,19 @@ Pour créer des clusters  Kubernetes, et gérer les worker nodes, il faut instal
     ```
 
 1. Pour installer le plugin Container Service , lancez la commande suivante:
+
     ```
     bx plugin install container-service -r Bluemix
     ```
 
-1. Pour gérér un registre d'images privées, installez le plug-in Registry. Ce plug-in permet d'accéder au dépot d'images privées Bluemix, où vous pourrez stocker vos images Docker qui seront utilisées pour construire vos containeurs. Le préfixe pour lancer la commande au registre est **bx cr**.
+1. Pour gérér un registre d'images privées, installez le plug-in Registry. Ce plug-in permet d'accéder au dépot d'images privées Bluemix, où vous pourrez stocker vos images docker qui seront utilisées pour construire vos containeurs. Le préfixe pour lancer la commande au registre est **bx cr**.
+
     ```
     bx plugin install container-registry -r Bluemix
     ```
 
 1. Pour vérifier que le plug-in est correctement installé, lancez la commande suivante:
+
     ```
     bx plugin list
     ```
@@ -83,6 +87,7 @@ Pour créer des clusters  Kubernetes, et gérer les worker nodes, il faut instal
 ## Etape 2 - Se Connecter à Bluemix
 
 1. Se connecter à Bluemix
+
     ```
     bx login -a https://api.ng.bluemix.net
     ```
@@ -193,66 +198,65 @@ Lancer la commande suivante pour un cluster donné.
     Starting to serve on 127.0.0.1:8001
     ```
 
-1. Ouvrir le tableau de bord Kubernetes:  <a href="http://localhost:8001/ui" target="_blank" >http://localhost:8001/ui </a>
-
-
+1. Ouvrir le tableau de bord Kubernetes: [http://localhost:8001/ui](http://localhost:8001/ui)
 
 
    ![](./images/kubedashboard.png)
 
 
-# Step 4 - Avoir et concevoir le code de l'application
+# Etape 4 - Avoir et concevoir le code de l'application
 
-1. Clone or download the source code for the Todo web app.
+1. Cloner ou télécharger le code source de l'application Todo.
     ```
     git clone https://github.com/lionelmace/mytodo
     ```
-    This command creates a directory of your project locally on your disk.
+    Cette commande créée un dossier du projet sur votre disque local.
 
-1. Change to the directory of the checkout
+1. Se déplacer dans le répertoire du projet.
     ```
     cd mytodo
     ```
 
-1. Get the node.js dependencies for this project
+1. Installler les dépendances node.js pour ce projet.
     ```
     npm install
     ```
 
-# Step 5 - Build and Push the application container
+# Etape 5 - Concevoir et pousser le containeur de l'application
 
-1. Log in to the private Container Registry of Bluemix. Only required if you haven't `bx login` before.
+1. Se connecter au registre Privé des containeurs Bluemix. Utile si vous n'avez pas fait `bx login` précédemment.
     ```
     bx cr login
     ```
-    `bx cr login` is a wrapper for `docker login` , it is only needed to log your local docker daemon into the registry, which enables you to push/pull images.
+    `bx cr login` est utilisé pour connecter votre démon docker local au registre, qui vous permettra de pousser ou récupérer des images.
 
-1. To create the namespace of your image registry
+1. Créer le namespace pour votre registre.
     ```
     bx cr namespace-add <YOUR-NAMESPACE-NAME>
     ```
 
-1. If you forgot the namespace for your image registry, run the command.
+1. Si vous avez perdu votre namespace, éxéxuter la commande suivante.
     ```
     bx cr namespace-list
     ```
 
-1. Build a Docker image that includes the app files of the directory.
+1. Construire l'image docker qui inclut les fichiers de l'application.
+
     ```
     docker build -t registry.ng.bluemix.net/<namespace>/mytodos:v1 .
     ```
 
-    Note: If you already have an image, just need to tag this image before pushing it.
+    Note: Si vous avez déjà une image, il n'y a juste qu'à lui donner un tag avant de la pousser.
     ```
     docker tag mytodos:v1 registry.ng.bluemix.net/<namespace>/mytodos:v1
     ```
 
-1. Push the image to your private images registry.
+1. Pousser l'image vers votre registre privé.
     ```
     docker push registry.ng.bluemix.net/<namespace>/mytodos:v1
     ```
 
-1. Verify that the image was successfully added to your registry.
+1. Vérifier que l'image a été ajouté avec succès dans votre registre.
     ```
     bx cr images
     ```
@@ -265,27 +269,27 @@ Lancer la commande suivante pour un cluster donné.
     ```
 
 
-## Step 6 - Bind a Bluemix service to a Kubernetes namespace
+# Etape 6 - Associer un service Bluemix au cluster Kubernetes
 
-This web application uses a Cloudant DBaaS to store the todo task.
+Cette application web utilise une base de données Cloudant pour stocker vos todo.
 
-1. See all the available services in the catalog
+1. Lister tous les services disponibles dans le catalogue.
     ```
     bx service offerings
     ```
 
-1. Create an instance of a service
+1. Créer une instance du service.
     ```
     bx service create <service_name> <service_plan> <service_instance_name>
     ```
-    Example: ```bx service create cloudantNoSQLDB Lite mycloudantinstance```
+    Exemple: ```bx service create cloudantNoSQLDB Lite mycloudantinstance```
 
-1. Verify you created your service
+1. Vérifier que le service est bien créé.
     ```
     bx service list
     ```
 
-1. Find your Kubernetes namespace you will need in the next step.
+1. Vérifier votre namespace Kubernetes qui sera nécessaire par la suite.
     ```
     kubectl get namespaces
     ```
@@ -297,7 +301,7 @@ This web application uses a Cloudant DBaaS to store the todo task.
     kube-system   Active    7d
     ```
 
-1. Bind your service to your Kubernetes namespace
+1. Associer votre service au cluster Kubernetes.
     ```
     bx cs cluster-service-bind <cluster_id> <kube_namespace> <service_instance_name>
     ```
@@ -305,23 +309,24 @@ This web application uses a Cloudant DBaaS to store the todo task.
     ```
     bx cs cluster-service-bind ad35aacc139b4e11a6f3182fb13d24af default todo-cloudant
     ```
-    Note: Use the namepsace **default** or create your own namespace.
+    Note: Utiliser le namepsace **default** ou créer le votre.
 
-1. Control that your secret was successfully created
+1. Controller que vos secret ont été créé correctement.
     ```
     kubectl get secrets
     ```
 
 
-# Step 7 - Create Kubernetes Services and Deployments
+# Etape 7 - Créer les Services et Deployments Kubernetes
 
-1. Edit the YAML file `deploy2kubernetes.yml` to set the namespace of your private registry. If you don't remember this namespace, run the following command:
+1. Editer le fichier YAML `deploy2kubernetes.yml` afin de définir le namespace de votre registre privé. Si vous avez oublié votre namespace, lancer la commande suivante:
     ```
     bx cr namespace-list
     ```
 
-    Your YAML file should look as follows:
-    ```yml
+    Votre fichier YAML ressemble à ça:
+    ```
+    yml
     ---
     # Service to expose frontend
     apiVersion: v1
@@ -373,18 +378,18 @@ This web application uses a Cloudant DBaaS to store the todo task.
                 defaultMode: 420
                 secretName: binding-todo-cloudant
     ```
-    Note: The secret name is the contatenation of **binding-** and the service name.
+    Note: Le nom du  secretName est  la concatenation de **binding-** et du nom du service.
 
-1. Deploy the app to a pod in your Kubernetes cluster.
+1. Deployez l'application vers un pod de votre cluster Kubernetes.
     ```
     kubectl create -f deploy2kubernetes.yml
 
     service "mytodos" created
     deployment "mytodos" created    
     ```
-    This command will make the app accessible to the world by exposing the deployment as a NodePort service.
+    Cette commande va rendre l'application accessible au monde extérieur en exposant le déploiement **deployment** en tant que **NodePort service**.
 
-1. To test your app in a browser, get the details to form the URL.
+1. Pour tester votre application dans un navigateur, regarder les détails pour former l'URL.
     ```
     kubectl describe service mytodos
     ```
@@ -403,16 +408,16 @@ This web application uses a Cloudant DBaaS to store the todo task.
     Session Affinity:	None
     No events.
     ```
-    The NodePorts are randomly assigned when they are generated with the expose command, but within 30000-32767. In this example, the NodePort is 30872.
+    Les **NodePorts** sont assignés de manière aléatoire pendant la création avec la commande expose, sont compris entre 30000 et 32767. Dans cet exemple, le **NodePort** est 30872.
 
-1. Get the public IP of the worker node in the cluster by running one of the command
+1. Trouver l'adresse IP publique du **worker node** du cluster avec cette commande:
 
     ```
     kubectl get nodes
     NAME             STATUS    AGE
     169.47.227.138   Ready     23h
     ```
-    OR
+    ou
     ```
     bx cs workers <cluster_name_or_id>
     Listing cluster workers...
@@ -421,53 +426,52 @@ This web application uses a Cloudant DBaaS to store the todo task.
     dal10-pa10c8f571c84d4ac3b52acbf50fd11788-w1   169.47.227.138   10.171.53.188   free           deployed   Deploy Automation Successful
     ```
 
-1. Open a browser and check out the app with the following URL:
+1. Ouvrir un navigateur et vérifier l'application avec l'URL suivante:
     ```
     http://<IP_address>:<NodePort>
     ```
-    In this example, the url would be ```http://169.47.227.138:30872```
+    Dans cet exemple, l'URL est ```http://169.47.227.138:30872```
 
 
-## Step 8 - Monitor your container with Weave Scope
+## Etape 8 - Surveiller vos containeurs avec Weave Scope
 
-Weaveworks scope provides a visual diagram of your resources within the kube cluster including services, pods, containers, processes, nodes, etc. Scope provides you interactive metrics for CPU and Memory and provides tools to tail and exec into a container. Scope is a powerful tool that you do NOT want to expose on the public internet.
+Weaveworks scope produit des diagrammes visuels de vos ressources de vos clusters Kubernetes incluant les services, les pods, les containeurs, les process, les nodes, ... Scope produit des métriques interactives pour le CPU et la RAM, ainsi que des outils pour éxécuter des commandes ou surveiller les logs dans un containeur.
 
-To use weave scope securely with your Kubernetes cluster you can follow these steps.
+Pour utiliser Weave Scope en sécurité avec votre cluster Kubernetes, vous devez suivre ces étapes.
 
-1. Update the Role Based Access Control
+1. Mettre à jour le Role Based Access Control
     ```
     kubectl apply -f "https://gist.githubusercontent.com/dcberg/0ae9b50cb2a94a18dc69c80dbb7c4d60/raw/e23a1bbbad877499f0e817f519176bf5e1e4aae9/weave-scope-rbac-alpha.yaml"
     ```
 
-1. Deploy weave scope service (privately accessible via cluster IP).
+1. Déployer le service weave scope (accès privé via l'IP du cluster).
     ```
     kubectl apply --namespace kube-system -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
     ```
 
-1. Run a port forward:
+1. Executer un port forward:
     ```
     kubectl port-forward -n kube-system "$(kubectl get -n kube-system pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')" 4040
     ```
 
-1. Open your web browser to
-    <a href="http://localhost:4040" target="_blank">http://localhost:4040</a>
-
-    Note: Weave Scope is a cpu heavy (especially the app). Scope is best utilized in a large cluster.
+1. Ouvrir votre navigateur web à
+    [http://localhost:4040](http://localhost:4040)
 
 
-## Step 9 - Scale and Clean your services
 
-1. Let's scale up to 3 replicas
+## Etape 9 - Passer à l'échelle et nettoyer vos services
+
+1. Passons maintenant notre cluster à 3 **replicas**
     ```
     kubectl scale --replicas=3 -f deploy2kubernetes.yml
     ```
 
-1. Then, inspect our Pods again.
+1. Vérifier vos **Pods**.
     ```
     kubectl get pods
     ```
 
-1. Finally, delete your deployment
+1. Au final, supprimer votre **deployment**
     ```
     kubectl delete -f deploy2kubernetes.yml
     ```
@@ -475,8 +479,7 @@ To use weave scope securely with your Kubernetes cluster you can follow these st
 
 # Resources
 
-For additional resources pay close attention to the following:
-
+Pour plus d'informations, regarder les liens suivants:
 - [Running Kubernetes clusters with IBM Bluemix Container Service](https://console.ng.bluemix.net/docs/containers/cs_cluster.html#cs_cluster_cli)
 - [Container Service Swagger API](https://us-south.containers.bluemix.net/swagger)
 - [Bash script to tail Kubernetes logs from multiple pods at the same time](https://github.com/johanhaleby/kubetail)
