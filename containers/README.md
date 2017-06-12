@@ -10,6 +10,7 @@
 
 Vous allez découvrir les concepts liés à kubernetes, son architecture, ses fonctionalités, ces concepts de développement en relation avec le service IBM Container.
 Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour créer un cluster, le gérer et y associer un service Bluemix.
+![](./images/kubelabarchi.png)
 
 # Prérequis
 + Avoir un [id IBM Bluemix](https://bluemix.net)
@@ -22,15 +23,15 @@ Au travers de cet exercice, vous utiliserez la ligne de commande (CLI) pour cré
 
 # Etapes
 
-1. [Installer les plugins Bluemix Container Service et Registry](#etape-1---installer-les-plugins-bluemix-container-service-et-registry)
+1. [Installer les plugins Bluemix Container Service et Container Registry](#etape-1---installer-les-plugins-bluemix-container-service-et-registry)
 1. [Se Connecter à Bluemix](#etape-2---se-connecter-à-bluemix)
 1. [Créer un  cluster](#etape-3---créer-un--cluster)
-1. [Avoir et concevoir le code de l'application ](#step-4---get-and-build-the-application-code)
-1. [Concevoir et pousser le containeur de l'application ](#step-5---build-and-push-the-application-container)
-1. [BAssocier un service Bluemix au cluster Kubernetes ](#step-6---bind-a-bluemix-service-to-a-kubernetes-namespace)
-1. [Créer les Services et Deployments Kubernetes](#step-7---Create-kubernetes-services-and-deployments)
-1. [Surveiller vos containeurs avec Weave Scope](#step-8---monitor-your-container-with-weave-scope)
-1. [Passer à l'échelle et nettoyer vos services](#step-9---scale-and-clean-your-services)
+1. [Avoir et concevoir le code de l'application](#etape-4---Avoir et concevoir le code de l'application)
+1. [Concevoir et pousser le containeur de l'application](#etape-5---Concevoir et pousser le containeur de l'application)
+1. [Associer un service Bluemix au cluster Kubernetes](#etape-6---Associer un service Bluemix au cluster Kubernetes)
+1. [Créer les Services et Deployments Kubernetes](#etape-7---Créer les Services et Deployments Kubernetes)
+1. [Surveiller vos containeurs avec Weave Scope](#etape-8---Surveiller vos containeurs avec Weave Scope)
+1. [Passer à l'échelle et nettoyer vos services](#etape-9---Passer à l'échelle et nettoyer vos services)
 
 
 ## Etape 1 - Installer les plugins Bluemix Container Service et Registry
@@ -192,10 +193,15 @@ Lancer la commande suivante pour un cluster donné.
     Starting to serve on 127.0.0.1:8001
     ```
 
-1. Ouvrir le tableau de bord Kubernetes: <a href="http://localhost:8001/ui" target="_blank">http://localhost:8001/ui</a>
+1. Ouvrir le tableau de bord Kubernetes:  <a href="http://localhost:8001/ui" target="_blank" >http://localhost:8001/ui </a>
 
 
-# Step 4 - Get and build the application code
+
+
+   ![](./images/kubedashboard.png)
+
+
+# Step 4 - Avoir et concevoir le code de l'application
 
 1. Clone or download the source code for the Todo web app.
     ```
