@@ -1,9 +1,9 @@
-  # Enrichir votre application Bluemix avec les services
+<!-- page_number: true -->
+<!-- $size: 16:9 -->
+<!-- prerender: true -->
+<!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
-  <!-- page_number: true -->
-  <!-- $size: 16:9 -->
-  <!-- prerender: true -->
-  <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
+# Enrichir votre application Bluemix avec les services
 
   Dans ce chapitre, vous allez enrichir votre application nouvellement crééé avec des services additionnels provenant du catalogue Bluemix.
   
