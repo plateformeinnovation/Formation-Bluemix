@@ -4,9 +4,10 @@
 <!-- prerender: true -->
 <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 Le catalogue de service Bluemix dispose de plus de 140 services et APIs.
-<center>
-      <img src="images/catalog.png" width="800" />
-</center>
+
+![catalog](./images/catalog.png)
+
+---
 
 Chaque catégorie est listée dans le menu de gauche avec 3 grands thèmes:
 * Infrastructure (Compute, Storage, Network & Security)
@@ -18,12 +19,13 @@ Chaque catégorie est listée dans le menu de gauche avec 3 grands thèmes:
 * Infrastructure.
 
 ```
-Compute – Les serveurs physiques (Bare Metal) et machines virtuelles (Virtual Servers) sont consommables au mois
-ou à l'heure afin de concevoir finement votre architecture. VMware est également disponible à l'achat.
+Compute – Les serveurs physiques (Bare Metal) et 
+machines virtuelles (Virtual Servers) sont consommables au mois
+ou à l'heure afin de concevoir finement votre architecture. 
+VMware est également disponible à l'achat.
 ```
-<center>
-      <img src="images/infra-compute.png" width="800" />
-</center>
+
+![infra-compute](./images/infra-compute.png)
 
 ---
 
@@ -33,9 +35,7 @@ Bluemix dispose de plusieurs options comme file storage,
 block storage et object storage,
 configurable afin de choisir vitesse et performance.
 ```
-<center>
-      <img src="images/infra-storage.png" width="800" />
-</center>
+![infra-storage](./images/infra-storage.png)
 
 ---
 ```
@@ -44,9 +44,7 @@ Plusieurs choix possible ici également avec Direct Link
 et  réseaux privés VPN, Load Balancing, VLAN spanning et Vyatta gateways
 pour des connexions sécurisées.
 ```
-<center>
-      <img src="images/infra-network.png" width="800" />
-</center>
+![infra-network](./images/infra-network.png)
 
 ---
 ```
@@ -54,9 +52,7 @@ Security – Assurer la meilleur protection de votre application.
 Bluemix offre une variété de pare-feux physiques et de certificats SSL
 pour garantir la sécurité de vos applications.
 ```
-<center>
-      <img src="images/infra-security.png" width="800" />
-</center>
+![infra-security](./images/infra-security.png)
 
 ---
 * Apps (Applications).
@@ -66,19 +62,15 @@ démontrant ainsi la puissance de Bluemix.
 Les Boilerplates sont déployables en quelques secondes
 avec le code source réutilisable et modifiable.
 ```
-<center>
-      <img src="images/apps-boilerplates.png" width="800" />
-</center>
+![apps-boilerplates](./images/apps-boilerplates.png)
 
 ---
 ```
 Cloud Foundry Apps – Une ressource pour les développeurs désirant
 une expérience de développement sur l'étagère (out-of-the-box).
-Plus besoin de gérer les dépendances et les library. Seul le code est important
+Plus besoin de gérer les dépendances et les library. Seul le code est important!
 ```
-<center>
-      <img src="images/apps-cloudfoundryapps.png" width="800" />
-</center>
+![apps-cloudfoundryapps](./images/apps-cloudfoundryapps.png)
 
 ---
 ```
@@ -88,9 +80,7 @@ sans avoir besoin d'outils de programmation.
 Cela fait que la technologie des containers extrement portable .
 Cette technologie est basée sur Docker.
 ```
-<center>
-      <img src="images/apps-containers.png" width="800" />
-</center>
+![apps-containers](./images/apps-containers.png)
 
 ---
 ```
@@ -100,25 +90,19 @@ une alerte.
 
 Vous ne payez que pour le temps d'éxécution (en ms)
 ```
-<center>
-      <img src="images/apps-openwhisk.png" width="800" />
-</center>
+![apps-openwhisk](./images/apps-openwhisk.png)
 
 ---
 ```
 Mobile – Des services autour du développement d'applications mobiles.
 ```
-<center>
-      <img src="images/apps-mobile.png" width="800" />
-</center>
+![apps-mobile](./images/apps-mobile.png)
 
 ---
 
 Passons maintenant à la section Services du catalogue.
 Il est possible de consulter le catalogue en entier ou bien de choisir les familles de services avec le menu de gauche.
-<center>
-      <img src="images/catalog.png" width="800" />
-</center>
+![catalog](./images/catalog.png)
 
 ---
 
@@ -127,9 +111,7 @@ Data & Analytics – Un ensemble de services et d'APIs
 pour stocker et analyzer vos données.
 
 ```
-<center>
-      <img src="images/services-dataetanalytics.png" width="800" />
-</center>
+![services-dataetanalytics](./images/services-dataetanalytics.png)
 
 ---
 ```
@@ -139,9 +121,7 @@ de machine learning et de reconnaissance d'images.
 Watson permet d'analyser des données non structurées, traduire des documents
 ou encore d'analyser votre personnalité.
 ```
-<center>
-      <img src="images/services-watson.png" width="800" />
-</center>
+![services-watson](./images/services-watson.png)
 
 ---
 ```
@@ -151,18 +131,14 @@ Bluemix dispose d'une plate-forme IoT complète.
 Une fois votre objet connecté, tirez parti des services IoT
 pour analyser toutes ces données.
 ```
-<center>
-      <img src="images/services-iot.png" width="800" />
-</center>
+![services-iot](./images/services-iot.png)
 
 ---
 ```
 APIs – Ce service est indispensable pour gérer le cycle
 de vie de vos APIs.
 ```
-<center>
-      <img src="images/services-api.png" width="800" />
-</center>
+![services-api](./images/services-api.png)
 
 ---
 
@@ -171,9 +147,7 @@ Network – En plus des services Réseaux dans la partie infrastructure,
 un VPN est disponible pour les containers.
 
 ```
-<center>
-      <img src="images/services-network.png" width="800" />
-</center>
+![services-network](./images/services-network.png)
 
 ---
 
@@ -184,9 +158,7 @@ ou SSO pour implémenter de l'authentification)
 Même si Bluemix est sécurisé de part son architecture,
 il se doit de considérer plus de sécurité à chaque application.
 ```
-<center>
-      <img src="images/services-security.png" width="800" />
-</center>
+![services-security](./images/services-security.png)
 
 ---
 ```
@@ -200,9 +172,7 @@ qui prend en charge les tâches de développement,
 de déploiement et les opérations.
 
 ```
-<center>
-      <img src="images/services-devops.png" width="800" />
-</center>
+![services-devops](./images/services-devops.png)
 
 ---
 
@@ -212,17 +182,13 @@ donner de la valeur à votre application web ou mobile.
 Ces services laissent aux développeurs plus de temps
 pour coder leur applications et du temps pour l'innovation.
 ```
-<center>
-      <img src="images/services-application.png" width="800" />
-</center>
+![services-application](./images/services-application.png)
 
 ---
 ```
 Integrate – Des services pour créer un cloud hybride.
 ```
-<center>
-      <img src="images/services-integrate.png" width="800" />
-</center>
+![services-integrate](./images/services-integrate.png)
 
 ---
 
@@ -233,9 +199,7 @@ Ce sont les services qui sont en cours de développement
 par les LABs IBM, qui potentiellement seront intégrés au catalogue général.
 
 ```
-<center>
-      <img src="images/experimental.png" width="800" />
-</center>
+![experimental](./images/experimental.png)
 
 
 ---

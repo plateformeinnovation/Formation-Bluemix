@@ -6,9 +6,13 @@
   <!-- footer: OPEN GROUPE - Formation Bluemix - JUIN 2017 -->
 
   Dans ce chapitre, vous allez enrichir votre application nouvellement crééé avec des services additionnels provenant du catalogue Bluemix.
-  A trevers cet exercice, vous allez créer une application basée sur le stack CLEAN (CLoudant NoSQL database, Express, Angular et Node.js).
+  
+  ---
+  
+  A travers cet exercice, vous allez créer une application basée sur le stack CLEAN (CLoudant NoSQL database, Express, Angular et Node.js).
 
   ![Todo](./images/screenshot.png)
+  
   ---
 
   # Objectif
@@ -48,6 +52,7 @@
   Votre premiere tache consiste à intégrer ce code dans l'application que vous venez de créer, en remplaçant le code existant.
 
   1. Supprimer tous les fichiers et dossiers de votre application  all files and folders from your app **sauf le fichier manifest.yml et le dossier .git**.
+---
 
   1. Télécharger l'application complete Todo  depuis [cette archive](./solution/node-todo-master.zip) dans un répertoire temporaire.
 
@@ -57,10 +62,13 @@
 
   Note: Assurez vous que les fichiers cachés (.gitignore, .cfignore et .bowerrc) seront aussi copiés.
 
+---
 
   # Etape 2 - Créer et associer le service Cloudant
 
   Afin d'enregistrer nos todos, nous aurons besoin d'un stockage persistant. Pour cela, nous allons utiliser une base de données Cloudant NoSQL, base de données documents, compatible avec CouchDB.
+
+---
 
   1. Revenir à la console Bluemix, allez sur le menu **Overview** de votre application.
 
@@ -75,19 +83,30 @@
   1. Cliquer sur **Create**. Bluemix va ainsi provisionner une base de données Cloudant et la connecter à votre application.
 
   1. Choisir **Restage** quand on vous le demande.
-
-      Votre application va redemarrée et les informations de connexion du service seront disponible dans votre application.
-      Noter les informations disponibles concernant votre service.
+---
+      Votre application va redemarrée et les informations 
+      de connexion du service seront disponible 
+      dans votre application.
+      Noter les informations disponibles
+      concernant votre service.
 
 ![Create app local](./images/services-details.png)
 
-```
-      Note: Toutes ces étapes sont réalisables en ligne de commande:
+---
 
-      cf create-service cloudantNoSQLDB Lite todo-cloudant-[your-initials]
-      cf bind-service todo-[your-initials] todo-cloudant-[your-initials]
-      cf restage todo-[your-initials]
+```
+      Note: Toutes ces étapes sont réalisables 
+      en ligne de commande:
+
+      cf create-service cloudantNoSQLDB 
+      Lite webapp-cloudant-[your-initials]
+      
+      cf bind-service webapp-[your-initials] 
+      webapp-cloudant-[your-initials]
+      
+      cf restage webapp-[your-initials]
   ```
+---
 
   # Etape 3 - Connecter la DB Cloudant avec le code de l'application
 
@@ -99,7 +118,9 @@
 
   1. Choisir **Runtime**, et **Environment Variables**
 
-  1. Copier tout le contenu de **VCAP_SERVICES** dans le fichier local vcap-local.json de votre projet. S'assurer de copier le contenu en dessous de l'élément services. Cela doit ressembler à ça:
+  1. Copier tout le contenu de **VCAP_SERVICES** dans le fichier local vcap-local.json de votre projet. S'assurer de copier le contenu en dessous de l'élément services. 
+---
+Cela doit ressembler à ça:
 
       ```json
       {
@@ -123,7 +144,7 @@
         }
       }
       ```
-
+---
 
   # Etape 4 - Exécuter l'application Todo localement
 
@@ -139,11 +160,12 @@
       npm start
       ```
 
+---
   1. Accéder à l'application avec votre navigateur web
 
   ![Create app local](./images/services-app-local.png)
 
-
+---
   # Etape 5 - Pousser  votre code local sur le cloud
 
   1. Se connecter à Bluemix en indiquant le endpoint Bluemix de l'URL avec la région où l'application a été crée.
@@ -163,9 +185,10 @@
       ```
       bx cf push
       ```
+     
+     ---
 
   1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
-
 
   ```
   requested state: started
@@ -179,10 +202,10 @@
        state     since                    cpu    memory      disk      details
   #0   running   2017-06-07 04:47:58 PM   0.0%   0 of 256M   0 of 1G
   ```
-
+---
   ![Create app cloud](./images/services-app-cloud.png)
 
-
+---
 
   Félicitations ! Vous avez complété cet exercice.
   Vous pouvez prendre connaissance du code source de l'application.
@@ -199,6 +222,7 @@
   |**app.js**|Web app backend entry point. It initializes the environment and imports the Todo API endpoints|
   |**todos.js**|Todo API implementation. It declares endpoints for PUT/GET/DELETE (create/retrieve/delete) and handles the *in-memory* storage.
 
+---
   ### Front-end
 
   | File | Description |
@@ -210,7 +234,7 @@
   |**todo.service.js**|Implements the connection between the front-end and the back-end. It has methods to create/retrieve/delete Todos|
   |**todo.controller.js**|Controls the main view, loading the current todos and adding/removing todos by delegating to the Todo service|
 
-
+---
   # Resources
 
   For additional resources pay close attention to the following:

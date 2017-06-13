@@ -54,14 +54,18 @@ Dans l'exercice suivant, vous allez apprendre à :
 
 ![Node.js](./images/nodejs.png)
 
+---
+
 1. Donner un nom unique à votre application (exemple:webapp-[vos-initials])
 
 ![Create app](./images/deploy-create-app.png)
 
+---
 1. On visualise facilement les détails de cette application(son statut, sa mise à l'échelle, sa RAM, son prix,...).
 
 ![Create app](./images/deploy-dashboard-details.png)
 
+---
 1. Accéder à votre application.
 
 Le runtime SDK for Node.js a créer une simple application web "Hello World!" qui nous servira comme point de départ.
@@ -76,6 +80,7 @@ Le runtime SDK for Node.js a créer une simple application web "Hello World!" qu
 Le code source est également disponible ici:
 [code source](./solution/webapp-jd-master.zip)
 
+---
 # Etape 3 - Controler le code localement
 
 1. Récupérer le code source disponible et extraire les données du fichier zip dans un répertoire temporaire
@@ -110,6 +115,7 @@ Le code source est également disponible ici:
 
     server starting on http://localhost:[port-number]
     ```
+---
 
 1. Accéder à l'application avec votre navigateur web
 
@@ -120,6 +126,8 @@ Le code source est également disponible ici:
 # Etape 5 - Changer un fichier localement
 
 1. Ouvrir le fichier **public/index.html**, modifier le message d'accueil à la ligne 19
+
+---
 
 1. Recharger la page web pour confirmer le changement localement
 
@@ -149,6 +157,7 @@ Un fichier manifest.yml a été généré par défaut pour votre application. Il
 L'application sera nommée **webapp-[your-initials]** et il utilisera **webapp-[your-initials]** comme nom de hote.
 Il utilisera **1024MB** de disque comme espace disponible.
 
+---
 1. Spécifier le buildpack a utiliser quand on pousse une application Cloud Foundry app est toujours plus rapide que de 'appuyer sur la détection du buildpack . Modifier le fichier Manifest généré en spécifiant le **buildpack** par la ligne suivante:
 
     ```yml
@@ -162,6 +171,7 @@ Il utilisera **1024MB** de disque comme espace disponible.
       host: webapp-[your-initials]
       disk_quota: 1024M
     ```
+---
 
 1. Se connecter à Bluemix en indiquant le endpoint Bluemix de l'URL avec la région où l'application a été crée.
 
@@ -180,7 +190,7 @@ Il utilisera **1024MB** de disque comme espace disponible.
     ```
     bx cf push
     ```
-
+---
 1. Quand la commande est terminée, accéder à l'application s'éxécutant dans le cloud pour confirmer que le changement a été déployé
 
     ```
@@ -195,7 +205,7 @@ Il utilisera **1024MB** de disque comme espace disponible.
      state     since                    cpu    memory          disk          details
      #0   running   2017-06-06 05:12:28 PM   0.0%   59.7M of 256M   67.7M of 1G
     ```
-
+---
 ![Create app](./images/deploy-app-bluemix-modif.png)
 
 
