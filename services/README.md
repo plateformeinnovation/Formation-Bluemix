@@ -5,7 +5,7 @@
 
 # Enrichir votre application Bluemix avec les services
 
-  Dans ce chapitre, vous allez enrichir votre application nouvellement crééé avec des services additionnels provenant du catalogue Bluemix.
+  Dans ce chapitre, vous allez enrichir votre application nouvellement créée avec des services additionnels provenant du catalogue Bluemix.
   
   ---
   
