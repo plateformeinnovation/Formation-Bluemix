@@ -51,7 +51,7 @@
 
   Votre premiere tache consiste à intégrer ce code dans l'application que vous venez de créer, en remplaçant le code existant.
 
-  1. Supprimer tous les fichiers et dossiers de votre application  all files and folders from your app **sauf le fichier manifest.yml et le dossier .git**.
+  1. Supprimer tous les fichiers et dossiers de votre application **sauf le fichier manifest.yml et le dossier .git**.
 ---
 
   1. Télécharger l'application complete Todo  depuis [cette archive](./solution/node-todo-master.zip) dans un répertoire temporaire.
