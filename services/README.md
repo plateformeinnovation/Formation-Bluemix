@@ -79,6 +79,8 @@
   1. Choisir le plan gratuit **Lite**
 
   1. Donner un nom à votre service comme **webapp-cloudant-[your-initials]**
+  
+  1. Cliquer sur **Connect to** (à gauche de l'écran) pour associer votre service de base de données Cloudant à votre application.
 
   1. Cliquer sur **Create**. Bluemix va ainsi provisionner une base de données Cloudant et la connecter à votre application.
 
