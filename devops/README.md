@@ -92,7 +92,6 @@ remote: HTTP Basic: Access denied
 remote: You must use a personal access token with 'api' scope for Git over HTTP.
 remote: You can generate one at https://git.ng.bluemix.net/profile/personal_access_tokens
 fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerome.druais/jd-netcore.git/'
-
   ```
 
   Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été cochée.
@@ -100,21 +99,27 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
   ![Toolchain](./images/devops-private-repo.png)
 
 1. Pour résoudre ce blocage, soit :
-  1. Rendre le dépot public dans les paramètres de GitLab.
-  ![Toolchain](./images/devops-settings-public-repo.png)
 
-  1. Créer un personal access token pour s'authentifier.
+    1. Rendre le dépot public dans les paramètres de GitLab.
+    ![Toolchain](./images/devops-settings-public-repo.png)
 
+<<<<<<< HEAD
     ![Toolchain](./images/devops-token-1.png)
 
     ![Toolchain](./images/devops-token-2.png)
 
     ![Toolchain](./images/devops-token-3.png)
+=======
+    1. Créer un personal access token pour s'authentifier.
+     ![Toolchain](./images/devops-token-1.png)
+     ![Toolchain](./images/devops-token-2.png)
+     ![Toolchain](./images/devops-token-3.png)
+>>>>>>> 7f091f91e6ead9819c204d1f0cf9e94c701efdf6
 
-1. Relancer la commande git clone avec le token
+1. Relancer la commande git clone en prenant en compte le token
 
 ```
-git clone https://jerome.druais:<MON_TOKEN>-s@git.ng.bluemix.net/jerome.druais/jd-netcore.git
+git clone https://jerome.druais:<MON_TOKEN>@git.ng.bluemix.net/jerome.druais/jd-netcore.git
 Cloning into 'jd-netcore'...
 remote: Counting objects: 43, done.
 remote: Compressing objects: 100% (36/36), done.
