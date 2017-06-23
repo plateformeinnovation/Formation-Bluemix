@@ -103,13 +103,10 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
   1. Soit créer un personal access token pour s'authentifier.
 
       ![Toolchain](./images/devops-token-1.png)
-
       ![Toolchain](./images/devops-token-2.png)
-
       ![Toolchain](./images/devops-token-3.png)
 
 1. Relancer la commande git clone en prenant en compte le token.
-
 ```
 git clone https://jerome.druais:<MON_TOKEN>@git.ng.bluemix.net/jerome.druais/jd-netcore.git
 Cloning into 'jd-netcore'...
