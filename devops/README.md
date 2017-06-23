@@ -100,13 +100,13 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
 
 1. Pour résoudre ce blocage, soit :
 
-  1. Rendre le dépot public dans les paramètres de GitLab.
-  ![Toolchain](./images/devops-settings-public-repo.png)
+    1. Rendre le dépot public dans les paramètres de GitLab.
+    ![Toolchain](./images/devops-settings-public-repo.png)
 
-  1. Créer un personal access token pour s'authentifier.
-    ![Toolchain](./images/devops-token-1.png)
-    ![Toolchain](./images/devops-token-2.png)
-    ![Toolchain](./images/devops-token-3.png)
+    1. Créer un personal access token pour s'authentifier.
+     ![Toolchain](./images/devops-token-1.png)
+     ![Toolchain](./images/devops-token-2.png)
+     ![Toolchain](./images/devops-token-3.png)
 
 1. Relancer la commande git clone en prenant en compte le token
 
