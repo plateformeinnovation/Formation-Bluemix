@@ -100,21 +100,17 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
 
 1. Pour résoudre ce blocage, soit :
   1. Rendre le dépot public dans les paramètres de GitLab.
-  
   ![Toolchain](./images/devops-settings-public-repo.png)
 
   1. Créer un personal access token pour s'authentifier.
-
     ![Toolchain](./images/devops-token-1.png)
-    
     ![Toolchain](./images/devops-token-2.png)
-    
     ![Toolchain](./images/devops-token-3.png)
 
-1. Relancer la commande git clone avec le token
+1. Relancer la commande git clone en prenant en compte le token
 
 ```
-git clone https://jerome.druais:<MON_TOKEN>-s@git.ng.bluemix.net/jerome.druais/jd-netcore.git
+git clone https://jerome.druais:<MON_TOKEN>@git.ng.bluemix.net/jerome.druais/jd-netcore.git
 Cloning into 'jd-netcore'...
 remote: Counting objects: 43, done.
 remote: Compressing objects: 100% (36/36), done.
