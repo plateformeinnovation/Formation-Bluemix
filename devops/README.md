@@ -99,6 +99,7 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
   ![Toolchain](./images/devops-private-repo.png)
 
 1. Pour résoudre ce blocage, soit :
+
   1. Rendre le dépot public dans les paramètres de GitLab.
   ![Toolchain](./images/devops-settings-public-repo.png)
 
