@@ -94,12 +94,12 @@ remote: You can generate one at https://git.ng.bluemix.net/profile/personal_acce
 fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerome.druais/jd-netcore.git/'
 
   ```
-  Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été coché.
+  Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été cochée.
 
   ![Toolchain](./images/devops-private-repo.png)
 
-1. Pour résoudre ce blocage:
-  1. Rendre le dépot public dans les paramtres de GitLab.
+1. Pour résoudre ce blocage, soit :
+  1. Rendre le dépot public dans les paramètres de GitLab.
   ![Toolchain](./images/devops-settings-public-repo.png)
 
   1. Créer un personal access token pour s'authentifier.
