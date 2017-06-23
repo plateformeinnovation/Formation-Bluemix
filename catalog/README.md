@@ -14,6 +14,7 @@ Chaque catégorie est listée dans le menu de gauche avec 3 grands thèmes:
 * Apps
 * Services
 
+
 ---
 
 * Infrastructure.

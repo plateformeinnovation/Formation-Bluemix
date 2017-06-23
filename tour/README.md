@@ -41,9 +41,11 @@ Rentrer son mot de passe.
 Voila, vous etes connecté.
 Vous allez ainsi pouvoir créer des applications web ou mobiles innovantes.
 Vous allez tirer profit des services variés disponible dans le catalogue.
-Mêler les technologies IaaS et PaaS, allant de la machine virtuelle jusqu'au containeur Docker.
-```
+Mêler les technologies IaaS et PaaS, 
+allant de la machine virtuelle au containeur Docker.
 
+```
+---
 ![tour-dashboard](./images/tour-dashboard.png)
 
 
@@ -245,16 +247,12 @@ Une fois le menu ouvert, voici les actions possibles.
 ---
 
 ##### 6.1 Applications
-
 On peut ici contrôler ses applications depuis son tableau de bord.
 ![tour-applications-dashboard](./images/tour-applications-dashboard.png)
-
 Le [chapitre 3](../deploy) parle en détail des applications.
 
 ---
-
 ##### 6.2. Services
-
 A partir du menu (en haut à gauche), on navigue vers les services.
 ![tour-menu](./images/tour-menu.png)
 

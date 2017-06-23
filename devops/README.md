@@ -49,7 +49,7 @@ Maintenant ajoutez un dépot pour votre code source et un pipeline de déploieme
 ---
   + soit par GitHub.com en mode public et/ou privé avec un abonnement.
   ![Toolchain](./images/toolchain-github.png)
-  
+
 ---
 
 1. Depuis la page **Overview** de votre application, recherchez **Continuous Delivery** et cliquez sur le bouton **Enable**.
@@ -82,6 +82,41 @@ La Toolchain contient un dépot Git, un Pipeline de déploiement et un IDE web.
     ```
     git clone <URL-OF-YOUR-GIT-REPO>
     ```
+
+1. Il se peut que vous ayez une erreur lors de la commande git clone dû à un problème d'autentification.
+
+  ```
+git clone https://jerome.druais@git.ng.bluemix.net/jerome.druais/jd-netcore.git
+Cloning into 'jd-netcore'...
+remote: HTTP Basic: Access denied
+remote: You must use a personal access token with 'api' scope for Git over HTTP.
+remote: You can generate one at https://git.ng.bluemix.net/profile/personal_access_tokens
+fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerome.druais/jd-netcore.git/'
+
+  ```
+  Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été coché.
+
+  ![Toolchain](./images/devops-private-repo.png)
+
+1. Pour résoudre ce blocage:
+  1. Rendre le dépot public dans les paramtres de GitLab.
+  ![Toolchain](./images/devops-settings-public-repo.png)
+
+  1. Créer un personal access token pour s'authentifier.
+
+    ![Toolchain](./images/devops-token-1.png)
+    ![Toolchain](./images/devops-token-2.png)
+    ![Toolchain](./images/devops-token-3.png)
+
+1. Relancer la commande git clone avec le token
+```
+git clone https://jerome.druais:<MON_TOKEN>-s@git.ng.bluemix.net/jerome.druais/jd-netcore.git
+Cloning into 'jd-netcore'...
+remote: Counting objects: 43, done.
+remote: Compressing objects: 100% (36/36), done.
+remote: Total 43 (delta 4), reused 0 (delta 0)
+Unpacking objects: 100% (43/43), done.
+```
 
 1. Cette commande crée un répertoire de votre projet localement sur votr disque dur.
 
