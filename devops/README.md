@@ -94,6 +94,7 @@ remote: You can generate one at https://git.ng.bluemix.net/profile/personal_acce
 fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerome.druais/jd-netcore.git/'
 
   ```
+  
   Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été cochée.
 
   ![Toolchain](./images/devops-private-repo.png)
@@ -105,10 +106,13 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
   1. Créer un personal access token pour s'authentifier.
 
     ![Toolchain](./images/devops-token-1.png)
+    
     ![Toolchain](./images/devops-token-2.png)
+    
     ![Toolchain](./images/devops-token-3.png)
 
 1. Relancer la commande git clone avec le token
+
 ```
 git clone https://jerome.druais:<MON_TOKEN>-s@git.ng.bluemix.net/jerome.druais/jd-netcore.git
 Cloning into 'jd-netcore'...
