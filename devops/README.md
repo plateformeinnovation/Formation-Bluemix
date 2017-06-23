@@ -97,17 +97,17 @@ fatal: Authentication failed for 'https://jerome.druais@git.ng.bluemix.net/jerom
 
   Lors de la création du dépot Git dans la Toolchain, la case dépot privé a été cochée.
 
-  ![Toolchain](./images/devops-private-repo.png)
+    ![Toolchain](./images/devops-private-repo.png)
 
-1. Pour résoudre ce blocage, soit :
+1. Pour résoudre ce blocage :
 
-    1. Rendre le dépot public dans les paramètres de GitLab.
+    1. Soit rendre le dépot public dans les paramètres de GitLab.
     ![Toolchain](./images/devops-settings-public-repo.png)  
-    1. Créer un personal access token pour s'authentifier.  
+    1. Soit créer un personal access token pour s'authentifier.  
     ![Toolchain](./images/devops-token-1.png)
     ![Toolchain](./images/devops-token-2.png)
     ![Toolchain](./images/devops-token-3.png)
-1. Relancer la commande git clone avec le token
+1. Relancer la commande git clone en prenant en compte le token.
 
 ```
 git clone https://jerome.druais:<MON_TOKEN>@git.ng.bluemix.net/jerome.druais/jd-netcore.git
