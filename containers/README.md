@@ -438,7 +438,7 @@ Cette application web utilise une base de données Cloudant pour stocker vos tod
     Session Affinity:	None
     No events.
     ```
-    Les **NodePorts** sont assignés de manière aléatoire pendant la création avec la commande expose, sont compris entre 30000 et 32767. Dans cet exemple, le **NodePort** est 30872.
+    Les **NodePorts** sont assignés de manière aléatoire pendant la création avec la commande expose, sont compris entre 30000 et 32767. Dans cet exemple, le **NodePort** est 31513.
 ---
 1. Trouver l'adresse IP publique du **worker node** du cluster avec cette commande:
 
@@ -460,7 +460,7 @@ Cette application web utilise une base de données Cloudant pour stocker vos tod
     ```
     http://<IP_address>:<NodePort>
     ```
-    Dans cet exemple, l'URL est ```http://169.47.227.138:30872```
+    Dans cet exemple, l'URL est ```http://169.47.227.138:31513```
 
 ---
 ## Etape 8 - Surveiller vos containeurs avec Weave Scope
